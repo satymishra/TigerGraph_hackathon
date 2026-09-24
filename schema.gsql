@@ -1,0 +1,82 @@
+// TigerGraph Schema for Olympic Agentic GraphRAG
+// Run this in TigerGraph Savanna → GSQL Editor
+
+// 1. Create graph
+CREATE GRAPH OlympicsGraph()
+
+USE GRAPH OlympicsGraph
+
+// 2. Vertex types
+
+// One vertex per Olympic event document (with infobox)
+CREATE VERTEX OlympicEvent (
+    PRIMARY_ID doc_id        STRING,
+    title        STRING,
+    event_name   STRING,
+    games        STRING,
+    sport        STRING,
+    season       STRING,   // "Summer" or "Winter"
+    year         INT,
+    venue_name   STRING,
+    date_str     STRING,   // raw date string from infobox
+    competitors  INT,      // number of competitors
+    nations      INT,      // number of nations
+    win_value    STRING,   // winning time/score (raw)
+    url          STRING,
+    wikidata_qid STRING
+) WITH STATS="OUTDEGREE_BY_EDGETYPE", PRIMARY_ID_AS_ATTRIBUTE="true"
+
+// Athlete or team that won a medal (gold/silver/bronze string as-is from infobox)
+CREATE VERTEX Medalist (
+    PRIMARY_ID medalist_id  STRING,   // name + "|" + noc_code
+    name       STRING,
+    noc_code   STRING
+) WITH STATS="OUTDEGREE_BY_EDGETYPE", PRIMARY_ID_AS_ATTRIBUTE="true"
+
+// Country by IOC/NOC code
+CREATE VERTEX Country (
+    PRIMARY_ID noc_code STRING,
+    noc_code   STRING
+) WITH PRIMARY_ID_AS_ATTRIBUTE="true"
+
+// Competition venue
+CREATE VERTEX Venue (
+    PRIMARY_ID name STRING,
+    name       STRING
+) WITH PRIMARY_ID_AS_ATTRIBUTE="true"
+
+// 3. Edge types
+
+// Medal edges
+CREATE DIRECTED EDGE GOLD_IN (
+    FROM Medalist, TO OlympicEvent
+) WITH REVERSE_EDGE="GOLD_WINNER_OF"
+
+CREATE DIRECTED EDGE SILVER_IN (
+    FROM Medalist, TO OlympicEvent
+) WITH REVERSE_EDGE="SILVER_WINNER_OF"
+
+CREATE DIRECTED EDGE BRONZE_IN (
+    FROM Medalist, TO OlympicEvent
+) WITH REVERSE_EDGE="BRONZE_WINNER_OF"
+
+// Venue edge
+CREATE DIRECTED EDGE HELD_AT (
+    FROM OlympicEvent, TO Venue
+) WITH REVERSE_EDGE="HOSTED"
+
+// Temporal chain (linking same event across Olympic editions)
+CREATE DIRECTED EDGE PREV_EDITION (
+    FROM OlympicEvent, TO OlympicEvent,
+    prev_year INT
+)
+
+CREATE DIRECTED EDGE NEXT_EDITION (
+    FROM OlympicEvent, TO OlympicEvent,
+    next_year INT
+)
+
+// Gold medalist's country
+CREATE DIRECTED EDGE GOLD_COUNTRY (
+    FROM OlympicEvent, TO Country
+)

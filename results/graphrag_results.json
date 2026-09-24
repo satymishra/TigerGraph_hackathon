@@ -1,0 +1,2243 @@
+{
+  "pipeline": "GraphRAG",
+  "n_questions": 100,
+  "overall": {
+    "exact_match": 0.9,
+    "contains_gold": 0.9
+  },
+  "by_type": {
+    "aggregation": {
+      "exact_match": 0.9524,
+      "contains_gold": 0.9524,
+      "n": 21
+    },
+    "temporal": {
+      "exact_match": 1.0,
+      "contains_gold": 1.0,
+      "n": 22
+    },
+    "superlative": {
+      "exact_match": 0.9,
+      "contains_gold": 0.9,
+      "n": 10
+    },
+    "multi_hop": {
+      "exact_match": 0.7143,
+      "contains_gold": 0.7143,
+      "n": 28
+    },
+    "lookup": {
+      "exact_match": 1.0,
+      "contains_gold": 1.0,
+      "n": 19
+    }
+  },
+  "results": [
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-001",
+      "question": "According to the provided corpus, how many biathlon events at the 2018 Winter Olympics had more than 73 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "5",
+      "gold_answer": [
+        "5"
+      ],
+      "retrieved_doc_ids": [
+        "Q47155365",
+        "Q47155555",
+        "Q47155425",
+        "Q47155408",
+        "Q47155815",
+        "Q47155541",
+        "Q47155467",
+        "Q47105341",
+        "Q47155505",
+        "Q47091419"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.02,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=2018, season=Winter, sport=Biathlon → 11 events found → competitors>73 → 5 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-002",
+      "question": "Who won the gold medal in the men's 20 kilometres walk athletics event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Chen Ding",
+      "gold_answer": [
+        "Chen Ding"
+      ],
+      "retrieved_doc_ids": [
+        "Q26233122",
+        "Q1050909"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 2.37,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2016, season=Summer, sport=Athletics → 41 candidates → anchor=Q26233122 → PREV_EDITION → Q1050909 → gold=Chen Ding",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-003",
+      "question": "According to the provided corpus, how many shooting events at the 2004 Summer Olympics had more than 37 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "8",
+      "gold_answer": [
+        "8"
+      ],
+      "retrieved_doc_ids": [
+        "Q7500829",
+        "Q7500830",
+        "Q4354074",
+        "Q5481589",
+        "Q7500847",
+        "Q7500842",
+        "Q7500849",
+        "Q7500840",
+        "Q722895",
+        "Q7500838"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=2004, season=Summer, sport=Shooting → 17 events found → competitors>37 → 8 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-004",
+      "question": "According to the provided corpus, which athletics event at the 2008 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Athletics at the 2008 Summer Olympics – Men's marathon",
+      "gold_answer": [
+        "Athletics at the 2008 Summer Olympics – Men's marathon"
+      ],
+      "retrieved_doc_ids": [
+        "Q693595"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2008, season=Summer, sport=Athletics → 43 events → best event: Athletics at the 2008 Summer Olympics – Men's marathon",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-005",
+      "question": "Who won the gold medal in the event held at Olympic Weightlifting Gymnasium on 20 September 1988?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Naim Süleymanoğlu",
+      "gold_answer": [
+        "Naim Süleymanoğlu"
+      ],
+      "retrieved_doc_ids": [
+        "Q25239316"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=1988 → 196 events → venue=Olympic Weightlifting Gymnasium, date=20 September → 1 events → event=Weightlifting at the 1988 Summer Olympics – Men's 60 kg → gold=Naim Süleymanoğlu",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-006",
+      "question": "Who won the gold medal in the women's 57 kg judo event at the Summer Olympics held immediately before 2020?",
+      "qtype": "temporal",
+      "predicted_answer": "Rafaela Silva",
+      "gold_answer": [
+        "Rafaela Silva"
+      ],
+      "retrieved_doc_ids": [
+        "Q65235550",
+        "Q26217865"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.7,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2020, season=Summer, sport=Judo → 15 candidates → anchor=Q65235550 → PREV_EDITION → Q26217865 → gold=Rafaela Silva",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-007",
+      "question": "Who won the gold medal in the men's pole vault athletics event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Renaud Lavillenie",
+      "gold_answer": [
+        "Renaud Lavillenie"
+      ],
+      "retrieved_doc_ids": [
+        "Q26208457",
+        "Q2000968"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.83,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2016, season=Summer, sport=Athletics → 41 candidates → anchor=Q26208457 → PREV_EDITION → Q2000968 → gold=Renaud Lavillenie",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-008",
+      "question": "According to the provided corpus, which sailing event at the 2000 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Sailing at the 2000 Summer Olympics – Soling",
+      "gold_answer": [
+        "Sailing at the 2000 Summer Olympics – Soling"
+      ],
+      "retrieved_doc_ids": [
+        "Q7400333"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2000, season=Summer, sport=Sailing → 8 events → best event: Sailing at the 2000 Summer Olympics – Soling",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-009",
+      "question": "How many nations competed in Sailing at the 2016 Summer Olympics – Women's RS:X?",
+      "qtype": "lookup",
+      "predicted_answer": "26",
+      "gold_answer": [
+        "26"
+      ],
+      "retrieved_doc_ids": [
+        "Q26254891"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.06,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (8 words): 'Sailing at the 2016 Summer Olympics – Women's RS:X' → nations=26",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-010",
+      "question": "According to the provided corpus, how many cycling events at the 2000 Summer Olympics had more than 30 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "4",
+      "gold_answer": [
+        "4"
+      ],
+      "retrieved_doc_ids": [
+        "Q2133123",
+        "Q2426715",
+        "Q2774005",
+        "Q5198393",
+        "Q3001409",
+        "Q2526348",
+        "Q1856784",
+        "Q5198390",
+        "Q5198388",
+        "Q3001459"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=2000, season=Summer, sport=Cycling → 10 events found → competitors>30 → 4 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-011",
+      "question": "Who won the gold medal in the event held at Richmond Olympic Oval on 14 February 2010?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Martina Sáblíková",
+      "gold_answer": [
+        "Martina Sáblíková"
+      ],
+      "retrieved_doc_ids": [
+        "Q580481"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2010 → 75 events → venue=Richmond Olympic Oval, date=14 February → 1 events → event=Speed skating at the 2010 Winter Olympics – Women's 3000 met → gold=Martina Sáblíková",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-012",
+      "question": "According to the provided corpus, how many rowing events at the 2020 Summer Olympics had more than 36 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "6",
+      "gold_answer": [
+        "6"
+      ],
+      "retrieved_doc_ids": [
+        "Q62020036",
+        "Q62020030",
+        "Q62020024",
+        "Q62020028",
+        "Q62020031",
+        "Q62020026",
+        "Q62020029",
+        "Q62020033",
+        "Q62020027",
+        "Q62020022"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=2020, season=Summer, sport=Rowing → 14 events found → competitors>36 → 6 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-013",
+      "question": "Who won the gold medal in the women's 200 metre freestyle swimming event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Allison Schmitt",
+      "gold_answer": [
+        "Allison Schmitt"
+      ],
+      "retrieved_doc_ids": [
+        "Q25932069",
+        "Q2071152"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.9,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2016, season=Summer, sport=Swimming → 31 candidates → anchor=Q25932069 → PREV_EDITION → Q2071152 → gold=Allison Schmitt",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-014",
+      "question": "Who won the gold medal in the event held at Riocentro – Pavilion 4 on 11–19 August at the 2016 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Misaki MatsutomoAyaka Takahashi",
+      "gold_answer": [
+        "Carolina Marín"
+      ],
+      "retrieved_doc_ids": [
+        "Q25301754"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.15,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "graph_path": "Filter: year=2016 → 273 events → venue=Riocentro – Pavilion 4, date=11 August → 5 events → event=Badminton at the 2016 Summer Olympics – Women's doubles → gold=Misaki MatsutomoAyaka Takahashi",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-015",
+      "question": "Who won the gold medal in the event held at London Velopark on 3 to 4 August at the 2012 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Ed ClancyGeraint ThomasSteven BurkePeter Kennaugh",
+      "gold_answer": [
+        "Dani KingLaura TrottJoanna Rowsell"
+      ],
+      "retrieved_doc_ids": [
+        "Q2297621"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.17,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "graph_path": "Filter: year=2012 → 243 events → venue=London Velopark, date=3 August → 3 events → vector disambiguated (2 candidates kept) → event=Cycling at the 2012 Summer Olympics – Men's team pursuit → gold=Ed ClancyGeraint ThomasSteven BurkePeter Kennaugh",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-016",
+      "question": "Who won the gold medal in the men's sprint biathlon event at the Winter Olympics held immediately before 2022?",
+      "qtype": "temporal",
+      "predicted_answer": "Arnd Peiffer",
+      "gold_answer": [
+        "Arnd Peiffer"
+      ],
+      "retrieved_doc_ids": [
+        "Q107861699",
+        "Q47105341"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.39,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2022, season=Winter, sport=Biathlon → 11 candidates → anchor=Q107861699 → PREV_EDITION → Q47105341 → gold=Arnd Peiffer",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-017",
+      "question": "Who won the gold medal in the event held at Royal Artillery Barracks on 28 July 2012?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Yi Siling",
+      "gold_answer": [
+        "Yi Siling"
+      ],
+      "retrieved_doc_ids": [
+        "Q1137721"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2012 → 243 events → venue=Royal Artillery Barracks, date=28 July → 1 events → event=Shooting at the 2012 Summer Olympics – Women's 10 metre air  → gold=Yi Siling",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-018",
+      "question": "Who won the gold medal in the men's freestyle 82 kg wrestling event at the Summer Olympics held immediately before 1996?",
+      "qtype": "temporal",
+      "predicted_answer": "Kevin Jackson",
+      "gold_answer": [
+        "Kevin Jackson"
+      ],
+      "retrieved_doc_ids": [
+        "Q8037937",
+        "Q3498597"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.47,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=1996, season=Summer, sport=Wrestling → 20 candidates → anchor=Q8037937 → PREV_EDITION → Q3498597 → gold=Kevin Jackson",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-019",
+      "question": "According to the provided corpus, how many fencing events at the 1988 Summer Olympics had more than 68 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "3",
+      "gold_answer": [
+        "3"
+      ],
+      "retrieved_doc_ids": [
+        "Q5443142",
+        "Q5443138",
+        "Q5443137",
+        "Q5443144",
+        "Q5443136",
+        "Q5443140",
+        "Q5443139",
+        "Q5443145"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=1988, season=Summer, sport=Fencing → 8 events found → competitors>68 → 3 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-020",
+      "question": "According to the provided corpus, how many alpine skiing events at the 2014 Winter Olympics had more than 63 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "4",
+      "gold_answer": [
+        "4"
+      ],
+      "retrieved_doc_ids": [
+        "Q15054997",
+        "Q15054999",
+        "Q15055013",
+        "Q15055004",
+        "Q15055002",
+        "Q15055001",
+        "Q15054994",
+        "Q15055009",
+        "Q15055011",
+        "Q15055007"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=2014, season=Winter, sport=Alpine skiing → 10 events found → competitors>63 → 4 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-021",
+      "question": "According to the provided corpus, which alpine skiing event at the 1988 Winter Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Alpine skiing at the 1988 Winter Olympics – Men's giant slalom",
+      "gold_answer": [
+        "Alpine skiing at the 1988 Winter Olympics – Men's giant slalom"
+      ],
+      "retrieved_doc_ids": [
+        "Q1005804"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=1988, season=Winter, sport=Alpine skiing → 10 events → best event: Alpine skiing at the 1988 Winter Olympics – Men's giant slalom",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-022",
+      "question": "Who won the gold medal in the event held at Beijing Science and TechnologyUniversity Gymnasium on August 12, 2008?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Ayumi Tanimoto",
+      "gold_answer": [
+        "Ayumi Tanimoto"
+      ],
+      "retrieved_doc_ids": [
+        "Q1193975"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2008 → 209 events → venue=Beijing Science and TechnologyUniversity Gymnasium, date=12 August → 1 events → event=Judo at the 2008 Summer Olympics – Women's 63 kg → gold=Ayumi Tanimoto",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-023",
+      "question": "Who won the gold medal in the event held at Estadi Olímpic Lluís Companys, Barcelona on August 9 at the 1992 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Hwang Young-Cho",
+      "gold_answer": [
+        "Hwang Young-Cho"
+      ],
+      "retrieved_doc_ids": [
+        "Q1407627"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=1992 → 218 events → venue=Estadi Olímpic Lluís Companys, Barcelona, date=9 August → 1 events → event=Athletics at the 1992 Summer Olympics – Men's marathon → gold=Hwang Young-Cho",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-024",
+      "question": "According to the provided corpus, how many biathlon events at the 2002 Winter Olympics had more than 74 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "3",
+      "gold_answer": [
+        "3"
+      ],
+      "retrieved_doc_ids": [
+        "Q1222176",
+        "Q256759",
+        "Q1004918",
+        "Q1221867",
+        "Q1222092",
+        "Q1005108",
+        "Q1221922",
+        "Q280553"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=2002, season=Winter, sport=Biathlon → 8 events found → competitors>74 → 3 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-025",
+      "question": "How many nations competed in Judo at the 2016 Summer Olympics – Women's 57 kg?",
+      "qtype": "lookup",
+      "predicted_answer": "23",
+      "gold_answer": [
+        "23"
+      ],
+      "retrieved_doc_ids": [
+        "Q26217865"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.05,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (9 words): 'Judo at the 2016 Summer Olympics – Women's 57 kg' → nations=23",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-026",
+      "question": "Who won the gold medal in the men's cross-country cycling event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Jaroslav Kulhavý",
+      "gold_answer": [
+        "Jaroslav Kulhavý"
+      ],
+      "retrieved_doc_ids": [
+        "Q25476845",
+        "Q2036655"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.57,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2016, season=Summer, sport=Cycling → 16 candidates → anchor=Q25476845 → PREV_EDITION → Q2036655 → gold=Jaroslav Kulhavý",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-027",
+      "question": "According to the provided corpus, how many fencing events at the 2008 Summer Olympics had more than 32 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "3",
+      "gold_answer": [
+        "4"
+      ],
+      "retrieved_doc_ids": [
+        "Q2726746",
+        "Q2570052",
+        "Q2726820",
+        "Q2726750",
+        "Q1051974",
+        "Q2570149",
+        "Q658704",
+        "Q2726788",
+        "Q2570068",
+        "Q2570158"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "graph_path": "OlympicEvent filter: year=2008, season=Summer, sport=Fencing → 10 events found → competitors>32 → 3 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-028",
+      "question": "Who won the gold medal in the event held at Olympic Aquatic Centre on August 14, 2004 (heats & final)?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Michael Phelps",
+      "gold_answer": [
+        "Michael Phelps"
+      ],
+      "retrieved_doc_ids": [
+        "Q1141105"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.16,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2004 → 193 events → venue=Olympic Aquatic Centre, date=14 August → 5 events → vector disambiguated (3 candidates kept) → event=Swimming at the 2004 Summer Olympics – Men's 400 metre indiv → gold=Michael Phelps",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-029",
+      "question": "How many nations competed in Shooting at the 2012 Summer Olympics – Men's 50 metre rifle three positions?",
+      "qtype": "lookup",
+      "predicted_answer": "28",
+      "gold_answer": [
+        "28"
+      ],
+      "retrieved_doc_ids": [
+        "Q334901"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.06,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (12 words): 'Shooting at the 2012 Summer Olympics – Men's 50 metre rifle three positions' → nations=28",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-030",
+      "question": "Who won the gold medal in the event held at Carioca Arena 3 on 6 August 2016?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Daniele Garozzo",
+      "gold_answer": [
+        "Emese Szász"
+      ],
+      "retrieved_doc_ids": [
+        "Q25386266"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.3,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "graph_path": "Filter: year=2016 → 273 events → venue=Carioca Arena 3, date=6 August → 17 events → vector disambiguated (9 candidates kept) → event=Fencing at the 2016 Summer Olympics – Men's foil → gold=Daniele Garozzo",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-031",
+      "question": "Who won the gold medal in the event held at Nikaia Olympic Weightlifting Hall on 24 August 2004?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Dmitry Berestov",
+      "gold_answer": [
+        "Dmitry Berestov"
+      ],
+      "retrieved_doc_ids": [
+        "Q1750583"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2004 → 193 events → venue=Nikaia Olympic Weightlifting Hall, date=24 August → 1 events → event=Weightlifting at the 2004 Summer Olympics – Men's 105 kg → gold=Dmitry Berestov",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-032",
+      "question": "How many nations competed in Gymnastics at the 2016 Summer Olympics – Men's horizontal bar?",
+      "qtype": "lookup",
+      "predicted_answer": "34",
+      "gold_answer": [
+        "34"
+      ],
+      "retrieved_doc_ids": [
+        "Q26233795"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.04,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (9 words): 'Gymnastics at the 2016 Summer Olympics – Men's horizontal bar' → nations=34",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-033",
+      "question": "According to the provided corpus, how many judo events at the 2004 Summer Olympics had more than 32 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "4",
+      "gold_answer": [
+        "4"
+      ],
+      "retrieved_doc_ids": [
+        "Q3811008",
+        "Q3811001",
+        "Q3811000",
+        "Q3811009",
+        "Q3811007",
+        "Q3811003",
+        "Q3811012",
+        "Q3811013",
+        "Q3811010",
+        "Q3811005"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=2004, season=Summer, sport=Judo → 14 events found → competitors>32 → 4 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-034",
+      "question": "How many nations competed in Figure skating at the 2010 Winter Olympics – Women's singles?",
+      "qtype": "lookup",
+      "predicted_answer": "23",
+      "gold_answer": [
+        "23"
+      ],
+      "retrieved_doc_ids": [
+        "Q916735"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.06,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (9 words): 'Figure skating at the 2010 Winter Olympics – Women's singles' → nations=23",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-035",
+      "question": "How many nations competed in Shooting at the 1996 Summer Olympics – Men's 50 metre rifle three positions?",
+      "qtype": "lookup",
+      "predicted_answer": "30",
+      "gold_answer": [
+        "30"
+      ],
+      "retrieved_doc_ids": [
+        "Q7500793"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.19,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (12 words): 'Shooting at the 1996 Summer Olympics – Men's 50 metre rifle three positions' → nations=30",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-036",
+      "question": "Who won the gold medal in the men's light flyweight boxing event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Zou Shiming",
+      "gold_answer": [
+        "Zou Shiming"
+      ],
+      "retrieved_doc_ids": [
+        "Q26037184",
+        "Q2000524"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.59,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2016, season=Summer, sport=Boxing → 13 candidates → anchor=Q26037184 → PREV_EDITION → Q2000524 → gold=Zou Shiming",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-037",
+      "question": "According to the provided corpus, which shooting event at the 2008 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Shooting at the 2008 Summer Olympics – Men's 50 metre rifle prone",
+      "gold_answer": [
+        "Shooting at the 2008 Summer Olympics – Men's 50 metre rifle prone"
+      ],
+      "retrieved_doc_ids": [
+        "Q1005722"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2008, season=Summer, sport=Shooting → 14 events → best event: Shooting at the 2008 Summer Olympics – Men's 50 metre rifle prone",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-038",
+      "question": "Who won the gold medal in the event held at Sydney Convention and Exhibition Centre on 23 September 2000?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Pyrros Dimas",
+      "gold_answer": [
+        "Pyrros Dimas"
+      ],
+      "retrieved_doc_ids": [
+        "Q7979999"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.13,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2000 → 209 events → venue=Sydney Convention and Exhibition Centre, date=23 September → 2 events → event=Weightlifting at the 2000 Summer Olympics – Men's 85 kg → gold=Pyrros Dimas",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-039",
+      "question": "Who won the gold medal in the women's discus throw athletics event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Sandra Perković",
+      "gold_answer": [
+        "Sandra Perković"
+      ],
+      "retrieved_doc_ids": [
+        "Q26234091",
+        "Q1771958"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.66,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2016, season=Summer, sport=Athletics → 41 candidates → anchor=Q26234091 → PREV_EDITION → Q1771958 → gold=Sandra Perković",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-040",
+      "question": "Who won the gold medal in the individual normal hill/10 km nordic combined event at the Winter Olympics held immediately before 2014?",
+      "qtype": "temporal",
+      "predicted_answer": "Jason Lamy Chappuis",
+      "gold_answer": [
+        "Jason Lamy Chappuis"
+      ],
+      "retrieved_doc_ids": [
+        "Q15056068",
+        "Q303268"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.54,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2014, season=Winter, sport=Nordic combined → 3 candidates → anchor=Q15056068 → PREV_EDITION → Q303268 → gold=Jason Lamy Chappuis",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-041",
+      "question": "Who won the gold medal in the event held at Mountain Bike Centre on 21 August at the 2016 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Nino Schurter",
+      "gold_answer": [
+        "Nino Schurter"
+      ],
+      "retrieved_doc_ids": [
+        "Q25476845"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2016 → 273 events → venue=Mountain Bike Centre, date=21 August → 1 events → event=Cycling at the 2016 Summer Olympics – Men's cross-country → gold=Nino Schurter",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-042",
+      "question": "How many nations competed in Alpine skiing at the 1992 Winter Olympics – Men's giant slalom?",
+      "qtype": "lookup",
+      "predicted_answer": "47",
+      "gold_answer": [
+        "47"
+      ],
+      "retrieved_doc_ids": [
+        "Q1005805"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.09,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (10 words): 'Alpine skiing at the 1992 Winter Olympics – Men's giant slalom' → nations=47",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-043",
+      "question": "Who won the gold medal in the event held at Val-d'Isère on 16 February 1992?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Kjetil André Aamodt",
+      "gold_answer": [
+        "Kjetil André Aamodt"
+      ],
+      "retrieved_doc_ids": [
+        "Q1534918"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=1992 → 218 events → venue=Val-d'Isère, date=16 February → 1 events → event=Alpine skiing at the 1992 Winter Olympics – Men's super-G → gold=Kjetil André Aamodt",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-044",
+      "question": "According to the provided corpus, which fencing event at the 2008 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Fencing at the 2008 Summer Olympics – Women's foil",
+      "gold_answer": [
+        "Fencing at the 2008 Summer Olympics – Men's épée"
+      ],
+      "retrieved_doc_ids": [
+        "Q2726746"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2008, season=Summer, sport=Fencing → 10 events → best event: Fencing at the 2008 Summer Olympics – Women's foil",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-045",
+      "question": "According to the provided corpus, how many athletics events at the 2004 Summer Olympics had more than 41 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "20",
+      "gold_answer": [
+        "20"
+      ],
+      "retrieved_doc_ids": [
+        "Q220855",
+        "Q1439323",
+        "Q900405",
+        "Q2557141",
+        "Q2558983",
+        "Q1433079",
+        "Q2318836",
+        "Q2634499",
+        "Q936622",
+        "Q3628754"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=2004, season=Summer, sport=Athletics → 43 events found → competitors>41 → 20 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-046",
+      "question": "How many nations competed in Cross-country skiing at the 2010 Winter Olympics – Men's 15 kilometre freestyle?",
+      "qtype": "lookup",
+      "predicted_answer": "50",
+      "gold_answer": [
+        "50"
+      ],
+      "retrieved_doc_ids": [
+        "Q384953"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.1,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (12 words): 'Cross-country skiing at the 2010 Winter Olympics – Men's 15 kilometre freestyle' → nations=50",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-047",
+      "question": "How many nations competed in Athletics at the 1992 Summer Olympics – Men's 3000 metres steeplechase?",
+      "qtype": "lookup",
+      "predicted_answer": "24",
+      "gold_answer": [
+        "24"
+      ],
+      "retrieved_doc_ids": [
+        "Q1409048"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.06,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (10 words): 'Athletics at the 1992 Summer Olympics – Men's 3000 metres steeplechase' → nations=24",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-048",
+      "question": "Who won the gold medal in the men's 68 kg taekwondo event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Servet Tazegül",
+      "gold_answer": [
+        "Servet Tazegül"
+      ],
+      "retrieved_doc_ids": [
+        "Q26219849",
+        "Q2142977"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.56,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2016, season=Summer, sport=Taekwondo → 7 candidates → anchor=Q26219849 → PREV_EDITION → Q2142977 → gold=Servet Tazegül",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-049",
+      "question": "Who won the gold medal in the men's pursuit biathlon event at the Winter Olympics held immediately before 2022?",
+      "qtype": "temporal",
+      "predicted_answer": "Martin Fourcade",
+      "gold_answer": [
+        "Martin Fourcade"
+      ],
+      "retrieved_doc_ids": [
+        "Q107861704",
+        "Q47155371"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.67,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2022, season=Winter, sport=Biathlon → 11 candidates → anchor=Q107861704 → PREV_EDITION → Q47155371 → gold=Martin Fourcade",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-050",
+      "question": "Who won the gold medal in the event held at Adler Arena Skating Center on 11 February 2014?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Lee Sang-hwa",
+      "gold_answer": [
+        "Lee Sang-hwa"
+      ],
+      "retrieved_doc_ids": [
+        "Q15056224"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2014 → 73 events → venue=Adler Arena Skating Center, date=11 February → 1 events → event=Speed skating at the 2014 Winter Olympics – Women's 500 metr → gold=Lee Sang-hwa",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-051",
+      "question": "According to the provided corpus, how many canoeing events at the 2012 Summer Olympics had more than 25 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "6",
+      "gold_answer": [
+        "6"
+      ],
+      "retrieved_doc_ids": [
+        "Q1042705",
+        "Q919261",
+        "Q303623",
+        "Q2352927",
+        "Q1005434",
+        "Q539696",
+        "Q2071238",
+        "Q919242",
+        "Q919388",
+        "Q2648878"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=2012, season=Summer, sport=Canoeing → 16 events found → competitors>25 → 6 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-052",
+      "question": "How many nations competed in Biathlon at the 2022 Winter Olympics – Women's relay?",
+      "qtype": "lookup",
+      "predicted_answer": "20",
+      "gold_answer": [
+        "20"
+      ],
+      "retrieved_doc_ids": [
+        "Q107861706"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.05,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (8 words): 'Biathlon at the 2022 Winter Olympics – Women's relay' → nations=20",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-053",
+      "question": "According to the provided corpus, which shooting event at the 2016 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Shooting at the 2016 Summer Olympics – Women's 10 metre air rifle",
+      "gold_answer": [
+        "Shooting at the 2016 Summer Olympics – Women's 10 metre air rifle"
+      ],
+      "retrieved_doc_ids": [
+        "Q26218171"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.01,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2016, season=Summer, sport=Shooting → 14 events → best event: Shooting at the 2016 Summer Olympics – Women's 10 metre air rifle",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-054",
+      "question": "How many nations competed in Marathon swimming at the 2016 Summer Olympics – Women's 10 kilometre?",
+      "qtype": "lookup",
+      "predicted_answer": "24",
+      "gold_answer": [
+        "24"
+      ],
+      "retrieved_doc_ids": [
+        "Q25991470"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.11,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (10 words): 'Marathon swimming at the 2016 Summer Olympics – Women's 10 kilometre' → nations=24",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-055",
+      "question": "Who won the gold medal in the men's 80 kg taekwondo event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Sebastián Crismanich",
+      "gold_answer": [
+        "Sebastián Crismanich"
+      ],
+      "retrieved_doc_ids": [
+        "Q26219850",
+        "Q934172"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.48,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2016, season=Summer, sport=Taekwondo → 7 candidates → anchor=Q26219850 → PREV_EDITION → Q934172 → gold=Sebastián Crismanich",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-056",
+      "question": "Who won the gold medal in the men's 30 kilometre pursuit cross-country skiing event at the Winter Olympics held immediately before 2010?",
+      "qtype": "temporal",
+      "predicted_answer": "Yevgeny Dementyev",
+      "gold_answer": [
+        "Yevgeny Dementyev"
+      ],
+      "retrieved_doc_ids": [
+        "Q848689",
+        "Q824803"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.54,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2010, season=Winter, sport=Cross-country skiing → 10 candidates → anchor=Q848689 → PREV_EDITION → Q824803 → gold=Yevgeny Dementyev",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-057",
+      "question": "Who won the gold medal in the women's 200 metres athletics event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Allyson Felix",
+      "gold_answer": [
+        "Allyson Felix"
+      ],
+      "retrieved_doc_ids": [
+        "Q26219842",
+        "Q1798867"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.53,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2016, season=Summer, sport=Athletics → 41 candidates → anchor=Q26219842 → PREV_EDITION → Q1798867 → gold=Allyson Felix",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-058",
+      "question": "According to the provided corpus, how many rowing events at the 1996 Summer Olympics had more than 39 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "5",
+      "gold_answer": [
+        "5"
+      ],
+      "retrieved_doc_ids": [
+        "Q22964454",
+        "Q22964459",
+        "Q22964455",
+        "Q22964450",
+        "Q22964458",
+        "Q22964456",
+        "Q17515790",
+        "Q22964449",
+        "Q22964453",
+        "Q22964447"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=1996, season=Summer, sport=Rowing → 12 events found → competitors>39 → 5 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-059",
+      "question": "Who won the gold medal in the women's sprint biathlon event at the Winter Olympics held immediately before 2022?",
+      "qtype": "temporal",
+      "predicted_answer": "Laura Dahlmeier",
+      "gold_answer": [
+        "Laura Dahlmeier"
+      ],
+      "retrieved_doc_ids": [
+        "Q107861710",
+        "Q47091419"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.44,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2022, season=Winter, sport=Biathlon → 11 candidates → anchor=Q107861710 → PREV_EDITION → Q47091419 → gold=Laura Dahlmeier",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-060",
+      "question": "Who won the gold medal in the event held at ExCeL Exhibition Centre on 30 July at the 2012 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Robeisy Ramírez",
+      "gold_answer": [
+        "Yana Shemyakina"
+      ],
+      "retrieved_doc_ids": [
+        "Q332673"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.22,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "graph_path": "Filter: year=2012 → 243 events → venue=ExCeL Exhibition Centre, date=30 July → 5 events → event=Boxing at the 2012 Summer Olympics – Men's flyweight → gold=Robeisy Ramírez",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-061",
+      "question": "How many nations competed in Boxing at the 1988 Summer Olympics – Light flyweight?",
+      "qtype": "lookup",
+      "predicted_answer": "34",
+      "gold_answer": [
+        "34"
+      ],
+      "retrieved_doc_ids": [
+        "Q10572416"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.05,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (8 words): 'Boxing at the 1988 Summer Olympics – Light flyweight' → nations=34",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-062",
+      "question": "Who won the gold medal in the women's 10,000 metres athletics event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Tirunesh Dibaba",
+      "gold_answer": [
+        "Tirunesh Dibaba"
+      ],
+      "retrieved_doc_ids": [
+        "Q26233297",
+        "Q1799275"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.68,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2016, season=Summer, sport=Athletics → 41 candidates → anchor=Q26233297 → PREV_EDITION → Q1799275 → gold=Tirunesh Dibaba",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-063",
+      "question": "How many nations competed in Swimming at the 1988 Summer Olympics – Men's 200 metre freestyle?",
+      "qtype": "lookup",
+      "predicted_answer": "41",
+      "gold_answer": [
+        "41"
+      ],
+      "retrieved_doc_ids": [
+        "Q7656692"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.06,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (10 words): 'Swimming at the 1988 Summer Olympics – Men's 200 metre freestyle' → nations=41",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-064",
+      "question": "Who won the gold medal in the event held at ANZ Stadium on 22 September 2000 (heats)25 September 2000 (final)?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Arsi Harju",
+      "gold_answer": [
+        "Gabriela Szabo"
+      ],
+      "retrieved_doc_ids": [
+        "Q3628775"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.16,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "graph_path": "Filter: year=2000 → 209 events → venue=ANZ Stadium, date=22 September → 2 events → vector disambiguated (2 candidates kept) → event=Athletics at the 2000 Summer Olympics – Men's shot put → gold=Arsi Harju",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-065",
+      "question": "According to the provided corpus, how many biathlon events at the 2014 Winter Olympics had more than 68 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "5",
+      "gold_answer": [
+        "5"
+      ],
+      "retrieved_doc_ids": [
+        "Q15052022",
+        "Q14643284",
+        "Q15052025",
+        "Q14643120",
+        "Q14643199",
+        "Q15052019",
+        "Q15021060",
+        "Q14643126",
+        "Q15052026",
+        "Q15052014"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=2014, season=Winter, sport=Biathlon → 11 events found → competitors>68 → 5 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-066",
+      "question": "According to the provided corpus, which weightlifting event at the 1992 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Weightlifting at the 1992 Summer Olympics – Men's 75 kg",
+      "gold_answer": [
+        "Weightlifting at the 1992 Summer Olympics – Men's 75 kg"
+      ],
+      "retrieved_doc_ids": [
+        "Q7979975"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=1992, season=Summer, sport=Weightlifting → 10 events → best event: Weightlifting at the 1992 Summer Olympics – Men's 75 kg",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-067",
+      "question": "Who won the gold medal in the event held at North Greenwich Arena on 4 August at the 2012 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Rosannagh MacLennan",
+      "gold_answer": [
+        "Rosannagh MacLennan"
+      ],
+      "retrieved_doc_ids": [
+        "Q284413"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2012 → 243 events → venue=North Greenwich Arena, date=4 August → 1 events → event=Gymnastics at the 2012 Summer Olympics – Women's trampoline → gold=Rosannagh MacLennan",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-068",
+      "question": "How many nations competed in Cycling at the 2012 Summer Olympics – Women's cross-country?",
+      "qtype": "lookup",
+      "predicted_answer": "24",
+      "gold_answer": [
+        "24"
+      ],
+      "retrieved_doc_ids": [
+        "Q2269155"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.05,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (9 words): 'Cycling at the 2012 Summer Olympics – Women's cross-country' → nations=24",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-069",
+      "question": "According to the provided corpus, how many fencing events at the 2000 Summer Olympics had more than 39 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "3",
+      "gold_answer": [
+        "3"
+      ],
+      "retrieved_doc_ids": [
+        "Q647742",
+        "Q13424670",
+        "Q632472",
+        "Q5443156",
+        "Q632742",
+        "Q647750",
+        "Q5443155",
+        "Q632754",
+        "Q5443151",
+        "Q5443153"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=2000, season=Summer, sport=Fencing → 10 events found → competitors>39 → 3 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-070",
+      "question": "According to the provided corpus, how many speed skating events at the 2010 Winter Olympics had more than 36 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "3",
+      "gold_answer": [
+        "3"
+      ],
+      "retrieved_doc_ids": [
+        "Q595972",
+        "Q848666",
+        "Q782429",
+        "Q586729",
+        "Q905485",
+        "Q848696",
+        "Q580481",
+        "Q614894",
+        "Q607635",
+        "Q916747"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=2010, season=Winter, sport=Speed skating → 16 events found → competitors>36 → 3 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-071",
+      "question": "How many nations competed in Biathlon at the 2018 Winter Olympics – Women's pursuit?",
+      "qtype": "lookup",
+      "predicted_answer": "24",
+      "gold_answer": [
+        "24"
+      ],
+      "retrieved_doc_ids": [
+        "Q47155365"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.11,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (8 words): 'Biathlon at the 2018 Winter Olympics – Women's pursuit' → nations=24",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-072",
+      "question": "Who won the gold medal in the women's 500 metres speed skating event at the Winter Olympics held immediately before 2014?",
+      "qtype": "temporal",
+      "predicted_answer": "Lee Sang-hwa",
+      "gold_answer": [
+        "Lee Sang-hwa"
+      ],
+      "retrieved_doc_ids": [
+        "Q15056224",
+        "Q848666"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.53,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2014, season=Winter, sport=Speed skating → 6 candidates → anchor=Q15056224 → PREV_EDITION → Q848666 → gold=Lee Sang-hwa",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-073",
+      "question": "Who won the gold medal in the event held at Sydney International Shooting Centre on 21 September 2000 (slow)22 September 2000 (fast)?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Yang Ling",
+      "gold_answer": [
+        "Yang Ling"
+      ],
+      "retrieved_doc_ids": [
+        "Q7500807"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.19,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2000 → 209 events → venue=Sydney International Shooting Centre, date=21 September → 4 events → vector disambiguated (3 candidates kept) → event=Shooting at the 2000 Summer Olympics – Men's 10 metre runnin → gold=Yang Ling",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-074",
+      "question": "How many nations competed in Cross-country skiing at the 2006 Winter Olympics – Women's 4 × 5 kilometre relay?",
+      "qtype": "lookup",
+      "predicted_answer": "17",
+      "gold_answer": [
+        "17"
+      ],
+      "retrieved_doc_ids": [
+        "Q827175"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.06,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (11 words): 'Cross-country skiing at the 2006 Winter Olympics – Women's 4 × 5 kilometre relay' → nations=17",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-075",
+      "question": "How many nations competed in Swimming at the 2000 Summer Olympics – Men's 1500 metre freestyle?",
+      "qtype": "lookup",
+      "predicted_answer": "32",
+      "gold_answer": [
+        "32"
+      ],
+      "retrieved_doc_ids": [
+        "Q3879590"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.06,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (10 words): 'Swimming at the 2000 Summer Olympics – Men's 1500 metre freestyle' → nations=32",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-076",
+      "question": "Who won the gold medal in the event held at Sestriere on February 24, 2006?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Julia Mancuso",
+      "gold_answer": [
+        "Julia Mancuso"
+      ],
+      "retrieved_doc_ids": [
+        "Q2574045"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2006 → 67 events → venue=Sestriere, date=24 February → 1 events → event=Alpine skiing at the 2006 Winter Olympics – Women's giant sl → gold=Julia Mancuso",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-077",
+      "question": "Who won the gold medal in the event held at Xiaohaituo Bobsleigh and Luge TrackBeijing on 13, 14 February 2022?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Francesco FriedrichThorsten Margis",
+      "gold_answer": [
+        "Kaillie Humphries"
+      ],
+      "retrieved_doc_ids": [
+        "Q110264101"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.19,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "graph_path": "Filter: year=2022 → 19 events → venue=Xiaohaituo Bobsleigh and Luge TrackBeijing, date=14 February → 2 events → vector disambiguated (2 candidates kept) → event=Bobsleigh at the 2022 Winter Olympics – Two-man → gold=Francesco FriedrichThorsten Margis",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-078",
+      "question": "According to the provided corpus, how many athletics events at the 1996 Summer Olympics had more than 49 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "7",
+      "gold_answer": [
+        "7"
+      ],
+      "retrieved_doc_ids": [
+        "Q1426854",
+        "Q1424018",
+        "Q1422103",
+        "Q3628792",
+        "Q26860",
+        "Q776944",
+        "Q942846",
+        "Q637365",
+        "Q2311876",
+        "Q3628791"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=1996, season=Summer, sport=Athletics → 16 events found → competitors>49 → 7 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-079",
+      "question": "Who won the gold medal in the event held at Centennial Parklands, Sydney on 26 September at the 2000 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Leontien Zijlaard",
+      "gold_answer": [
+        "Leontien Zijlaard"
+      ],
+      "retrieved_doc_ids": [
+        "Q2133123"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2000 → 209 events → venue=Centennial Parklands, Sydney, date=26 September → 1 events → event=Cycling at the 2000 Summer Olympics – Women's individual roa → gold=Leontien Zijlaard",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-080",
+      "question": "How many nations competed in Beach volleyball at the 2008 Summer Olympics – Women's tournament?",
+      "qtype": "lookup",
+      "predicted_answer": "17",
+      "gold_answer": [
+        "17"
+      ],
+      "retrieved_doc_ids": [
+        "Q977229"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.07,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (9 words): 'Beach volleyball at the 2008 Summer Olympics – Women's tournament' → nations=17",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-081",
+      "question": "Who won the gold medal in the event held at Beijing Shooting Range Hall on August 10, 2008?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Guo Wenjun",
+      "gold_answer": [
+        "Guo Wenjun"
+      ],
+      "retrieved_doc_ids": [
+        "Q736527"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2008 → 209 events → venue=Beijing Shooting Range Hall, date=10 August → 1 events → event=Shooting at the 2008 Summer Olympics – Women's 10 metre air  → gold=Guo Wenjun",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-082",
+      "question": "According to the provided corpus, how many swimming events at the 1996 Summer Olympics had more than 42 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "12",
+      "gold_answer": [
+        "12"
+      ],
+      "retrieved_doc_ids": [
+        "Q3879625",
+        "Q3879610",
+        "Q3879635",
+        "Q3879630",
+        "Q3879627",
+        "Q3879620",
+        "Q3879622",
+        "Q3879632",
+        "Q3879618",
+        "Q3879633"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=1996, season=Summer, sport=Swimming → 26 events found → competitors>42 → 12 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-083",
+      "question": "Who won the gold medal in the event held at Kvitfjell and Hafjell on February 20–21, 1994?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Pernilla Wiberg",
+      "gold_answer": [
+        "Pernilla Wiberg"
+      ],
+      "retrieved_doc_ids": [
+        "Q1222212"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=1994 → 54 events → venue=Kvitfjell and Hafjell, date=20 February → 1 events → event=Alpine skiing at the 1994 Winter Olympics – Women's combined → gold=Pernilla Wiberg",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-084",
+      "question": "According to the provided corpus, which fencing event at the 1992 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Fencing at the 1992 Summer Olympics – Men's épée",
+      "gold_answer": [
+        "Fencing at the 1992 Summer Olympics – Men's épée"
+      ],
+      "retrieved_doc_ids": [
+        "Q38594"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=1992, season=Summer, sport=Fencing → 8 events → best event: Fencing at the 1992 Summer Olympics – Men's épée",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-085",
+      "question": "According to the provided corpus, which sailing event at the 2008 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Sailing at the 2008 Summer Olympics – Men's 470",
+      "gold_answer": [
+        "Sailing at the 2008 Summer Olympics – Men's 470"
+      ],
+      "retrieved_doc_ids": [
+        "Q2564420"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2008, season=Summer, sport=Sailing → 11 events → best event: Sailing at the 2008 Summer Olympics – Men's 470",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-086",
+      "question": "Who won the gold medal in the event held at Richmond Olympic Oval on 17 February 2010?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Shani Davis",
+      "gold_answer": [
+        "Shani Davis"
+      ],
+      "retrieved_doc_ids": [
+        "Q848696"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2010 → 75 events → venue=Richmond Olympic Oval, date=17 February → 1 events → event=Speed skating at the 2010 Winter Olympics – Men's 1000 metre → gold=Shani Davis",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-087",
+      "question": "According to the provided corpus, how many athletics events at the 1988 Summer Olympics had more than 41 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "17",
+      "gold_answer": [
+        "17"
+      ],
+      "retrieved_doc_ids": [
+        "Q3628704",
+        "Q3628680",
+        "Q3628678",
+        "Q3628685",
+        "Q3628691",
+        "Q1439757",
+        "Q3628682",
+        "Q3628708",
+        "Q3628690",
+        "Q3628689"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=1988, season=Summer, sport=Athletics → 37 events found → competitors>41 → 17 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-088",
+      "question": "According to the provided corpus, which alpine skiing event at the 1992 Winter Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Alpine skiing at the 1992 Winter Olympics – Men's giant slalom",
+      "gold_answer": [
+        "Alpine skiing at the 1992 Winter Olympics – Men's giant slalom"
+      ],
+      "retrieved_doc_ids": [
+        "Q1005805"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=1992, season=Winter, sport=Alpine skiing → 10 events → best event: Alpine skiing at the 1992 Winter Olympics – Men's giant slalom",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-089",
+      "question": "According to the provided corpus, how many boxing events at the 1988 Summer Olympics had more than 39 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "5",
+      "gold_answer": [
+        "5"
+      ],
+      "retrieved_doc_ids": [
+        "Q10572440",
+        "Q10497007",
+        "Q10581226",
+        "Q10706346",
+        "Q10572416",
+        "Q10572432",
+        "Q10426128",
+        "Q10719573",
+        "Q10572462",
+        "Q10572421"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=1988, season=Summer, sport=Boxing → 12 events found → competitors>39 → 5 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-090",
+      "question": "Who won the gold medal in the men's greco-roman 96 kg wrestling event at the Summer Olympics held immediately before 2012?",
+      "qtype": "temporal",
+      "predicted_answer": "Aslanbek Khushtov",
+      "gold_answer": [
+        "Aslanbek Khushtov"
+      ],
+      "retrieved_doc_ids": [
+        "Q2358254",
+        "Q1005294"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 1.53,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2012, season=Summer, sport=Wrestling → 15 candidates → anchor=Q2358254 → PREV_EDITION → Q1005294 → gold=Aslanbek Khushtov",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-091",
+      "question": "How many nations competed in Wrestling at the 1992 Summer Olympics – Men's freestyle 100 kg?",
+      "qtype": "lookup",
+      "predicted_answer": "18",
+      "gold_answer": [
+        "18"
+      ],
+      "retrieved_doc_ids": [
+        "Q3498987"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.2,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Title match (10 words): 'Wrestling at the 1992 Summer Olympics – Men's freestyle 100 kg' → nations=18",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-092",
+      "question": "According to the provided corpus, how many shooting events at the 1992 Summer Olympics had more than 44 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "6",
+      "gold_answer": [
+        "6"
+      ],
+      "retrieved_doc_ids": [
+        "Q7500777",
+        "Q7500758",
+        "Q7500761",
+        "Q7500756",
+        "Q7500771",
+        "Q7500764",
+        "Q7500776",
+        "Q7500774",
+        "Q7500772",
+        "Q7500779"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=1992, season=Summer, sport=Shooting → 13 events found → competitors>44 → 6 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-093",
+      "question": "According to the provided corpus, how many biathlon events at the 2006 Winter Olympics had more than 72 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "4",
+      "gold_answer": [
+        "4"
+      ],
+      "retrieved_doc_ids": [
+        "Q915058",
+        "Q846788",
+        "Q847288",
+        "Q653672",
+        "Q915092",
+        "Q847280",
+        "Q847284",
+        "Q1004924",
+        "Q256529"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.0,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "OlympicEvent filter: year=2006, season=Winter, sport=Biathlon → 9 events found → competitors>72 → 4 events match",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-094",
+      "question": "Who won the gold medal in the men's greco-roman 48 kg wrestling event at the Summer Olympics held immediately before 1996?",
+      "qtype": "temporal",
+      "predicted_answer": "Oleg Kucherenko",
+      "gold_answer": [
+        "Oleg Kucherenko"
+      ],
+      "retrieved_doc_ids": [
+        "Q8037916",
+        "Q3499058"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 3.87,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=1996, season=Summer, sport=Wrestling → 20 candidates → anchor=Q8037916 → PREV_EDITION → Q3499058 → gold=Oleg Kucherenko",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-095",
+      "question": "Who won the gold medal in the event held at Beijing National Stadium on 16 August 2008?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Usain Bolt",
+      "gold_answer": [
+        "Valerie Vili"
+      ],
+      "retrieved_doc_ids": [
+        "Q754844"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.81,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "graph_path": "Filter: year=2008 → 209 events → venue=Beijing National Stadium, date=16 August → 10 events → vector disambiguated (2 candidates kept) → event=Athletics at the 2008 Summer Olympics – Men's 100 metres → gold=Usain Bolt",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-096",
+      "question": "Who won the gold medal in the event held at Riocentro – Pavilion 6 on 10–21 August 2016?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Fazliddin Gaibnazarov",
+      "gold_answer": [
+        "Fazliddin Gaibnazarov"
+      ],
+      "retrieved_doc_ids": [
+        "Q26212151"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.48,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2016 → 273 events → venue=Riocentro – Pavilion 6, date=10 August → 2 events → vector disambiguated (2 candidates kept) → event=Boxing at the 2016 Summer Olympics – Men's light welterweigh → gold=Fazliddin Gaibnazarov",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-097",
+      "question": "Who won the gold medal in the women's épée fencing event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Yana Shemyakina",
+      "gold_answer": [
+        "Yana Shemyakina"
+      ],
+      "retrieved_doc_ids": [
+        "Q25386274",
+        "Q1156695"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 2.83,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2016, season=Summer, sport=Fencing → 10 candidates → anchor=Q25386274 → PREV_EDITION → Q1156695 → gold=Yana Shemyakina",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-098",
+      "question": "Who won the gold medal in the event held at Sydney Convention and Exhibition Centre on 18 September to 1 October 2000?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Bekzat Sattarkhanov",
+      "gold_answer": [
+        "Bekzat Sattarkhanov"
+      ],
+      "retrieved_doc_ids": [
+        "Q4951838"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 0.53,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Filter: year=2000 → 209 events → venue=Sydney Convention and Exhibition Centre, date=18 September → 6 events → event=Boxing at the 2000 Summer Olympics – Featherweight → gold=Bekzat Sattarkhanov",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-099",
+      "question": "Who won the gold medal in the event held at Laura Biathlon & Ski Complex on 22 February 2014?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Marit Bjørgen",
+      "gold_answer": [
+        "Erik LesserDaniel BöhmArnd PeifferSimon Schempp"
+      ],
+      "retrieved_doc_ids": [
+        "Q15055028"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 3.3,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "graph_path": "Filter: year=2014 → 73 events → venue=Laura Biathlon & Ski Complex, date=22 February → 2 events → vector disambiguated (1 candidates kept) → event=Cross-country skiing at the 2014 Winter Olympics – Women's 3 → gold=Marit Bjørgen",
+      "used_fallback": false
+    },
+    {
+      "pipeline": "GraphRAG",
+      "qid": "pub-100",
+      "question": "Who won the gold medal in the women's 200 metre backstroke swimming event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Missy Franklin",
+      "gold_answer": [
+        "Missy Franklin"
+      ],
+      "retrieved_doc_ids": [
+        "Q25932666",
+        "Q2051400"
+      ],
+      "tokens_used": 0,
+      "elapsed_sec": 2.4,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "graph_path": "Anchor: year=2016, season=Summer, sport=Swimming → 31 candidates → anchor=Q25932666 → PREV_EDITION → Q2051400 → gold=Missy Franklin",
+      "used_fallback": false
+    }
+  ]
+}

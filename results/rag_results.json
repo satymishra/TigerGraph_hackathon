@@ -1,0 +1,3140 @@
+{
+  "pipeline": "RAG",
+  "top_k": 5,
+  "n_questions": 100,
+  "overall": {
+    "exact_match": 0.29,
+    "contains_gold": 0.43,
+    "avg_tokens": 1855.7,
+    "total_tokens": 185574
+  },
+  "by_type": {
+    "aggregation": {
+      "exact_match": 0.0,
+      "contains_gold": 0.2381,
+      "n": 21
+    },
+    "temporal": {
+      "exact_match": 0.4091,
+      "contains_gold": 0.5455,
+      "n": 22
+    },
+    "superlative": {
+      "exact_match": 0.0,
+      "contains_gold": 0.0,
+      "n": 10
+    },
+    "multi_hop": {
+      "exact_match": 0.1071,
+      "contains_gold": 0.25,
+      "n": 28
+    },
+    "lookup": {
+      "exact_match": 0.8947,
+      "contains_gold": 1.0,
+      "n": 19
+    }
+  },
+  "results": [
+    {
+      "pipeline": "RAG",
+      "qid": "pub-001",
+      "question": "According to the provided corpus, how many biathlon events at the 2018 Winter Olympics had more than 73 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "Let me double-check. The documents list events from 1988, 1998, 2002, 2006. The next Olympics after 2006 would be 2010, 2014",
+      "gold_answer": [
+        "5"
+      ],
+      "retrieved_doc_ids": [
+        "Q1004918",
+        "Q1005047",
+        "Q256759",
+        "Q1005041",
+        "Q846788"
+      ],
+      "tokens_used": 1837,
+      "elapsed_sec": 143.84,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7601,
+        0.7601,
+        0.759,
+        0.7582,
+        0.7546
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking: \"According to the provided corpus, how many biathlon events at the 2018 Winter Olympics had more than 73 competitors?\"\n\nFirst, I need to check the documents provided to see if there's any information about the 2018 Winter Olympics biathlon events. Let me go through each document.\n\nLooking at the documents:\n\n- Doc 1: 2002 Winter Olympics – Men's sprint\n- Doc 2: 1998 Winter Olympics – Men's individual\n- Doc 3: 2002 Winter Olympics – Men's individual\n- Doc 4: 1988 Winter Olympics – Individual\n- Doc 5: 2006 Winter Olympics – Men's individual\n\nHmm, none of these documents mention the 2018 Winter Olympics. The documents cover up to 2006 (Doc 5) and earlier years like 1998, 1988, 2002. The question is about 2018, which isn't covered in any of the provided documents.\n\nWait, the user says \"Using ONLY the documents above\". So the corpus here doesn't have any information about the 2018 Winter Olympics. The answer would be zero because there's no data on 2018 events in the provided docs.\n\nLet me double-check. The documents list events from 1988, 1998, 2002, 2006. The next Olympics after 2006 would be 2010, 2014,"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-002",
+      "question": "Who won the gold medal in the men's 20 kilometres walk athletics event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Chen Ding",
+      "gold_answer": [
+        "Chen Ding"
+      ],
+      "retrieved_doc_ids": [
+        "Q26233122",
+        "Q3628781",
+        "Q1050909",
+        "Q26225938",
+        "Q853023"
+      ],
+      "tokens_used": 1856,
+      "elapsed_sec": 133.93,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8245,
+        0.8115,
+        0.8027,
+        0.8008,
+        0.798
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the question is asking: \"Who won the gold medal in the men's 20 kilometres walk athletics event at the Summer Olympics held immediately before 2016?\"\n\nFirst, I need to figure out which Olympics were held immediately before 2016. The 2016 Summer Olympics were in Rio de Janeiro. The one before that would be the 2012 Summer Olympics. So, the event in question is the 2012 Men's 20 km walk.\n\nNow, I need to check the documents to find out who won gold in that event. Let me look through the provided documents.\n\nLooking at Doc 3: It's about the 2012 Summer Olympics – Men's 20 kilometres walk. The infobox shows:\n\ngold: Chen Ding\ngoldNOC: CHN\n\nSo, Chen Ding from China won the gold medal in the 2012 Men's 20 km walk. \n\nWait, let me double-check the other documents to make sure. Doc 1 is 2016, Doc 2 is 2000, Doc 3 is 2012, Doc 4 is 2016 (50 km walk), Doc 5 is 2008. So the Olympics immediately before 2016 is 2012. \n\nIn Doc 3, the gold medalist is Chen Ding (CHN). The summary says: \"The men's 20 kilometres race walk at the 2012 Summer Olympics in London took place on 4 August...\" and the medalists are listed as"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-003",
+      "question": "According to the provided corpus, how many shooting events at the 2004 Summer Olympics had more than 37 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "Wait, the problem states \"shooting events at the 2004 Summer Olympics\". The documents provided might not list all shooting events, but according to the given corpus (the documents provided), we have to check only",
+      "gold_answer": [
+        "8"
+      ],
+      "retrieved_doc_ids": [
+        "Q1408300",
+        "Q1433101",
+        "Q7500829",
+        "Q582514",
+        "Q1415848"
+      ],
+      "tokens_used": 1773,
+      "elapsed_sec": 123.56,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7501,
+        0.7466,
+        0.7407,
+        0.74,
+        0.7391
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking: \"According to the provided corpus, how many shooting events at the 2004 Summer Olympics had more than 37 competitors?\"\n\nFirst, I need to check the documents provided to see which ones are related to shooting events at the 2004 Summer Olympics. Let me go through each document.\n\nLooking at the documents:\n\n- Doc 1: Archery at the 2004 Summer Olympics – Men's team. This is archery, not shooting.\n- Doc 2: Athletics at the 2004 Summer Olympics – Men's shot put. Athletics, not shooting.\n- Doc 3: Shooting at the 2004 Summer Olympics – Men's 10 metre air rifle. This is a shooting event. Here, the competitors are listed as 47. So 47 competitors here.\n- Doc 4: Athletics at the 2004 Summer Olympics – Men's decathlon. Athletics again.\n- Doc 5: Cycling at the 2004 Summer Olympics – Men's sprint. Cycling.\n\nSo the only shooting event mentioned in the documents is Doc 3: Men's 10 metre air rifle. The competitors for this event are 47. The question is asking how many shooting events had more than 37 competitors. Since 47 is more than 37, this one counts. Are there any other shooting events in the corpus?\n\nWait, the problem states \"shooting events at the 2004 Summer Olympics\". The documents provided might not list all shooting events, but according to the given corpus (the documents provided), we have to check only"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-004",
+      "question": "According to the provided corpus, which athletics event at the 2008 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "First, I'll go through each document one by one",
+      "gold_answer": [
+        "Athletics at the 2008 Summer Olympics – Men's marathon"
+      ],
+      "retrieved_doc_ids": [
+        "Q830711",
+        "Q853049",
+        "Q947691",
+        "Q693595",
+        "Q853072"
+      ],
+      "tokens_used": 1876,
+      "elapsed_sec": 117.99,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8062,
+        0.7979,
+        0.7943,
+        0.7922,
+        0.7918
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking which athletics event at the 2008 Summer Olympics had the highest number of competitors based on the provided documents. I need to look at each document and find the number of competitors for each event.\n\nFirst, I'll go through each document one by one.\n\nStarting with Doc 1: Men's 10,000 metres. The competitors field says 39. So that's 39 competitors.\n\nDoc 2: Women's 10,000 metres. Competitors: 29. So 29 here.\n\nDoc 3: Women's marathon. Competitors: 82. That's a higher number than the previous ones.\n\nDoc 4: Men's marathon. Competitors: 95. Wait, 95 is higher than 82. Let me check again.\n\nDoc 5: Men's 5000 metres. Competitors: 43.\n\nSo the numbers are:\n\n- Men's 10,000m: 39\n- Women's 10,000m: 29\n- Women's marathon: 82\n- Men's marathon: 95\n- Men's 5000m: 43\n\nThe highest number here is 95 for the Men's marathon (Doc 4). Let me double-check the documents to make sure I didn't miss any.\n\nIn Doc 4, it says \"competitors: 95\" for the Men's marathon. The women's marathon has 82 competitors. So yes, 95 is the highest. The answer should be"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-005",
+      "question": "Who won the gold medal in the event held at Olympic Weightlifting Gymnasium on 20 September 1988?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Naim Süleymanoğlu",
+      "gold_answer": [
+        "Naim Süleymanoğlu"
+      ],
+      "retrieved_doc_ids": [
+        "Q25239314",
+        "Q25239533",
+        "Q25239317",
+        "Q25239316",
+        "Q3498940"
+      ],
+      "tokens_used": 1776,
+      "elapsed_sec": 123.39,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7936,
+        0.7862,
+        0.7844,
+        0.7808,
+        0.7753
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the user wants to know who won the gold medal in the event held at the Olympic Weightlifting Gymnasium on 20 September 1988. \n\nFirst, I need to check the documents provided to find which event was held on that date at that venue. Let me go through each document.\n\nStarting with Doc 1: It's about Men's 52 kg weightlifting at the 1988 Summer Olympics. The date here is 18 September 1988. So that's not the date we need.\n\nDoc 2: Men's 67.5 kg. The date is 21 September 1988. Close but not 20th.\n\nDoc 3: Men's +110 kg. Date is 29 September. Not the one.\n\nDoc 4: Men's 60 kg. The date here is 20 September 1988. And the venue is Olympic Weightlifting Gymnasium. That matches the venue and date. The gold medalist here is Naim Süleymanoğlu from Turkey (TUR).\n\nWait, but there's also Doc 5, which is wrestling. The venue is Sangmu Gymnasium, so that's different. The date for wrestling is 28-30 September, so not relevant here.\n\nSo the event on 20 September 1988 at Olympic Weightlifting Gymnasium is the Men's 60 kg weightlifting event. The gold medalist is Naim Süleymanoğlu. \n\nLet me double-check the other docs to make sure. Doc 4 says: \"The"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-006",
+      "question": "Who won the gold medal in the women's 57 kg judo event at the Summer Olympics held immediately before 2020?",
+      "qtype": "temporal",
+      "predicted_answer": "Wait, let me check the other documents to make sure. Doc 1 is 2020 Summer Olympics (Women's 57 kg), Doc 3 is 2020 Women's 52 kg, Doc 4 is 2020 Women's 63 kg, and Doc 5 is 2016 Women's 70 kg. So the only document that's the Olympics immediately before",
+      "gold_answer": [
+        "Rafaela Silva"
+      ],
+      "retrieved_doc_ids": [
+        "Q65235550",
+        "Q26217865",
+        "Q65235542",
+        "Q65235557",
+        "Q26217871"
+      ],
+      "tokens_used": 1921,
+      "elapsed_sec": 140.84,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8475,
+        0.8376,
+        0.8253,
+        0.8175,
+        0.8168
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user is asking: \"Who won the gold medal in the women's 57 kg judo event at the Summer Olympics held immediately before 2020?\"\n\nFirst, I need to figure out which Olympics were held immediately before 2020. The 2020 Summer Olympics were actually held in 2021 due to the pandemic, but the question refers to the \"Summer Olympics held immediately before 2020\". Wait, the Olympics are named by the year they were supposed to be held, but in reality, the 2020 Olympics took place in 2021. So the Olympics immediately before 2020 would be the 2016 Summer Olympics. Because the next one after 2016 is 2020 (which was postponed to 2021). So the question is asking for the 2016 Olympics.\n\nLooking at the documents, Doc 2 is about the 2016 Summer Olympics – Women's 57 kg. In that document, the gold medalist is listed as \"Rafaela Silva\" with goldNOC: BRA. So the answer should be Rafaela Silva.\n\nWait, let me check the other documents to make sure. Doc 1 is 2020 Summer Olympics (Women's 57 kg), Doc 3 is 2020 Women's 52 kg, Doc 4 is 2020 Women's 63 kg, and Doc 5 is 2016 Women's 70 kg. So the only document that's the Olympics immediately before"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-007",
+      "question": "Who won the gold medal in the men's pole vault athletics event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Renaud Lavillenie",
+      "gold_answer": [
+        "Renaud Lavillenie"
+      ],
+      "retrieved_doc_ids": [
+        "Q26208457",
+        "Q2000968",
+        "Q26233789",
+        "Q26212202",
+        "Q26224939"
+      ],
+      "tokens_used": 1785,
+      "elapsed_sec": 111.02,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8251,
+        0.7969,
+        0.7866,
+        0.7659,
+        0.7589
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the men's pole vault athletics event at the Summer Olympics held immediately before 2016. \n\nFirst, I need to figure out which Olympics came right before 2016. The Summer Olympics in 2016 were held in Rio, so the one before that would be the 2012 Summer Olympics. The question is asking for the gold medalist from the men's pole vault in 2012.\n\nLooking at the documents provided, Doc 2 is about the 2012 Summer Olympics – Men's pole vault. In that document, the gold medalist is listed as Renaud Lavillenie from France (goldNOC: FRA). The document states: \"The event was won by Renaud Lavillenie of France, the nation's first victory in the event since 1996 and third overall.\"\n\nSo the answer should be Renaud Lavillenie. Let me double-check the other documents to make sure. Doc 1 is 2016, which has Thiago Braz as gold. But the question is about the Olympics immediately before 2016, so 2012. Doc 2 clearly states Renaud Lavillenie won in 2012. The other docs are about different events (gymnastics, long jump, women's pole vault), so they don't matter here.\n\nYep, the answer is Renaud Lavillenie.\n</think>\n\nRenaud Lavillenie"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-008",
+      "question": "According to the provided corpus, which sailing event at the 2000 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "- Doc 3: 19",
+      "gold_answer": [
+        "Sailing at the 2000 Summer Olympics – Soling"
+      ],
+      "retrieved_doc_ids": [
+        "Q7400334",
+        "Q7400333",
+        "Q7400318",
+        "Q7400330",
+        "Q7400329"
+      ],
+      "tokens_used": 1870,
+      "elapsed_sec": 118.39,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7909,
+        0.7825,
+        0.7736,
+        0.7692,
+        0.7682
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking which sailing event at the 2000 Summer Olympics had the highest number of competitors based on the provided documents. I need to look at each document and find the number of competitors for each event in the 2000 Olympics.\n\nFirst, I'll go through each document to identify the events from the 2000 Summer Olympics and their competitor counts.\n\nStarting with Doc 1: It's about the Star event in the 2000 Olympics. The \"competitors\" field says 32. So that's 32 competitors.\n\nDoc 2: This is the Soling event. The competitors listed here are 48. So 48 competitors.\n\nDoc 3: This is about the 1996 Olympics (Laser event), so it's not relevant for 2000. The competitors here are 56, but it's 1996, so skip.\n\nDoc 4: Men's Mistral One Design in 2000. Competitors listed as 36. So 36 competitors.\n\nDoc 5: Laser event in 2000. Competitors here are 43. So 43 competitors.\n\nWait, the question is about the 2000 Summer Olympics. So I need to check which of these events are from 2000. Let me confirm:\n\n- Doc 1: 2000 Summer Olympics (Star event) → 32 competitors\n- Doc 2: 2000 Summer Olympics (Soling) → 48 competitors\n- Doc 3: 19"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-009",
+      "question": "How many nations competed in Sailing at the 2016 Summer Olympics – Women's RS:X?",
+      "qtype": "lookup",
+      "predicted_answer": "nations: 26",
+      "gold_answer": [
+        "26"
+      ],
+      "retrieved_doc_ids": [
+        "Q3039134",
+        "Q2558792",
+        "Q26254891",
+        "Q2341653",
+        "Q584005"
+      ],
+      "tokens_used": 1864,
+      "elapsed_sec": 143.17,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8104,
+        0.8082,
+        0.8062,
+        0.764,
+        0.7633
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know how many nations competed in the Women's RS:X at the 2016 Summer Olympics based solely on the provided documents.\n\nFirst, I need to check which document talks about the 2016 Summer Olympics Women's RS:X. Looking at the documents:\n\n- Doc 1 is about 2012 Summer Olympics Women's RS:X.\n- Doc 2 is 2008 Summer Olympics Women's RS:X.\n- Doc 3 is 2016 Summer Olympics Women's RS:X. That's the one we need.\n- Doc 4 is 2008 Summer Olympics Laser Radial (men's and women's? Wait, it says Women's Laser Radial, but the event is different).\n- Doc 5 is 2012 Summer Olympics Men's RS:X.\n\nSo, Doc 3 is the relevant document here. Let me read it carefully.\n\nIn Doc 3, the infobox says:\n  nations: 26\n\nThe description also states: \"The women's RS:X competition at the 2016 Summer Olympics in Rio de Janeiro took place between 8–14 August at Marina da Glória.\" And the competitors section mentions 26 sailors from 26 nations.\n\nWait, the infobox for Doc 3 shows \"nations: 26\". The answer should be 26. Let me double-check if there's any other document that might have conflicting info, but the user said to use ONLY the documents above. Since Doc 3 is the 2016 Women's RS:X, and it states nations: 26, that's"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-010",
+      "question": "According to the provided corpus, how many cycling events at the 2000 Summer Olympics had more than 30 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "Wait, but are there more cycling events in the 2000 Olympics? The documents provided might not list",
+      "gold_answer": [
+        "4"
+      ],
+      "retrieved_doc_ids": [
+        "Q3001459",
+        "Q5198393",
+        "Q5198390",
+        "Q1063589",
+        "Q1064728"
+      ],
+      "tokens_used": 1823,
+      "elapsed_sec": 135.47,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7666,
+        0.7542,
+        0.741,
+        0.7398,
+        0.739
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking how many cycling events at the 2000 Summer Olympics had more than 30 competitors, based solely on the provided documents.\n\nFirst, I need to look at the documents to find all the cycling events from the 2000 Summer Olympics. The documents given are Doc 1, Doc 2, Doc 3, Doc 4, and Doc 5. But Doc 4 and Doc 5 are about the 2008 Olympics, so they're not relevant here. So we focus on Doc 1, Doc 2, and Doc 3.\n\nLet me check each document for the number of competitors in the 2000 events.\n\nStarting with Doc 1: Men's individual road race at the 2000 Summer Olympics. The document states \"competitors: 154\". So that's 154 competitors, which is more than 30.\n\nDoc 2: Women's sprint. The competitors listed here are \"12\". So 12 competitors, which is less than 30.\n\nDoc 3: Men's track time trial. The competitors here are \"16\". So 16, which is also less than 30.\n\nWait, but the question is about how many events had more than 30 competitors. So in the 2000 Olympics, the cycling events mentioned here are three: Men's individual road race (154), Women's sprint (12), Men's track time trial (16). \n\nWait, but are there more cycling events in the 2000 Olympics? The documents provided might not list"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-011",
+      "question": "Who won the gold medal in the event held at Richmond Olympic Oval on 14 February 2010?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Doc 1",
+      "gold_answer": [
+        "Martina Sáblíková"
+      ],
+      "retrieved_doc_ids": [
+        "Q848696",
+        "Q841942",
+        "Q905540",
+        "Q782429",
+        "Q848666"
+      ],
+      "tokens_used": 2099,
+      "elapsed_sec": 147.72,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7817,
+        0.7787,
+        0.7756,
+        0.7723,
+        0.7703
+      ],
+      "raw_llm_output": "Okay, let's try to figure out who won the gold medal in the event held at Richmond Olympic Oval on 14 February 2010. Hmm, first I need to check the documents provided to see which event was on that date.\n\nLooking at the documents:\n\nDoc 1: Men's 1000m, held on 17 Feb 2010.\nDoc 2: Men's 500m, held on 15 Feb 2010.\nDoc 3: Women's 1000m, held on 18 Feb 2010.\nDoc 4: Men's 1500m, held on 20 Feb 2010.\nDoc 5: Women's 500m, held on 16 Feb 2010.\n\nWait, the question says 14 February 2010. But all the dates in the documents are 15, 16, 17, 18, 20. There's no event listed for 14th. Let me check again.\n\nDoc 2 mentions Men's 500m on 15 Feb. Doc 5 is Women's 500m on 16 Feb. The next day after 15th is 16th. Wait, the problem states \"on 14 February 2010\". But according to the documents, there's no event on the 14th. Maybe it's a trick question?\n\nWait, the user says \"Using ONLY the documents above\". Let me check each document's date.\n\nDoc 1"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-012",
+      "question": "According to the provided corpus, how many rowing events at the 2020 Summer Olympics had more than 36 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "So, for each",
+      "gold_answer": [
+        "6"
+      ],
+      "retrieved_doc_ids": [
+        "Q62020028",
+        "Q62020022",
+        "Q62020033",
+        "Q62020027",
+        "Q22968982"
+      ],
+      "tokens_used": 1911,
+      "elapsed_sec": 144.39,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.792,
+        0.7793,
+        0.7704,
+        0.7664,
+        0.7638
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking how many rowing events at the 2020 Summer Olympics had more than 36 competitors, based solely on the provided documents.\n\nFirst, I need to go through each document to find the number of competitors for each rowing event listed. The documents are about different rowing events from the 2020 Summer Olympics.\n\nStarting with Doc 1: Men's eight. The competitors field says \"63 rowers and coxswains from 7 nations competed.\" So that's 63 competitors. Since 63 is more than 36, this event counts.\n\nDoc 2: Men's single sculls. Competitors: \"32 rowers from 32 nations competed.\" 32 is less than 36, so this doesn't count.\n\nDoc 3: Women's single sculls. Also 32 competitors. Same as above, 32 <36, so no.\n\nDoc 4: Men's coxless four. Competitors: \"40 rowers from 10 nations competed.\" 40 is more than 36, so this counts.\n\nWait, are there any other events mentioned in the documents? Let me check again.\n\nThe documents list four events: Men's eight (Doc1), Men's single sculls (Doc2), Women's single sculls (Doc3), Men's coxless four (Doc4). The 2020 Summer Olympics rowing events here are these four.\n\nSo, for each:\n\n- Men's eight: 63 competitors (more than 36)\n- Men's single sculls: 32"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-013",
+      "question": "Who won the gold medal in the women's 200 metre freestyle swimming event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Allison Schmitt",
+      "gold_answer": [
+        "Allison Schmitt"
+      ],
+      "retrieved_doc_ids": [
+        "Q25932069",
+        "Q25991462",
+        "Q2071152",
+        "Q26237636",
+        "Q25932666"
+      ],
+      "tokens_used": 1872,
+      "elapsed_sec": 133.99,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8334,
+        0.8136,
+        0.8119,
+        0.8118,
+        0.8114
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user is asking: \"Who won the gold medal in the women's 200 metre freestyle swimming event at the Summer Olympics held immediately before 2016?\"\n\nFirst, I need to figure out which Olympics came right before 2016. The 2016 Summer Olympics were held in Rio, so the one before that would be the 2012 Summer Olympics. The question is about the women's 200m freestyle event from that 2012 Games.\n\nLooking at the documents provided, Doc 3 is about the 2012 Summer Olympics – Women's 200 metre freestyle. In that document, the gold medalist is listed as Allison Schmitt with the NOC USA. The summary mentions she \"blasted a new Olympic record\" and won the gold.\n\nLet me double-check the other documents to make sure. Doc 1 is 2016, Doc 2 is 2016 breaststroke, Doc 4 is 2016 individual medley, Doc 5 is 2016 backstroke. So the only 2012 document is Doc 3. \n\nIn Doc 3, the gold medalist is Allison Schmitt (USA). The answer should be her name. The question specifies \"the Summer Olympics held immediately before 2016\", which is 2012. So the answer is Allison Schmitt.\n</think>\n\nAllison Schmitt"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-014",
+      "question": "Who won the gold medal in the event held at Riocentro – Pavilion 4 on 11–19 August at the 2016 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Doc 4: Men's flyweight boxing. Venue: Riocentro – Pavilion 6. Date: 13–21 August",
+      "gold_answer": [
+        "Carolina Marín"
+      ],
+      "retrieved_doc_ids": [
+        "Q26212149",
+        "Q26212145",
+        "Q26212151",
+        "Q26205999",
+        "Q26155829"
+      ],
+      "tokens_used": 1905,
+      "elapsed_sec": 2485.77,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7799,
+        0.7779,
+        0.7747,
+        0.77,
+        0.7649
+      ],
+      "raw_llm_output": "Okay, let's try to figure out who won the gold medal in the event held at Riocentro – Pavilion 4 on 11–19 August at the 2016 Summer Olympics. \n\nFirst, I need to check the documents provided to see which event matches the description. The key points here are:\n\n- Venue: Riocentro – Pavilion 4\n- Dates: 11–19 August 2016\n- Event: 2016 Summer Olympics\n\nLooking at the documents:\n\nDoc 1: Men's 62 kg weightlifting. Date: 8 August 2016. Venue: Riocentro. But the date here is 8 August, not 11–19. So probably not this one.\n\nDoc 2: Men's 94 kg weightlifting. Date: 13 August 2016. Venue: Riocentro. Date is 13 August, but the event runs from 13 August, but the question says 11–19 August. So maybe not.\n\nDoc 3: Men's light welterweight boxing. Venue: Riocentro – Pavilion 6. Date: 10–21 August 2016. The dates here are 10–21 August, which is a bit longer than 11–19, but the question says 11–19. Also, Pavilion 6, not Pavilion 4. So probably not.\n\nDoc 4: Men's flyweight boxing. Venue: Riocentro – Pavilion 6. Date: 13–21 August"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-015",
+      "question": "Who won the gold medal in the event held at London Velopark on 3 to 4 August at the 2012 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "The user wants to know who",
+      "gold_answer": [
+        "Dani KingLaura TrottJoanna Rowsell"
+      ],
+      "retrieved_doc_ids": [
+        "Q1005298",
+        "Q2297621",
+        "Q2329168",
+        "Q2000988",
+        "Q2362858"
+      ],
+      "tokens_used": 1802,
+      "elapsed_sec": 70.91,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7953,
+        0.7851,
+        0.7818,
+        0.7818,
+        0.7802
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the event held at London Velopark on 3 to 4 August at the 2012 Summer Olympics, using only the provided documents.\n\nFirst, I need to check each document to find the event that took place at London Velopark on 3 to 4 August. Let me go through each document one by one.\n\nStarting with Doc 1: It's about Men's BMX at the 2012 Summer Olympics. The date here is 8 to 10 August. So that's not 3-4 August. So probably not this one.\n\nDoc 2: Men's cycling team pursuit. The date here is 2 to 3 August 2012. Close but the dates are 2-3, not 3-4. Also, the venue is London Velopark, but the dates don't match the 3-4 August.\n\nDoc 3: Women's keirin. The date here is 3 August. The venue is London Velopark. The event is held on 3 August. The question says \"3 to 4 August\", but maybe the event was on the 3rd and the next day? Wait, the document says \"3 August\" for the date. Hmm. Let me check the other docs.\n\nDoc 4: Athletics Women's marathon. The date is 5 August 2012. Venue is Marathon course, central London. Not Velopark. So this is probably not the one.\n\nDoc 5: Women's BMX. Date is 8 to 10 August. So that's"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-016",
+      "question": "Who won the gold medal in the men's sprint biathlon event at the Winter Olympics held immediately before 2022?",
+      "qtype": "temporal",
+      "predicted_answer": "Arnd Peiffer\" with goldNOC: GER",
+      "gold_answer": [
+        "Arnd Peiffer"
+      ],
+      "retrieved_doc_ids": [
+        "Q107861699",
+        "Q47105341",
+        "Q107802335",
+        "Q107861717",
+        "Q1004918"
+      ],
+      "tokens_used": 1823,
+      "elapsed_sec": 62.06,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8084,
+        0.8062,
+        0.7994,
+        0.7903,
+        0.7888
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the men's sprint biathlon event at the Winter Olympics held immediately before 2022. \n\nFirst, I need to figure out which Olympics were immediately before 2022. The 2022 Winter Olympics were in Beijing, so the one before that would be the 2018 Winter Olympics. So the question is asking about the 2018 Men's sprint biathlon gold medalist.\n\nLooking at the documents provided:\n\nDoc 1 is about the 2022 Winter Olympics Men's sprint. The gold there was Johannes Thingnes Bø (NOR).\n\nDoc 2 is about the 2018 Winter Olympics Men's sprint. Here, the gold medalist is Arnd Peiffer (GER). The document states: \"gold: Arnd Peiffer\" with goldNOC: GER.\n\nThe question is about the Olympics immediately before 2022, which is 2018. So the answer should be Arnd Peiffer.\n\nLet me double-check the other documents to make sure. Doc 3 is 2022 Men's individual, Doc 4 is 2022 Men's mass start, Doc 5 is 2002. So yes, Doc 2 is the 2018 event. The gold medalist there is Arnd Peiffer from Germany.\n\nThe user wants the shortest answer, just the name. So the answer is Arnd Peiffer.\n</think>\n\nArnd Peiffer"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-017",
+      "question": "Who won the gold medal in the event held at Royal Artillery Barracks on 28 July 2012?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Doc 1: Men's skeet is 3",
+      "gold_answer": [
+        "Yi Siling"
+      ],
+      "retrieved_doc_ids": [
+        "Q2268100",
+        "Q681571",
+        "Q921100",
+        "Q2254560",
+        "Q2353475"
+      ],
+      "tokens_used": 1853,
+      "elapsed_sec": 91.19,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7929,
+        0.7889,
+        0.7846,
+        0.78,
+        0.7795
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. So, the question is asking: \"Who won the gold medal in the event held at Royal Artillery Barracks on 28 July 2012?\" And I need to use only the provided documents to answer with the shortest possible answer.\n\nFirst, I need to check each document to see which event was held on 28 July 2012 at the Royal Artillery Barracks. Let me go through each document one by one.\n\nStarting with Doc 1: Men's skeet. The dates here are 30 July 2012 to 31 July 2012. So that's the 30th and 31st. Not 28th.\n\nDoc 2: Men's trap. The dates are 5 August 2012 to 6 August 2012. So that's August, not July. So no.\n\nDoc 3: Men's double trap. The date here is 2 August 2012. Also August, so not July 28.\n\nDoc 4: Men's 10 metre air rifle. The date is 30 July 2012. So that's the 30th, not 28th.\n\nDoc 5: Men's 50 metre pistol. The date is 5 August 2012. August again.\n\nWait, the problem says \"on 28 July 2012\". But looking at the documents, none of the events are listed as happening on the 28th. Let me check again.\n\nDoc 1: Men's skeet is 3"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-018",
+      "question": "Who won the gold medal in the men's freestyle 82 kg wrestling event at the Summer Olympics held immediately before 1996?",
+      "qtype": "temporal",
+      "predicted_answer": "But the problem",
+      "gold_answer": [
+        "Kevin Jackson"
+      ],
+      "retrieved_doc_ids": [
+        "Q8037937",
+        "Q8037930",
+        "Q8037934",
+        "Q8037932",
+        "Q8037922"
+      ],
+      "tokens_used": 1854,
+      "elapsed_sec": 235.96,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8167,
+        0.8009,
+        0.7953,
+        0.7936,
+        0.7911
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user is asking: \"Who won the gold medal in the men's freestyle 82 kg wrestling event at the Summer Olympics held immediately before 1996?\"\n\nFirst, I need to figure out which Olympics were held immediately before 1996. The Summer Olympics in 1996 were held in Atlanta, so the one before that would be 1992 in Barcelona.\n\nLooking at the documents provided, each document is about a different weight class in the 1996 Olympics. The question is about the men's freestyle 82 kg event. Let me check Doc 1, which is about the 1996 Men's freestyle 82 kg.\n\nIn Doc 1, the gold medalist is listed as Khadzhimurad Magomedov with NOC RUS (Russia). But the question is about the Olympics held immediately before 1996, which is 1992. So the 1992 Olympics would have had their own gold medalists for that weight class.\n\nWait, the documents here are all for the 1996 Olympics. The \"prev\" field in each infobox says \"prev: 1992\". So the previous Olympics for each event was 1992. But the question is asking for the gold medalist from the Olympics immediately before 1996, which is 1992. However, the documents provided are all for 1996 events. So the user wants to know who won the 82 kg freestyle gold in the 1992 Olympics.\n\nBut the problem"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-019",
+      "question": "According to the provided corpus, how many fencing events at the 1988 Summer Olympics had more than 68 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "Wait, the question says \"how many fencing events\". The 1988 Summer Olympics had eight fencing events total, as mentioned in the documents (e.g., Doc 1 says \"one of eight fencing events\"). But the documents here cover five specific events: men's foil, men's sabre, men's team sabre, men's épée, men's team foil. Wait, but the problem states \"according to the provided corpus\", so we only have these five documents. Wait, the problem says \"using ONLY the documents above\". So the corpus here has five documents",
+      "gold_answer": [
+        "3"
+      ],
+      "retrieved_doc_ids": [
+        "Q5443136",
+        "Q5443137",
+        "Q5443139",
+        "Q5443142",
+        "Q5443138"
+      ],
+      "tokens_used": 1868,
+      "elapsed_sec": 100.06,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7946,
+        0.787,
+        0.7839,
+        0.7827,
+        0.7808
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. So, the question is asking how many fencing events at the 1988 Summer Olympics had more than 68 competitors, based on the provided documents.\n\nFirst, I need to go through each of the documents to find the number of competitors for each fencing event. The documents are about different events: Men's foil, Men's sabre, Men's team sabre, Men's épée, and Men's team foil.\n\nLet me list out each document and the competitors count:\n\n- Doc 1: Men's foil. Competitors: 68. So that's exactly 68, not more than 68.\n- Doc 2: Men's sabre. Competitors: 40. Less than 68.\n- Doc 3: Men's team sabre. Competitors: 53. Less than 68.\n- Doc 4: Men's épée. Competitors: 79. More than 68.\n- Doc 5: Men's team foil. Competitors: 76. More than 68.\n\nWait, the question says \"how many fencing events\". The 1988 Summer Olympics had eight fencing events total, as mentioned in the documents (e.g., Doc 1 says \"one of eight fencing events\"). But the documents here cover five specific events: men's foil, men's sabre, men's team sabre, men's épée, men's team foil. Wait, but the problem states \"according to the provided corpus\", so we only have these five documents. Wait, the problem says \"using ONLY the documents above\". So the corpus here has five documents"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-020",
+      "question": "According to the provided corpus, how many alpine skiing events at the 2014 Winter Olympics had more than 63 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "The question is asking how many alpine skiing events at the 2014 Winter Olympics had",
+      "gold_answer": [
+        "4"
+      ],
+      "retrieved_doc_ids": [
+        "Q15055001",
+        "Q15055009",
+        "Q1005811",
+        "Q15021060",
+        "Q9663"
+      ],
+      "tokens_used": 1957,
+      "elapsed_sec": 114.22,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7346,
+        0.7342,
+        0.7307,
+        0.7284,
+        0.7283
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking: \"According to the provided corpus, how many alpine skiing events at the 2014 Winter Olympics had more than 63 competitors?\"\n\nFirst, I need to look through the documents provided to find information about alpine skiing events at the 2014 Winter Olympics and their number of competitors.\n\nLet me check each document:\n\nDoc 1: This is about Alpine skiing at the 2014 Winter Olympics – Men's giant slalom. The competitors listed here are 109. So that's one event with 109 competitors.\n\nDoc 2: Alpine skiing at the 2014 Winter Olympics – Men's combined. Competitors here are 50. So that's another event with 50 competitors.\n\nDoc 3: This is about Snowboarding at the 1998 Winter Olympics – Men's giant slalom. Not relevant here since it's 1998 and snowboarding, not alpine skiing.\n\nDoc 4: Biathlon at the 2014 Winter Olympics – Men's individual. Biathlon is a different sport, so not alpine skiing.\n\nDoc 5: 1994 Winter Olympics. Not relevant here as it's 1994 and not 2014.\n\nSo, the alpine skiing events at the 2014 Winter Olympics mentioned in the documents are:\n\n- Men's giant slalom (Doc 1): 109 competitors\n- Men's combined (Doc 2): 50 competitors\n\nThe question is asking how many alpine skiing events at the 2014 Winter Olympics had"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-021",
+      "question": "According to the provided corpus, which alpine skiing event at the 1988 Winter Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Men's giant slalom",
+      "gold_answer": [
+        "Alpine skiing at the 1988 Winter Olympics – Men's giant slalom"
+      ],
+      "retrieved_doc_ids": [
+        "Q1005804",
+        "Q1005639",
+        "Q1222713",
+        "Q1222524",
+        "Q15703663"
+      ],
+      "tokens_used": 2073,
+      "elapsed_sec": 117.15,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7835,
+        0.7709,
+        0.7682,
+        0.7662,
+        0.7635
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking which alpine skiing event at the 1988 Winter Olympics had the highest number of competitors based on the provided documents. \n\nFirst, I need to look at each document to find the number of competitors for each alpine skiing event. The documents are labeled as Doc 1 to Doc 5, but Doc 5 is about Nordic combined, not alpine skiing. So I'll focus on Docs 1-4 which are alpine skiing events.\n\nStarting with Doc 1: Men's giant slalom. The competitors field is listed as 117.\n\nDoc 2: Men's slalom. Competitors: 109.\n\nDoc 3: Women's giant slalom. Competitors: 64.\n\nDoc 4: Women's slalom. Competitors: 57.\n\nSo the numbers are:\n- Men's giant slalom: 117\n- Men's slalom: 109\n- Women's giant slalom: 64\n- Women's slalom: 57\n\nComparing these numbers, the highest is 117 for Men's giant slalom. The question is about alpine skiing events, and all these are alpine skiing events. Nordic combined (Doc 5) is a different discipline, so it's excluded.\n\nTherefore, the answer should be Men's giant slalom with 117 competitors.\n</think>\n\nMen's giant slalom"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-022",
+      "question": "Who won the gold medal in the event held at Beijing Science and TechnologyUniversity Gymnasium on August 12, 2008?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Wait, the problem says \"on August 1",
+      "gold_answer": [
+        "Ayumi Tanimoto"
+      ],
+      "retrieved_doc_ids": [
+        "Q762663",
+        "Q704595",
+        "Q1005685",
+        "Q761318",
+        "Q1005660"
+      ],
+      "tokens_used": 1763,
+      "elapsed_sec": 87.93,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7958,
+        0.7911,
+        0.7874,
+        0.7808,
+        0.7783
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user is asking: \"Who won the gold medal in the event held at Beijing Science and Technology University Gymnasium on August 12, 2008?\" I need to look at the documents provided to find the answer.\n\nFirst, I'll check each document to see which event was held at Beijing Science and Technology University Gymnasium on August 12, 2008.\n\nStarting with Doc 1: It's about Gymnastics at the 2008 Summer Olympics – Men's artistic individual all-around. The venue is Beijing National Indoor Stadium, not the Science and Technology University Gymnasium. The dates here are August 9–14, but the venue is different. So probably not this one.\n\nDoc 2: Taekwondo Men's 58 kg. Venue is Beijing Science and Technology University Gymnasium. The date here is 20 August 2008. The question says August 12, so this is too late.\n\nDoc 3: Taekwondo Men's 68 kg. Venue is same as Doc 2, Beijing Science and Technology University Gymnasium. Date is 21 August 2008. Also not August 12.\n\nDoc 4: Women's balance beam. Venue is Beijing National Indoor Stadium. Dates August 19. Not the right venue or date.\n\nDoc 5: Taekwondo Men's +80 kg. Venue is Beijing Science and Technology University Gymnasium. Date is 23 August 2008. Also not August 12.\n\nWait, the problem says \"on August 1"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-023",
+      "question": "Who won the gold medal in the event held at Estadi Olímpic Lluís Companys, Barcelona on August 9 at the 1992 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Doc 5 is Archery – Men's individual. Venue is Camp Olímp",
+      "gold_answer": [
+        "Hwang Young-Cho"
+      ],
+      "retrieved_doc_ids": [
+        "Q1407627",
+        "Q31843476",
+        "Q3498614",
+        "Q1408876",
+        "Q4786042"
+      ],
+      "tokens_used": 1846,
+      "elapsed_sec": 90.18,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7915,
+        0.7791,
+        0.7749,
+        0.7735,
+        0.7732
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the user wants to know who won the gold medal in the event held at Estadi Olímpic Lluís Companys, Barcelona on August 9 at the 1992 Summer Olympics.\n\nFirst, I need to check the documents provided to find the event that took place on August 9 at that venue. Let me go through each document.\n\nStarting with Doc 1: It's about Athletics at the 1992 Summer Olympics – Men's marathon. The venue is Estadi Olímpic Lluís Companys, Barcelona. The date is August 9. The gold medalist here is Hwang Young-Cho from KOR (Korea). The document says the race started on August 9, 1992. So this seems like the event in question.\n\nDoc 2 is Equestrian – Individual jumping, held at Real Club de Polo de Barcelona. The dates are 4–9 August, but the venue is different (Real Club de Polo), so not the same venue.\n\nDoc 3 is Wrestling – Men's freestyle 62 kg. Venue is Institut Nacional d'Educació Física de Catalunya. Dates are 5–7 August. Not the same venue or date.\n\nDoc 4 is Athletics – Men's 110m hurdles. Venue is Estadi Olímpic Lluís Companys, but the dates are 2 and 3 August. So the date here is different (August 2-3 vs August 9), so not the same event.\n\nDoc 5 is Archery – Men's individual. Venue is Camp Olímp"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-024",
+      "question": "According to the provided corpus, how many biathlon events at the 2002 Winter Olympics had more than 74 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "For each document",
+      "gold_answer": [
+        "3"
+      ],
+      "retrieved_doc_ids": [
+        "Q256759",
+        "Q1004918",
+        "Q280553",
+        "Q1221922",
+        "Q1222176"
+      ],
+      "tokens_used": 1787,
+      "elapsed_sec": 96.17,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7871,
+        0.7839,
+        0.7753,
+        0.7602,
+        0.7594
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking how many biathlon events at the 2002 Winter Olympics had more than 74 competitors, based solely on the provided documents.\n\nFirst, I need to go through each document to find the number of competitors for each biathlon event. The documents are labeled as Doc 1 to Doc 5, each covering a different event.\n\nStarting with Doc 1: Men's individual. The competitors field is listed as 87. So that's 87 competitors. Since 87 is more than 74, this event counts.\n\nDoc 2: Men's sprint. Competitors: 87. Also more than 74, so this counts too.\n\nDoc 3: Men's pursuit. Competitors: 57. 57 is less than 74, so this doesn't count.\n\nDoc 4: Women's individual. Competitors: 71. 71 is less than 74, so no.\n\nDoc 5: Women's sprint. Competitors: 74. The question says \"more than 74\", so 74 is not more than 74. So this event doesn't count.\n\nWait, let me check again. The problem states \"more than 74 competitors\". So the threshold is strictly greater than 74.\n\nFor each document:\n\nDoc 1: 87 competitors → yes\nDoc 2: 87 → yes\nDoc 3: 57 → no\nDoc 4: 71 → no\nDoc 5: 74 → no (since 74 is not more than 74)"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-025",
+      "question": "How many nations competed in Judo at the 2016 Summer Olympics – Women's 57 kg?",
+      "qtype": "lookup",
+      "predicted_answer": "23",
+      "gold_answer": [
+        "23"
+      ],
+      "retrieved_doc_ids": [
+        "Q26217865",
+        "Q26218598",
+        "Q4160923",
+        "Q26212161",
+        "Q1193963"
+      ],
+      "tokens_used": 1746,
+      "elapsed_sec": 159.22,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8191,
+        0.801,
+        0.8,
+        0.7972,
+        0.7947
+      ],
+      "raw_llm_output": "Okay, let's see. The question is asking how many nations competed in Judo at the 2016 Summer Olympics – Women's 57 kg.\n\nFirst, I need to check the documents provided. Let me look through each one.\n\nStarting with Doc 1: It's about Judo at the 2016 Summer Olympics – Women's 57 kg. The infobox says \"nations: 23\". So that's the number of nations for that event in 2016.\n\nWait, but let me make sure there's no confusion with other documents. Doc 2 is Women's 63 kg, which is a different weight class. Doc 3 is 2000 Olympics, so not relevant here. Doc 4 is Women's 52 kg in 2016. Doc 5 is 2008 Olympics.\n\nSo the answer should be 23. The document clearly states \"nations: 23\" for the 2016 Women's 57 kg event.\n\nI should check if there's any other document that might have conflicting info, but the others are different weight classes or different years. So the answer is 23.\n</think>\n\n23"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-026",
+      "question": "Who won the gold medal in the men's cross-country cycling event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Jaroslav Kulhavý",
+      "gold_answer": [
+        "Jaroslav Kulhavý"
+      ],
+      "retrieved_doc_ids": [
+        "Q25476845",
+        "Q2036655",
+        "Q24760634",
+        "Q2212666",
+        "Q26259596"
+      ],
+      "tokens_used": 1879,
+      "elapsed_sec": 92.22,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8096,
+        0.7836,
+        0.7777,
+        0.7636,
+        0.7626
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the men's cross-country cycling event at the Summer Olympics held immediately before 2016. \n\nFirst, I need to figure out which Olympics came right before 2016. The Summer Olympics in 2016 were held in Rio de Janeiro. The one immediately before that would be the 2012 Summer Olympics in London. So the question is asking about the 2012 Men's Cross-Country Cycling event.\n\nLooking at the documents provided, I should check which document talks about the 2012 event. Doc 2 is titled \"Cycling at the 2012 Summer Olympics – Men's cross-country\". Let me read through that.\n\nIn Doc 2, the infobox shows:\n- event: Men's cross-country cycling\n- games: 2012 Summer\n- gold: Jaroslav Kulhavý\n- goldNOC: CZE\n\nSo according to Doc 2, Jaroslav Kulhavý from the Czech Republic won the gold medal in the 2012 Men's Cross-Country Cycling event. \n\nWait, let me double-check the other documents to make sure. Doc 1 is 2016, Doc 3 is 2016 road race, Doc 4 is 2004, Doc 5 is 2016 team sprint. So the only 2012 document is Doc 2. \n\nThe question says \"immediately before 2016\", so 2012 is the correct Olympics here. The gold medalist in"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-027",
+      "question": "According to the provided corpus, how many fencing events at the 2008 Summer Olympics had more than 32 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "In Doc 3: \"competitors: 41000000\" — that's 41 million? That doesn't make sense. Wait, perhaps it's a typo for 41. Because in the description it",
+      "gold_answer": [
+        "4"
+      ],
+      "retrieved_doc_ids": [
+        "Q2570158",
+        "Q3951952",
+        "Q2570052",
+        "Q2570149",
+        "Q2726746"
+      ],
+      "tokens_used": 1768,
+      "elapsed_sec": 78.55,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.784,
+        0.783,
+        0.7814,
+        0.7756,
+        0.7686
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. So, the question is asking how many fencing events at the 2008 Summer Olympics had more than 32 competitors, based solely on the provided documents.\n\nFirst, I need to go through each document to find the number of competitors for each fencing event in 2008. The documents are labeled as Doc 1 to Doc 5, each covering a different event.\n\nStarting with Doc 1: It's about Men's foil at the 2008 Summer Olympics. The competitors field is listed as 26. So that's 26 competitors. Since 26 is less than 32, this event doesn't count.\n\nDoc 2: This is Men's foil at the 2004 Olympics, so it's not relevant for 2008. The question is about 2008 events, so I can skip this one.\n\nDoc 3: Men's épée at 2008. Competitors listed as 41,000,000? Wait, that seems way too high. Wait, looking back at the text: \"competitors: 41000000\". Hmm, that's probably a typo. In the context of Olympic events, the number of competitors is usually in the hundreds or thousands, not millions. Wait, maybe it's a formatting error. Let me check the original text again.\n\nIn Doc 3: \"competitors: 41000000\" — that's 41 million? That doesn't make sense. Wait, perhaps it's a typo for 41. Because in the description it"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-028",
+      "question": "Who won the gold medal in the event held at Olympic Aquatic Centre on August 14, 2004 (heats & final)?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Michael Phelps (goldNOC: USA)",
+      "gold_answer": [
+        "Michael Phelps"
+      ],
+      "retrieved_doc_ids": [
+        "Q3879563",
+        "Q3879574",
+        "Q1141105",
+        "Q3879570",
+        "Q1028699"
+      ],
+      "tokens_used": 1882,
+      "elapsed_sec": 98.53,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8122,
+        0.8113,
+        0.8099,
+        0.8065,
+        0.8033
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the user is asking which event was held at the Olympic Aquatic Centre on August 14, 2004 (heats & final), and who won the gold medal for that event.\n\nFirst, I need to check the documents provided. Let me go through each one.\n\nStarting with Doc 1: Men's 100m butterfly. The date here is August 19 and 20. So not August 14.\n\nDoc 2: Men's 200m individual medley. Dates are August 18 and 19. Not August 14.\n\nDoc 3: Men's 400m individual medley. The date here is August 14 (heats & final). That matches the date mentioned in the question. The gold medalist here is Michael Phelps (goldNOC: USA). \n\nDoc 4: Men's 200m butterfly. Dates are August 16 and 17. Not August 14.\n\nDoc 5: Men's 200m freestyle. Dates are August 15 and 16. So not August 14.\n\nSo the event that was held on August 14, 2004 (heats & final) is the Men's 400m individual medley, as per Doc 3. The gold medalist there is Michael Phelps.\n\nWait, let me double-check Doc 3. The event is Men's 400m individual medley, date August 14, 2004 (heats & final). The gold is Michael Phelps. Yes"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-029",
+      "question": "How many nations competed in Shooting at the 2012 Summer Olympics – Men's 50 metre rifle three positions?",
+      "qtype": "lookup",
+      "predicted_answer": "28",
+      "gold_answer": [
+        "28"
+      ],
+      "retrieved_doc_ids": [
+        "Q334901",
+        "Q1346374",
+        "Q7500745",
+        "Q7500813",
+        "Q1005722"
+      ],
+      "tokens_used": 1721,
+      "elapsed_sec": 57.04,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8094,
+        0.7887,
+        0.7677,
+        0.7652,
+        0.7643
+      ],
+      "raw_llm_output": "Okay, let's see. The question is asking how many nations competed in the Shooting at the 2012 Summer Olympics – Men's 50 metre rifle three positions event.\n\nFirst, I need to check the documents provided. Let me look through each one.\n\nStarting with Doc 1. It's about the 2012 Summer Olympics Men's 50m rifle three positions. The infobox section says \"nations: 28\". So that's the number. Wait, but I should make sure that this is the correct document. Let me check the other docs too.\n\nDoc 2 is 2008, so not relevant here. Doc 3 is 1988, Doc 4 is 2000, Doc 5 is 2008 rifle prone. So only Doc 1 is for 2012. The answer should be 28. Let me confirm the exact text in Doc 1.\n\nIn Doc 1, under the infobox: \"nations: 28\". Yes, that's clear. The question is specifically about the 2012 event, so Doc 1 is the right one. The answer is 28.\n</think>\n\n28"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-030",
+      "question": "Who won the gold medal in the event held at Carioca Arena 3 on 6 August 2016?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Daniele Garozzo from Italy. But the date here is August 7",
+      "gold_answer": [
+        "Emese Szász"
+      ],
+      "retrieved_doc_ids": [
+        "Q25386266",
+        "Q26219849",
+        "Q26219848",
+        "Q26217896",
+        "Q25386268"
+      ],
+      "tokens_used": 1838,
+      "elapsed_sec": 104.09,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7984,
+        0.7946,
+        0.7922,
+        0.7879,
+        0.7847
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the event held at Carioca Arena 3 on 6 August 2016, using only the provided documents.\n\nFirst, I need to check each document to find the event that took place on August 6, 2016, at Carioca Arena 3. Let me go through each document one by one.\n\nStarting with Doc 1: It's about Fencing at the 2016 Summer Olympics – Men's foil. The date here is 7 August 2016, venue is Carioca Arena 3. The gold medalist is Daniele Garozzo from Italy. But the date here is August 7, not August 6. So this event was on the 7th, not the 6th.\n\nDoc 2: Taekwondo Men's 68 kg. Date is 18 August 2016. So that's later than August 6.\n\nDoc 3: Taekwondo Men's 58 kg. Date is 17 August 2016. Also later.\n\nDoc 4: Judo Women's 78 kg. Venue is Carioca Arena 2, not 3. So that's a different venue. The date here is 11 August 2016.\n\nDoc 5: Fencing Men's sabre. Date is 10 August 2016, venue Carioca Arena 3. So this event was on the 10th, not the 6th.\n\nWait, the question says \"on 6 August"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-031",
+      "question": "Who won the gold medal in the event held at Nikaia Olympic Weightlifting Hall on 24 August 2004?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Wait, the question says \"the event held at Nikaia Olympic Weightlifting Hall on 24 August 20",
+      "gold_answer": [
+        "Dmitry Berestov"
+      ],
+      "retrieved_doc_ids": [
+        "Q1750583",
+        "Q1750579",
+        "Q1750595",
+        "Q906854",
+        "Q906865"
+      ],
+      "tokens_used": 1802,
+      "elapsed_sec": 73.4,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7929,
+        0.7916,
+        0.7843,
+        0.7824,
+        0.7801
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the user is asking who won the gold medal in the event held at Nikaia Olympic Weightlifting Hall on 24 August 2004. I need to look at the documents provided to find the answer.\n\nFirst, I'll check each document to see which one mentions the date of 24 August 2004. Let me go through them one by one.\n\nStarting with Doc 1: The title is \"Weightlifting at the 2004 Summer Olympics – Men's 105 kg\". The infobox shows the date as 24 August 2004. The gold medalist here is Dmitry Berestov from RUS (Russia). The venue is Nikaia Olympic Weightlifting Hall. So this event was on 24 August 2004.\n\nDoc 2 is Men's 94 kg, date is 23 August 2004. So that's earlier than 24th.\n\nDoc 3 is Men's 85 kg, date 21 August 2004.\n\nDoc 4 is Men's +105 kg, date 25 August 2004.\n\nDoc 5 is Women's +75 kg, date 21 August 2004.\n\nSo the only event on 24 August 2004 is Doc 1, Men's 105 kg. The gold medalist there is Dmitry Berestov. The answer should be Dmitry Berestov.\n\nWait, the question says \"the event held at Nikaia Olympic Weightlifting Hall on 24 August 20"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-032",
+      "question": "How many nations competed in Gymnastics at the 2016 Summer Olympics – Men's horizontal bar?",
+      "qtype": "lookup",
+      "predicted_answer": "34 nations. The user wants the shortest possible answer, so just the number 34",
+      "gold_answer": [
+        "34"
+      ],
+      "retrieved_doc_ids": [
+        "Q26233795",
+        "Q26233794",
+        "Q26233786",
+        "Q26233789",
+        "Q26233783"
+      ],
+      "tokens_used": 1821,
+      "elapsed_sec": 93.62,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8432,
+        0.7875,
+        0.7709,
+        0.7637,
+        0.7576
+      ],
+      "raw_llm_output": "Okay, let's see. The question is asking how many nations competed in Gymnastics at the 2016 Summer Olympics – Men's horizontal bar.\n\nFirst, I need to check the documents provided. The user specified to use only the documents above. Let me look through each document.\n\nStarting with Doc 1, which is about Men's horizontal bar. The infobox section says \"nations: 34\". The description also mentions \"There were 71 competitors from 34 nations.\" So that's a direct answer here.\n\nWait, the question is specifically about the Men's horizontal bar event. Doc 1 is exactly that event. The infobox lists \"nations: 34\" and the text says \"71 competitors from 34 nations\". So the answer should be 34.\n\nLet me check the other documents to make sure I'm not mixing up events. Doc 2 is Men's parallel bars, which has 33 nations. Doc 3 is artistic individual all-around with 31 nations. Doc 4 is men's vault with 14 nations. Doc 5 is team all-around with 8 nations. So each document is for a different event.\n\nThe question is about Men's horizontal bar, which is Doc 1. The answer is 34 nations. The user wants the shortest possible answer, so just the number 34.\n</think>\n\n34"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-033",
+      "question": "According to the provided corpus, how many judo events at the 2004 Summer Olympics had more than 32 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "So only Doc 4 is about the 2004 Olympics. The",
+      "gold_answer": [
+        "4"
+      ],
+      "retrieved_doc_ids": [
+        "Q6303877",
+        "Q10522550",
+        "Q6303879",
+        "Q3811008",
+        "Q4160924"
+      ],
+      "tokens_used": 1824,
+      "elapsed_sec": 71.09,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.756,
+        0.7535,
+        0.751,
+        0.7496,
+        0.7489
+      ],
+      "raw_llm_output": "Okay, let's try to figure out this problem. The question is asking: According to the provided corpus, how many judo events at the 2004 Summer Olympics had more than 32 competitors?\n\nFirst, I need to check the documents provided. The user has given five documents, each describing a specific judo event at either the 2000 or 2004 Summer Olympics.\n\nLet me go through each document to see which ones are about the 2004 Summer Olympics and then check the number of competitors.\n\nStarting with Doc 4: It's titled \"Judo at the 2004 Summer Olympics – Men's 66 kg\". The competitors field says 32. So that's exactly 32, not more than 32.\n\nDoc 5 is about the 2000 Olympics, so we can ignore that for the 2004 count.\n\nDoc 1, 2, and 3 are all 2000 Olympics events, so they don't matter here.\n\nWait, the question is about the 2004 Summer Olympics. Let me check if there are any other documents that mention 2004. The only document with 2004 is Doc 4. Let me confirm.\n\nLooking at the documents:\n\n- Doc 1: 2000 Summer\n- Doc 2: 2000 Summer\n- Doc 3: 2000 Summer\n- Doc 4: 2004 Summer\n- Doc 5: 2000 Summer\n\nSo only Doc 4 is about the 2004 Olympics. The"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-034",
+      "question": "How many nations competed in Figure skating at the 2010 Winter Olympics – Women's singles?",
+      "qtype": "lookup",
+      "predicted_answer": "23",
+      "gold_answer": [
+        "23"
+      ],
+      "retrieved_doc_ids": [
+        "Q916735",
+        "Q302701",
+        "Q5448040",
+        "Q905607",
+        "Q15619183"
+      ],
+      "tokens_used": 1765,
+      "elapsed_sec": 91.74,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7792,
+        0.7765,
+        0.7661,
+        0.7577,
+        0.7569
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know how many nations competed in Figure skating at the 2010 Winter Olympics – Women's singles. They specified to use only the provided documents and give the shortest answer.\n\nFirst, I need to check which document talks about the 2010 Winter Olympics Women's singles figure skating. Looking at the documents:\n\n- Doc 1 is about Figure skating at the 2010 Winter Olympics – Women's singles. It mentions \"nations: 23\" under the infobox. The text also says \"30 skaters from 23 nations\". So that's a clear indicator.\n\nLet me double-check the other documents to make sure. Doc 2 is 2006, Doc 3 is 1994, Doc 4 is Luge (not figure skating), Doc 5 is 2014. So only Doc 1 is relevant here.\n\nIn Doc 1, the infobox states \"nations: 23\". The text also confirms \"30 skaters from 23 nations\". So the answer should be 23.\n\nI need to make sure there's no confusion with other events. The question specifies Figure skating at the 2010 Winter Olympics – Women's singles. Doc 4 is about Luge, so it's not relevant here. All other docs are different years or events. \n\nYes, the answer is 23.\n</think>\n\n23"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-035",
+      "question": "How many nations competed in Shooting at the 1996 Summer Olympics – Men's 50 metre rifle three positions?",
+      "qtype": "lookup",
+      "predicted_answer": "30",
+      "gold_answer": [
+        "30"
+      ],
+      "retrieved_doc_ids": [
+        "Q7500793",
+        "Q7500813",
+        "Q7500789",
+        "Q7500745",
+        "Q7500802"
+      ],
+      "tokens_used": 1692,
+      "elapsed_sec": 332.37,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8112,
+        0.7874,
+        0.7866,
+        0.7834,
+        0.7757
+      ],
+      "raw_llm_output": "Okay, let's see. The question is asking how many nations competed in the Shooting at the 1996 Summer Olympics – Men's 50 metre rifle three positions.\n\nFirst, I need to check the documents provided. Let me go through each one.\n\nLooking at Doc 1: It's about the 1996 Summer Olympics – Men's 50 metre rifle three positions. The infobox says \"nations: 30\". So that's 30 nations.\n\nWait, but let me make sure there's no conflicting info in other docs. Doc 2 is about 2000 Olympics, so not relevant. Doc 3 is 1996 but for the prone event, so different event. Doc 4 is 1988, so not relevant. Doc 5 is women's event in 1996, so not the same as the men's event.\n\nSo the answer should be 30. The document clearly states \"nations: 30\" in the infobox for Doc 1.\n</think>\n\n30"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-036",
+      "question": "Who won the gold medal in the men's light flyweight boxing event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Zou Shiming",
+      "gold_answer": [
+        "Zou Shiming"
+      ],
+      "retrieved_doc_ids": [
+        "Q26205999",
+        "Q26037184",
+        "Q2000524",
+        "Q26208513",
+        "Q332673"
+      ],
+      "tokens_used": 1811,
+      "elapsed_sec": 69.09,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8197,
+        0.8111,
+        0.7952,
+        0.7899,
+        0.7866
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the men's light flyweight boxing event at the Summer Olympics held immediately before 2016. \n\nFirst, I need to figure out which Olympics came right before 2016. The Summer Olympics in 2016 were held in Rio, so the one before that would be 2012 in London. So the question is asking about the 2012 Olympics for the men's light flyweight event.\n\nLooking at the documents provided, I should check which ones mention the 2012 Olympics and the light flyweight category. \n\nDoc 3 is about the 2012 Summer Olympics – Men's light flyweight. Let me check that. The infobox for Doc 3 shows:\n- event: Men's light flyweight boxing\n- games: 2012 Summer\n- gold: Zou Shiming\n- goldNOC: CHN\n\nSo in the 2012 Olympics, the gold medalist for men's light flyweight was Zou Shiming from China (CHN). \n\nWait, but let me double-check the other documents to make sure. Doc 5 is about the 2012 Summer Olympics – Men's flyweight, but the question is about light flyweight, so that's a different weight class. The user specified \"light flyweight\", so Doc 3 is the correct one.\n\nAlso, the question says \"immediately before 2016\", so 2012 is the one. The gold medalist in Doc 3 for light flyweight is Zou Shiming."
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-037",
+      "question": "According to the provided corpus, which shooting event at the 2008 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "The documents provided are Doc 1 (Athletics, Men's shot put), Doc 2 (Shooting, Men's 10m air rifle), Doc 3 (Shooting, Men's 25m rapid fire pistol), Doc 4 (Shooting, Women's 10m air rifle), and Doc 5 (Athletics, Women's shot put). So the shooting events here are three: Men's 10m air rifle (51 competitors), Men",
+      "gold_answer": [
+        "Shooting at the 2008 Summer Olympics – Men's 50 metre rifle prone"
+      ],
+      "retrieved_doc_ids": [
+        "Q848291",
+        "Q1005606",
+        "Q1005423",
+        "Q1204722",
+        "Q848278"
+      ],
+      "tokens_used": 1817,
+      "elapsed_sec": 83.9,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7795,
+        0.7785,
+        0.7771,
+        0.7735,
+        0.7698
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. So, the question is asking which shooting event at the 2008 Summer Olympics had the highest number of competitors, based solely on the provided documents. I need to look at the documents and find the shooting events mentioned there, check the number of competitors for each, and then pick the one with the highest count.\n\nFirst, let me go through each document to identify the shooting events and their competitor numbers.\n\nStarting with Doc 2: It's about \"Shooting at the 2008 Summer Olympics – Men's 10 metre air rifle\". The competitors field here is 51. So that's 51 competitors for this event.\n\nDoc 3: \"Shooting at the 2008 Summer Olympics – Men's 25 metre rapid fire pistol\". Competitors here are 19. So that's lower than 51.\n\nDoc 4: \"Shooting at the 2008 Summer Olympics – Women's 10 metre air rifle\". Competitors listed here are 47. So 47 is less than 51.\n\nWait, are there any other shooting events mentioned in the documents? Let me check again.\n\nThe documents provided are Doc 1 (Athletics, Men's shot put), Doc 2 (Shooting, Men's 10m air rifle), Doc 3 (Shooting, Men's 25m rapid fire pistol), Doc 4 (Shooting, Women's 10m air rifle), and Doc 5 (Athletics, Women's shot put). So the shooting events here are three: Men's 10m air rifle (51 competitors), Men"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-038",
+      "question": "Who won the gold medal in the event held at Sydney Convention and Exhibition Centre on 23 September 2000?",
+      "qtype": "multi_hop",
+      "predicted_answer": "- Doc 3: Wrestling – Men's freestyle 76 kg. Venue: Sydney Convention and Exhibition Centre. Date: 28–30 September 2000. So this event was",
+      "gold_answer": [
+        "Pyrros Dimas"
+      ],
+      "retrieved_doc_ids": [
+        "Q7500814",
+        "Q8037965",
+        "Q8037969",
+        "Q8037967",
+        "Q8037964"
+      ],
+      "tokens_used": 1737,
+      "elapsed_sec": 73.07,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.791,
+        0.7906,
+        0.7835,
+        0.7822,
+        0.78
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem step by step. The question is asking: \"Who won the gold medal in the event held at Sydney Convention and Exhibition Centre on 23 September 2000?\" \n\nFirst, I need to look through the provided documents to find which event was held at the Sydney Convention and Exhibition Centre on September 23, 2000. The documents are about different Olympic events from the 2000 Summer Olympics, specifically wrestling events.\n\nLet me check each document:\n\n- **Doc 1**: This is about Shooting at the 2000 Summer Olympics – Men's double trap. The venue is Sydney International Shooting Centre, not the Convention and Exhibition Centre. The date mentioned is 20 September 2000. So this isn't the event in question.\n\n- **Doc 2**: Wrestling – Men's freestyle 58 kg. Venue: Sydney Convention and Exhibition Centre. Date: 29 September – 1 October 2000. The event spans from 29th September to 1st October. So September 23rd is within this date range? Wait, September 23rd is before 29th. Hmm, the dates here might be a bit tricky. The document says \"29 September – 1 October 2000\", so the event started on the 29th. Therefore, September 23rd is not part of this event's dates.\n\n- **Doc 3**: Wrestling – Men's freestyle 76 kg. Venue: Sydney Convention and Exhibition Centre. Date: 28–30 September 2000. So this event was"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-039",
+      "question": "Who won the gold medal in the women's discus throw athletics event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Sandra Per",
+      "gold_answer": [
+        "Sandra Perković"
+      ],
+      "retrieved_doc_ids": [
+        "Q26234091",
+        "Q1771958",
+        "Q26234119",
+        "Q26234144",
+        "Q26234051"
+      ],
+      "tokens_used": 1718,
+      "elapsed_sec": 100.4,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8043,
+        0.7968,
+        0.7944,
+        0.7875,
+        0.786
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user is asking: \"Who won the gold medal in the women's discus throw athletics event at the Summer Olympics held immediately before 2016?\"\n\nFirst, I need to figure out which Olympics came right before 2016. The Summer Olympics in 2016 were held in Rio de Janeiro. The one immediately before that would be the 2012 Summer Olympics in London.\n\nNow, looking at the documents provided. The user has given four documents related to different events in the 2016 Olympics, but there's also Doc 2 which is about the 2012 Summer Olympics – Women's discus throw. Let me check that.\n\nDoc 2 says: [Doc 2 | Athletics at the 2012 Summer Olympics – Women's discus throw]. In the infobox, it lists the gold medalist as Sandra Perković with goldNOC: CRO. Wait, but hold on. In the 2012 Olympics, the gold medalist for women's discus throw was Sandra Perković? Let me verify.\n\nWait, the problem states to use ONLY the documents above. So I shouldn't rely on external knowledge. Let me check the documents again.\n\nIn Doc 1, which is the 2016 Olympics discus throw, the gold medalist is Sandra Perković (CRO). But the question is about the Olympics immediately before 2016, which is 2012.\n\nLooking at Doc 2: The 2012 Summer Olympics women's discus throw. The infobox shows:\n\ngold: Sandra Per"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-040",
+      "question": "Who won the gold medal in the individual normal hill/10 km nordic combined event at the Winter Olympics held immediately before 2014?",
+      "qtype": "temporal",
+      "predicted_answer": "Jason Lamy Chappuis",
+      "gold_answer": [
+        "Jason Lamy Chappuis"
+      ],
+      "retrieved_doc_ids": [
+        "Q15056068",
+        "Q613470",
+        "Q303268",
+        "Q15056067",
+        "Q578012"
+      ],
+      "tokens_used": 1973,
+      "elapsed_sec": 82.77,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8031,
+        0.8008,
+        0.7977,
+        0.796,
+        0.794
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the question is asking: \"Who won the gold medal in the individual normal hill/10 km nordic combined event at the Winter Olympics held immediately before 2014?\"\n\nFirst, I need to figure out which Winter Olympics was immediately before 2014. The 2014 Winter Olympics were in Sochi, Russia. The one before that would be the 2010 Winter Olympics in Vancouver, Canada.\n\nNow, looking at the documents provided, I need to find the gold medalist for the individual normal hill/10 km event at the 2010 Winter Olympics. Let me check each document.\n\nDoc 1 is about the 2014 Winter Olympics (individual normal hill/10 km), so that's not the one we need. Doc 2 is 2010 Winter Olympics but for individual large hill/10 km. Doc 3 is 2010 Winter Olympics for individual normal hill/10 km. That's the one we need.\n\nIn Doc 3, the infobox says: event: Men's individual normal hill/10 km, games: 2010 Winter, gold: Jason Lamy Chappuis, goldNOC: FRA. So the gold medalist for the 2010 Winter Olympics individual normal hill/10 km was Jason Lamy Chappuis from France.\n\nWait, but let me double-check the other documents to make sure. Doc 4 is 2014 large hill, so not relevant. Doc 5 is ski jumping, not Nordic combined.\n\nYes, Doc 3 is the correct one."
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-041",
+      "question": "Who won the gold medal in the event held at Mountain Bike Centre on 21 August at the 2016 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Nino Schurter. The answer should be Nino Schurter",
+      "gold_answer": [
+        "Nino Schurter"
+      ],
+      "retrieved_doc_ids": [
+        "Q25476845",
+        "Q25476835",
+        "Q26260943",
+        "Q24760634",
+        "Q938833"
+      ],
+      "tokens_used": 1852,
+      "elapsed_sec": 101.59,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7995,
+        0.7657,
+        0.7642,
+        0.7631,
+        0.7617
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the user is asking: \"Who won the gold medal in the event held at Mountain Bike Centre on 21 August at the 2016 Summer Olympics?\"\n\nFirst, I need to figure out which event was held at the Mountain Bike Centre on 21 August in 2016. Looking at the documents provided.\n\nStarting with Doc 1: It's titled \"Cycling at the 2016 Summer Olympics – Men's cross-country\". The infobox says the event is Men's cross-country cycling, games: 2016 Summer, venue: Mountain Bike Centre, date: 21 August. So that's the event on 21 August at Mountain Bike Centre. The gold medalist here is Nino Schurter from Switzerland (SUI).\n\nDoc 2 is Women's cross-country, which was on 20 August, so that's a different date. Doc 3 is Men's team pursuit at Rio Olympic Velodrome, date 11-12 August. Doc 4 is Men's individual road race on 6 August. Doc 5 is 2008 Olympics, so not relevant here.\n\nSo the event on 21 August at Mountain Bike Centre is Men's cross-country cycling. The gold medalist is Nino Schurter. The answer should be Nino Schurter.\n\nWait, let me double-check. The question says \"the event held at Mountain Bike Centre on 21 August\". Doc 1 clearly states that the Men's cross-country was on 21 August at Mountain Bike Centre. The gold is Nino Schurter. The other docs don't"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-042",
+      "question": "How many nations competed in Alpine skiing at the 1992 Winter Olympics – Men's giant slalom?",
+      "qtype": "lookup",
+      "predicted_answer": "47",
+      "gold_answer": [
+        "47"
+      ],
+      "retrieved_doc_ids": [
+        "Q1005805",
+        "Q1005804",
+        "Q1005641",
+        "Q1005808",
+        "Q1005286"
+      ],
+      "tokens_used": 2190,
+      "elapsed_sec": 81.59,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7974,
+        0.7567,
+        0.7511,
+        0.7507,
+        0.7503
+      ],
+      "raw_llm_output": "Okay, let's see. The question is asking how many nations competed in Alpine skiing at the 1992 Winter Olympics – Men's giant slalom.\n\nFirst, I need to check the documents provided. Let me go through each one.\n\nDoc 1 is about Alpine skiing at the 1992 Winter Olympics – Men's giant slalom. The infobox says \"nations: 47\". So that's the number. Wait, but let me make sure there's no confusion with other events.\n\nDoc 2 is 1988, so not relevant here. Doc 3 is Men's slalom in 1992, which is a different event. Doc 4 is 1994, so not relevant. Doc 5 is Men's combined in 1992, so different event.\n\nSo the answer should be 47. The document clearly states \"nations: 47\" for the Men's giant slalom in 1992 Winter Olympics. The other documents have different events or years, so they don't affect this answer. The question is specifically about Men's giant slalom in 1992, which is Doc 1. So the answer is 47.\n</think>\n\n47"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-043",
+      "question": "Who won the gold medal in the event held at Val-d'Isère on 16 February 1992?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Kjetil André Aamodt with goldNOC NOR (Norway)",
+      "gold_answer": [
+        "Kjetil André Aamodt"
+      ],
+      "retrieved_doc_ids": [
+        "Q1005286",
+        "Q1005805",
+        "Q1005331",
+        "Q1004961",
+        "Q1534918"
+      ],
+      "tokens_used": 2052,
+      "elapsed_sec": 133.23,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8164,
+        0.7969,
+        0.7882,
+        0.7879,
+        0.7838
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the event held at Val-d'Isère on 16 February 1992, using only the provided documents.\n\nFirst, I need to check which documents mention Val-d'Isère and the date 16 February 1992. Let me go through each document.\n\nDoc 1 is about Alpine skiing Men's combined at the 1992 Winter Olympics. The date here is February 10–11, 1992, so that's not 16th. The venue is Val d'Isère, but the date doesn't match.\n\nDoc 2 is Alpine skiing Men's giant slalom. The date here is February 18, 1992, so that's later than 16th. Venue is Val d'Isère, but date doesn't match.\n\nDoc 3 is Luge Men's singles at La Plagne, so venue is different (La Plagne), not Val-d'Isère. So probably not relevant.\n\nDoc 4 is Speed skating Men's 1500m. Venue is L'anneau de vitesse, which is different. Date is 16 February 1992, but venue isn't Val-d'Isère. So not this one.\n\nDoc 5 is Alpine skiing Men's super-G. Here, the venue is Val-d'Isère, and the date is 16 February 1992. Perfect match. The gold medalist here is Kjetil André Aamodt with goldNOC NOR (Norway). \n\nWait, the"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-044",
+      "question": "According to the provided corpus, which fencing event at the 2008 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "First, I'll go through each document one by one",
+      "gold_answer": [
+        "Fencing at the 2008 Summer Olympics – Men's épée"
+      ],
+      "retrieved_doc_ids": [
+        "Q2570052",
+        "Q2570149",
+        "Q2570158",
+        "Q3951952",
+        "Q2726788"
+      ],
+      "tokens_used": 1762,
+      "elapsed_sec": 95.15,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8058,
+        0.8,
+        0.7964,
+        0.7943,
+        0.7864
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. So, the question is asking which fencing event at the 2008 Summer Olympics had the highest number of competitors based on the provided documents. I need to look at each document and find the number of competitors for each event.\n\nFirst, I'll go through each document one by one.\n\nStarting with Doc 1: It's about Men's épée. The competitors field says 41000000. Wait, that seems way too high. Like, 41 million? But that can't be right because the total number of competitors in the Olympics is around 10,000 per event. Wait, maybe it's a typo. Let me check the original text. The document says \"competitors: 41000000\". Hmm, that's probably a mistake. In the description after the infobox, it says \"There were 41 competitors from 23 nations.\" Oh, so the \"41000000\" is likely a typo where the number was written as 41 followed by six zeros, but it should be 41. Because in the text it says \"41 competitors\". So maybe the actual number is 41. But the infobox says 41000000. Wait, that's confusing. Let me check again.\n\nIn Doc 1's infobox: \"competitors: 41000000\". But the text says \"There were 41 competitors from 23 nations.\" So the number here is 41. So the infobox probably has a typo with the number. So the actual"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-045",
+      "question": "According to the provided corpus, how many athletics events at the 2004 Summer Olympics had more than 41 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "The question is asking for events with more than",
+      "gold_answer": [
+        "20"
+      ],
+      "retrieved_doc_ids": [
+        "Q1439249",
+        "Q2463752",
+        "Q1408300",
+        "Q582514",
+        "Q599322"
+      ],
+      "tokens_used": 1820,
+      "elapsed_sec": 109.89,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.766,
+        0.7654,
+        0.7588,
+        0.7546,
+        0.7537
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking how many athletics events at the 2004 Summer Olympics had more than 41 competitors, based solely on the provided documents.\n\nFirst, I need to go through each document to find the athletics events mentioned and check the number of competitors for each. The documents are labeled as Doc 1 to Doc 5, but only some of them are about athletics events.\n\nLet me list out the documents:\n\n- Doc 1: Athletics at the 2004 Summer Olympics – Men's 110 metres hurdles\n- Doc 2: Athletics at the 2004 Summer Olympics – Men's 400 metres\n- Doc 3: Archery at the 2004 Summer Olympics – Men's team (this is archery, not athletics, so probably not relevant)\n- Doc 4: Athletics at the 2004 Summer Olympics – Men's decathlon\n- Doc 5: Swimming at the 2004 Summer Olympics – Men's 400 metre freestyle (this is swimming, not athletics)\n\nSo, the athletics events here are Doc 1, Doc 2, and Doc 4. Doc 3 is archery, Doc 5 is swimming, so they don't count for athletics.\n\nNow, for each athletics event, check the number of competitors:\n\n- Doc 1 (Men's 110m hurdles): competitors: 47\n- Doc 2 (Men's 400m): competitors: 62\n- Doc 4 (Men's decathlon): competitors: 39\n\nThe question is asking for events with more than"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-046",
+      "question": "How many nations competed in Cross-country skiing at the 2010 Winter Olympics – Men's 15 kilometre freestyle?",
+      "qtype": "lookup",
+      "predicted_answer": "50",
+      "gold_answer": [
+        "50"
+      ],
+      "retrieved_doc_ids": [
+        "Q384953",
+        "Q732985",
+        "Q905503",
+        "Q221335",
+        "Q303268"
+      ],
+      "tokens_used": 1735,
+      "elapsed_sec": 87.63,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7801,
+        0.7517,
+        0.7472,
+        0.7457,
+        0.7351
+      ],
+      "raw_llm_output": "Okay, let's see. The question is asking how many nations competed in Cross-country skiing at the 2010 Winter Olympics – Men's 15 kilometre freestyle.\n\nFirst, I need to check the documents provided. The user mentioned using only the documents above. Let me look through each document.\n\nDoc 1 is about Cross-country skiing at the 2010 Winter Olympics – Men's 15 kilometre freestyle. In the infobox section, it says \"nations: 50\". So that's the number of nations that competed in that event.\n\nWait, let me double-check. The infobox for Doc 1 has \"nations: 50\". The event is Men's 15 kilometre freestyle from 2010 Winter Olympics. The answer should be 50.\n\nLooking at the other documents: Doc 2 is about freestyle skiing (ski cross), Doc 3 is snowboarding, Doc 4 is 2006 Olympics cross-country, and Doc 5 is Nordic combined. So the relevant document here is Doc 1.\n\nYes, Doc 1's infobox states \"nations: 50\". So the answer is 50.\n</think>\n\n50"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-047",
+      "question": "How many nations competed in Athletics at the 1992 Summer Olympics – Men's 3000 metres steeplechase?",
+      "qtype": "lookup",
+      "predicted_answer": "24",
+      "gold_answer": [
+        "24"
+      ],
+      "retrieved_doc_ids": [
+        "Q1409048",
+        "Q2303535",
+        "Q1408876",
+        "Q3628765",
+        "Q1408856"
+      ],
+      "tokens_used": 1892,
+      "elapsed_sec": 77.29,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8248,
+        0.7773,
+        0.7753,
+        0.7747,
+        0.7737
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user is asking how many nations competed in the Athletics at the 1992 Summer Olympics – Men's 3000 metres steeplechase. I need to look through the provided documents to find the answer.\n\nFirst, I'll check each document to see which one mentions the 1992 Summer Olympics Men's 3000 metres steeplechase. \n\nLooking at Doc 1: It's titled \"Athletics at the 1992 Summer Olympics – Men's 3000 metres steeplechase\". The infobox here shows \"nations: 24\". That seems relevant. The document also mentions there were 32 competitors, but the question is about nations, so 24 is the number here.\n\nWait, let me double-check the other documents to make sure. Doc 2 is about the 400m hurdles, Doc 3 is 110m hurdles, Doc 4 is 2000 Olympics, and Doc 5 is 10,000m. So only Doc 1 is the correct one for the 1992 Men's 3000m steeplechase.\n\nIn Doc 1's infobox, under \"nations\", it says 24. The answer should be 24. The user wants the shortest possible answer, so just the number 24.\n</think>\n\n24"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-048",
+      "question": "Who won the gold medal in the men's 68 kg taekwondo event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Servet Tazegül",
+      "gold_answer": [
+        "Servet Tazegül"
+      ],
+      "retrieved_doc_ids": [
+        "Q1005685",
+        "Q7674779",
+        "Q3980076",
+        "Q2142977",
+        "Q26219850"
+      ],
+      "tokens_used": 1817,
+      "elapsed_sec": 381.57,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7929,
+        0.7877,
+        0.7866,
+        0.7824,
+        0.7739
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the men's 68 kg taekwondo event at the Summer Olympics held immediately before 2016. \n\nFirst, I need to figure out which Olympics came right before 2016. The Summer Olympics in 2016 was held in Rio, so the one before that would be 2012 in London. Wait, but the documents mention 2012 Summer Olympics in Doc 4. Let me check the documents.\n\nLooking at the documents:\n\n- Doc 1: 2008 Summer Olympics (Beijing)\n- Doc 2: 2000 Summer Olympics (Sydney)\n- Doc 3: 2004 Summer Olympics (Athens)\n- Doc 4: 2012 Summer Olympics (London)\n- Doc 5: 2016 Summer Olympics (Rio)\n\nThe question is about the Olympics immediately before 2016. So 2016 is the next one after 2012. So the one before 2016 is 2012. The event in question is men's 68 kg. \n\nIn Doc 4, which is the 2012 Summer Olympics, the gold medalist for men's 68 kg is listed as Servet Tazegül with NOC TUR (Turkey). Let me confirm the details.\n\nDoc 4 says: \ngold: Servet Tazegül\ngoldNOC: TUR\n\nYes, that's the 2012 event. The next Olympics after 20"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-049",
+      "question": "Who won the gold medal in the men's pursuit biathlon event at the Winter Olympics held immediately before 2022?",
+      "qtype": "temporal",
+      "predicted_answer": "The user wants to know who",
+      "gold_answer": [
+        "Martin Fourcade"
+      ],
+      "retrieved_doc_ids": [
+        "Q107861704",
+        "Q47155371",
+        "Q107802335",
+        "Q280553",
+        "Q225969"
+      ],
+      "tokens_used": 1792,
+      "elapsed_sec": 126.87,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8159,
+        0.7923,
+        0.7894,
+        0.7867,
+        0.7865
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the men's pursuit biathlon event at the Winter Olympics held immediately before 2022. \n\nFirst, I need to figure out which Olympics came right before 2022. The 2022 Winter Olympics were in Beijing, so the one before that would be the 2018 Winter Olympics. That's the key here—immediately before 2022 is 2018.\n\nNow, looking at the documents provided. Let me check each one to find the 2018 men's pursuit results. \n\nDoc 2 is about the 2018 Winter Olympics – Men's pursuit. The infobox shows that the gold medalist was Martin Fourcade from France (goldNOC: FRA). The summary mentions that the 2014 and 2018 champion, Martin Fourcade, won the event. So that's the answer.\n\nWait, let me double-check the other documents to make sure. Doc 1 is 2022, which is after 2018, so not relevant here. Doc 3 is 2022 men's individual, not pursuit. Doc 4 is 2002, which is too early. Doc 5 is 2010, so not the one before 2022. \n\nYes, the 2018 Olympics is the one immediately before 2022. The gold medalist there was Martin Fourcade. The answer should be Martin Fourcade.\n</think>\n\nMartin Fourcade"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-050",
+      "question": "Who won the gold medal in the event held at Adler Arena Skating Center on 11 February 2014?",
+      "qtype": "multi_hop",
+      "predicted_answer": "So the Adler Arena Skating Center hosted speed skating events. The Men's 500m was on",
+      "gold_answer": [
+        "Lee Sang-hwa"
+      ],
+      "retrieved_doc_ids": [
+        "Q15056225",
+        "Q15292539",
+        "Q15056222",
+        "Q15620701",
+        "Q15620726"
+      ],
+      "tokens_used": 1881,
+      "elapsed_sec": 88.7,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8094,
+        0.8081,
+        0.8048,
+        0.8006,
+        0.7999
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the question is: \"Who won the gold medal in the event held at Adler Arena Skating Center on 11 February 2014?\"\n\nFirst, I need to figure out which event was held at Adler Arena Skating Center on that date. Let me check the documents provided.\n\nLooking at the documents:\n\nDoc 1 is about Speed skating at the 2014 Winter Olympics – Men's 500 metres. The date here is 10 February 2014. So that's not 11 February.\n\nDoc 2 is Figure skating Men's singles, held on 13–14 February. Not 11.\n\nDoc 3 is Speed skating Men's 1500 metres, date is 15 February 2014. So that's after 11.\n\nDoc 4 is Ice dance, held on 16–17 February. Not 11.\n\nDoc 5 is Pair skating, dates are 11–12 February 2014. Wait, the venue here is Iceberg Skating Palace in Sochi, Russia. But the question is about Adler Arena Skating Center. Hmm.\n\nWait, the problem says \"event held at Adler Arena Skating Center on 11 February 2014\". Let me check each document's venue.\n\nDoc 1: Venue is Adler Arena Skating Center. Date: 10 Feb.\n\nDoc 3: Venue is Adler Arena Skating Center. Date: 15 Feb.\n\nSo the Adler Arena Skating Center hosted speed skating events. The Men's 500m was on"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-051",
+      "question": "According to the provided corpus, how many canoeing events at the 2012 Summer Olympics had more than 25 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "Doc 2: Men's K-",
+      "gold_answer": [
+        "6"
+      ],
+      "retrieved_doc_ids": [
+        "Q2352412",
+        "Q2648878",
+        "Q2352927",
+        "Q2494175",
+        "Q2390636"
+      ],
+      "tokens_used": 1879,
+      "elapsed_sec": 78.14,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7591,
+        0.7534,
+        0.7516,
+        0.7443,
+        0.7429
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking how many canoeing events at the 2012 Summer Olympics had more than 25 competitors, based solely on the provided documents.\n\nFirst, I need to go through each document and check the number of competitors for each event. The documents are labeled as Doc 1 to Doc 5, each describing a different canoeing event.\n\nStarting with Doc 1: Men's slalom K-1. The competitors field says 22. So that's 22 competitors, which is less than 25. So this event doesn't count.\n\nDoc 2: Men's K-1 1000m. Competitors: 22. Also less than 25. So no.\n\nDoc 3: Men's slalom C-2. Competitors: 28. That's more than 25. So this one counts.\n\nDoc 4: Men's C-2 1000m. Competitors: 24. 24 is less than 25. So doesn't count.\n\nDoc 5: Men's C-1 200m. Competitors: 25. Wait, the question says \"more than 25\". So 25 is not more than 25. So this event has exactly 25 competitors, so it doesn't count.\n\nWait, let me double-check each document's competitor numbers.\n\nDoc 1: [Doc 1 | Canoeing at the 2012 Summer Olympics – Men's slalom K-1] says competitors: 22. Correct.\n\nDoc 2: Men's K-"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-052",
+      "question": "How many nations competed in Biathlon at the 2022 Winter Olympics – Women's relay?",
+      "qtype": "lookup",
+      "predicted_answer": "20",
+      "gold_answer": [
+        "20"
+      ],
+      "retrieved_doc_ids": [
+        "Q107861706",
+        "Q1222092",
+        "Q107802331",
+        "Q107861710",
+        "Q15052025"
+      ],
+      "tokens_used": 1840,
+      "elapsed_sec": 68.5,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7982,
+        0.7931,
+        0.7786,
+        0.7756,
+        0.7693
+      ],
+      "raw_llm_output": "Okay, let's see. The question is asking how many nations competed in Biathlon at the 2022 Winter Olympics – Women's relay.\n\nFirst, I need to check the documents provided. Let me go through each one.\n\nLooking at Doc 1: It's about the 2022 Winter Olympics Women's relay. The infobox says \"nations: 20\". So that's 20 nations.\n\nWait, but let me make sure there's no confusion with other events. The question is specifically about the Women's relay in 2022. Doc 1 is the one for that event. The infobox lists \"nations: 20\". So the answer should be 20.\n\nLet me check the other documents quickly to confirm. Doc 2 is 2002, so not relevant. Doc 3 is Mixed relay 2022, which has 20 nations too but the question is about Women's relay. Doc 4 is Women's sprint 2022. Doc 5 is 2014. So only Doc 1 is relevant here.\n\nIn Doc 1, the \"nations\" field is listed as 20. So the answer is 20.\n</think>\n\n20"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-053",
+      "question": "According to the provided corpus, which shooting event at the 2016 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "First, I'll go through each document one by one",
+      "gold_answer": [
+        "Shooting at the 2016 Summer Olympics – Women's 10 metre air rifle"
+      ],
+      "retrieved_doc_ids": [
+        "Q26219824",
+        "Q25396733",
+        "Q26218171",
+        "Q25396697",
+        "Q26237421"
+      ],
+      "tokens_used": 1817,
+      "elapsed_sec": 223.69,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7777,
+        0.7738,
+        0.7737,
+        0.7723,
+        0.7688
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking which shooting event at the 2016 Summer Olympics had the highest number of competitors based on the provided documents. I need to look at each document and find the number of competitors for each shooting event.\n\nFirst, I'll go through each document one by one.\n\nStarting with Doc 1: Men's 25 metre rapid fire pistol. The competitors number here is 26. So that's 26 competitors.\n\nDoc 2: Men's 10 metre air pistol. Competitors listed as 46. So 46 here.\n\nDoc 3: Women's 10 metre air rifle. Competitors are 51. So 51.\n\nDoc 4: This is about Archery, not shooting. The question is about shooting events, so I can skip this one. The archery event is mentioned but it's not a shooting event. So probably not relevant here.\n\nDoc 5: Men's 50 metre pistol. Competitors are 41. So 41.\n\nSo the shooting events here are Doc 1, 2, 3, 5. Doc 4 is archery, so not part of shooting. The numbers are:\n\n- Men's 25m rapid fire pistol: 26\n- Men's 10m air pistol: 46\n- Women's 10m air rifle: 51\n- Men's 50m pistol: 41\n\nSo the highest number here is 51 for Women's 10m air rifle. Wait, but the question is about shooting events. Wait, the Women's 1"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-054",
+      "question": "How many nations competed in Marathon swimming at the 2016 Summer Olympics – Women's 10 kilometre?",
+      "qtype": "lookup",
+      "predicted_answer": "24",
+      "gold_answer": [
+        "24"
+      ],
+      "retrieved_doc_ids": [
+        "Q25991470",
+        "Q1064845",
+        "Q739527",
+        "Q25932055",
+        "Q2026292"
+      ],
+      "tokens_used": 1774,
+      "elapsed_sec": 66.02,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7857,
+        0.7827,
+        0.7745,
+        0.7559,
+        0.7547
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user is asking how many nations competed in the Women's 10 kilometre Marathon swimming at the 2016 Summer Olympics. I need to look at the documents provided and find the answer.\n\nFirst, I'll check Doc 1 because it's about the 2016 Summer Olympics Women's 10 km marathon swimming. The document says: \"nations: 24\". Wait, let me read that again. The infobox for Doc 1 lists \"nations: 24\". So that's the number of nations that competed in that event in 2016.\n\nLet me double-check the other documents to make sure I'm not confusing with another year. Doc 2 is for 2012, which has 25 nations. Doc 3 is 2008 with 23 nations. Doc 4 and 5 are about the 100m freestyle, not marathon swimming. So the answer should be 24.\n\nThe question specifies to use ONLY the documents above. Doc 1 clearly states \"nations: 24\" for the 2016 event. So the answer is 24.\n</think>\n\n24"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-055",
+      "question": "Who won the gold medal in the men's 80 kg taekwondo event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "The user wants to know who",
+      "gold_answer": [
+        "Sebastián Crismanich"
+      ],
+      "retrieved_doc_ids": [
+        "Q26219852",
+        "Q26219850",
+        "Q3980075",
+        "Q7674788",
+        "Q1005660"
+      ],
+      "tokens_used": 1838,
+      "elapsed_sec": 80.7,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8096,
+        0.8092,
+        0.8061,
+        0.799,
+        0.7961
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the men's 80 kg taekwondo event at the Summer Olympics held immediately before 2016. \n\nFirst, I need to figure out which Olympics came right before 2016. The 2016 Summer Olympics were in Rio, so the one before that would be 2012. Wait, but the documents mention 2004, 2008, 2012, 2016. Let me check the documents.\n\nLooking at the documents:\n\n- Doc 1 is 2016 Summer Olympics, Men's +80 kg.\n- Doc 2 is 2016 Summer Olympics, Men's 80 kg.\n- Doc 3 is 2004 Summer Olympics, Men's 80 kg.\n- Doc 4 is 2004 Summer Olympics, Men's +80 kg.\n- Doc 5 is 2008 Summer Olympics, Men's +80 kg.\n\nThe question is about the Olympics immediately before 2016. So 2016's predecessor is 2012. But wait, the documents don't have a 2012 entry. Hmm. Wait, the \"prev\" field in the infoboxes might indicate the previous Olympics. Let me check.\n\nIn Doc 1 (2016 Men's +80 kg), the \"prev\" is 2012. Similarly, Doc 2 (2016 Men's 80 kg) has \"prev: 201"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-056",
+      "question": "Who won the gold medal in the men's 30 kilometre pursuit cross-country skiing event at the Winter Olympics held immediately before 2010?",
+      "qtype": "temporal",
+      "predicted_answer": "Yevgeny Dementyev\" and \"goldNOC: RUS",
+      "gold_answer": [
+        "Yevgeny Dementyev"
+      ],
+      "retrieved_doc_ids": [
+        "Q848689",
+        "Q225969",
+        "Q824803",
+        "Q769542",
+        "Q916724"
+      ],
+      "tokens_used": 1856,
+      "elapsed_sec": 111.09,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7948,
+        0.7846,
+        0.7771,
+        0.7589,
+        0.756
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the men's 30 kilometre pursuit cross-country skiing event at the Winter Olympics held immediately before 2010. \n\nFirst, I need to figure out which Olympics came right before 2010. The 2010 Winter Olympics were in Vancouver, so the one before that would be the 2006 Winter Olympics. \n\nLooking at the documents provided, Doc 3 is about the 2006 Winter Olympics Men's 30 kilometre pursuit. In that document, the gold medalist is listed as Yevgeny Dementyev with the NOC RUS (Russia). The document states: \"gold: Yevgeny Dementyev\" and \"goldNOC: RUS\". \n\nI should check if there's any other document that might have information about the 2006 event. Doc 1 is about the 2010 event, so that's not relevant here. Doc 2 is biathlon, not cross-country skiing. Doc 4 is figure skating. Doc 5 is another cross-country event but for 2010. So Doc 3 is the correct one.\n\nThe question asks for the gold medalist in the event immediately before 2010, which is 2006. The answer from Doc 3 is Yevgeny Dementyev. \n\nWait, let me double-check the dates. The 2006 Winter Olympics were held in Turin, Italy, as mentioned in Doc 3. The next Olympics after 2006 would be 2"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-057",
+      "question": "Who won the gold medal in the women's 200 metres athletics event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "The user wants to know who",
+      "gold_answer": [
+        "Allyson Felix"
+      ],
+      "retrieved_doc_ids": [
+        "Q26219842",
+        "Q1798867",
+        "Q26219841",
+        "Q25932069",
+        "Q26219839"
+      ],
+      "tokens_used": 1875,
+      "elapsed_sec": 77.86,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.838,
+        0.8218,
+        0.8027,
+        0.8009,
+        0.8004
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the women's 200 metres athletics event at the Summer Olympics held immediately before 2016. \n\nFirst, I need to figure out which Olympics came right before 2016. The 2016 Summer Olympics were in Rio, so the one before that would be the 2012 Summer Olympics in London. \n\nLooking at the documents provided, Doc 2 is about the 2012 Summer Olympics – Women's 200 metres. In that document, the gold medalist is listed as Allyson Felix with her NOC as USA. Let me double-check the other documents to make sure.\n\nDoc 1 is 2016 Olympics, so that's after the one we need. Doc 3 is 2016 Women's 100m, Doc 4 is swimming, and Doc 5 is 2016 Women's 400m. So the only relevant document here is Doc 2 for the 2012 event.\n\nIn Doc 2, the infobox shows \"gold: Allyson Felix\" and \"goldNOC: USA\". The summary mentions that the event was in London, UK, on 6–8 August 2012. The question asks for the Olympics immediately before 2016, which is 2012. So the answer should be Allyson Felix.\n\nWait, just to be thorough, let me check if there's any other document that might have the 2012 results. The other docs are 2016 or swimming,"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-058",
+      "question": "According to the provided corpus, how many rowing events at the 1996 Summer Olympics had more than 39 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "- Doc 4: Men's",
+      "gold_answer": [
+        "5"
+      ],
+      "retrieved_doc_ids": [
+        "Q17515791",
+        "Q17515790",
+        "Q7400318",
+        "Q22964455",
+        "Q7372006"
+      ],
+      "tokens_used": 1822,
+      "elapsed_sec": 127.31,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7645,
+        0.7569,
+        0.7548,
+        0.7471,
+        0.7397
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking: \"According to the provided corpus, how many rowing events at the 1996 Summer Olympics had more than 39 competitors?\"\n\nFirst, I need to look through the documents provided to find all the rowing events from the 1996 Summer Olympics and check the number of competitors for each.\n\nLet me go through each document one by one.\n\nStarting with Doc 1: This is about \"Rowing at the 1996 Summer Olympics – Men's single sculls\". The competitors listed here are 21. So that's 21 competitors.\n\nDoc 2: \"Rowing at the 1996 Summer Olympics – Men's lightweight double sculls\". Competitors here are 38. So 38 competitors.\n\nDoc 3: This is about Sailing, not rowing. The question is about rowing events, so I can skip this one.\n\nDoc 4: \"Rowing at the 1996 Summer Olympics – Men's double sculls\". Competitors here are 39. So 39 competitors.\n\nDoc 5: This is about the 2000 Olympics, so not relevant for 1996.\n\nWait, the question is about rowing events at the 1996 Summer Olympics. So I need to check all rowing events from 1996. From the documents, the rowing events in 1996 are:\n\n- Doc 1: Men's single sculls (21 competitors)\n- Doc 2: Men's lightweight double sculls (38 competitors)\n- Doc 4: Men's"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-059",
+      "question": "Who won the gold medal in the women's sprint biathlon event at the Winter Olympics held immediately before 2022?",
+      "qtype": "temporal",
+      "predicted_answer": "her name. The user wants the shortest possible answer",
+      "gold_answer": [
+        "Laura Dahlmeier"
+      ],
+      "retrieved_doc_ids": [
+        "Q47091419",
+        "Q107861710",
+        "Q47155365",
+        "Q107861723",
+        "Q1222176"
+      ],
+      "tokens_used": 1860,
+      "elapsed_sec": 88.38,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8236,
+        0.8182,
+        0.8105,
+        0.8081,
+        0.8044
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the women's sprint biathlon event at the Winter Olympics held immediately before 2022. \n\nFirst, I need to figure out which Olympics were immediately before 2022. The Winter Olympics in 2022 were held in Beijing, so the one before that would be the 2018 Winter Olympics. That's the key here—immediately before 2022 is 2018.\n\nNow, looking at the documents provided. Let me check each one.\n\nDoc 1 is about the 2018 Winter Olympics Women's sprint. The infobox shows that the gold medalist was Laura Dahlmeier from GER (Germany). The date here is 10 February 2018, which matches the 2018 Winter Olympics. The next Olympics after 2018 would be 2022, so this is the one immediately before 2022.\n\nDoc 2 is for 2022, so that's the one after, not relevant here. Doc 3 is also 2018 but for the Women's pursuit event, so not the sprint. Doc 4 is 2022 Women's individual, so not relevant. Doc 5 is 2002, which is earlier.\n\nSo the answer should be Laura Dahlmeier. Let me double-check. The question says \"immediately before 2022\" so 2018. Doc 1's gold is Laura Dahlmeier. The answer is her name. The user wants the shortest possible answer,"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-060",
+      "question": "Who won the gold medal in the event held at ExCeL Exhibition Centre on 30 July at the 2012 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Doc 3: Table tennis at the 2012 Summer Olympics – Women's singles. The venue is ExCeL London, and the date is 28 July – 1 August. So this event ran from July 2",
+      "gold_answer": [
+        "Yana Shemyakina"
+      ],
+      "retrieved_doc_ids": [
+        "Q972253",
+        "Q2380135",
+        "Q2451718",
+        "Q2303578",
+        "Q2070058"
+      ],
+      "tokens_used": 1767,
+      "elapsed_sec": 106.47,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.794,
+        0.7822,
+        0.7814,
+        0.7808,
+        0.7801
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. So, the question is asking: \"Who won the gold medal in the event held at ExCeL Exhibition Centre on 30 July at the 2012 Summer Olympics?\" And I need to use only the provided documents to answer with the shortest possible answer.\n\nFirst, I need to check each document to see which event was held at ExCeL Exhibition Centre on 30 July 2012. Let me go through each document one by one.\n\nStarting with Doc 1: Taekwondo at the 2012 Summer Olympics – Women's 57 kg. The venue here is ExCeL Exhibition Centre, and the date mentioned is 9 August. So that's August 9th, not July 30th. So this event is on August 9, so not the one we need.\n\nDoc 2: Weightlifting at the 2012 Summer Olympics – Women's 63 kg. The venue here is ExCeL London, and the date is 31 July 2012. Wait, the date here is 31 July, but the question is about 30 July. Hmm. Wait, the document says \"date: 31 July 2012\". So this event was on the 31st, not the 30th. So maybe not this one either. But let me check the other docs.\n\nDoc 3: Table tennis at the 2012 Summer Olympics – Women's singles. The venue is ExCeL London, and the date is 28 July – 1 August. So this event ran from July 2"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-061",
+      "question": "How many nations competed in Boxing at the 1988 Summer Olympics – Light flyweight?",
+      "qtype": "lookup",
+      "predicted_answer": "34",
+      "gold_answer": [
+        "34"
+      ],
+      "retrieved_doc_ids": [
+        "Q10572416",
+        "Q10497007",
+        "Q10572462",
+        "Q10572432",
+        "Q10572421"
+      ],
+      "tokens_used": 1720,
+      "elapsed_sec": 79.39,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8397,
+        0.825,
+        0.8177,
+        0.8082,
+        0.8061
+      ],
+      "raw_llm_output": "Okay, let's see. The question is asking how many nations competed in Boxing at the 1988 Summer Olympics – Light flyweight.\n\nFirst, I need to find the relevant document. Looking at the documents provided, Doc 1 is about Light flyweight. Let me check that.\n\nIn Doc 1, the infobox says: \"nations: 34\". The description also mentions \"34 boxers from 34 nations competed.\" So that's a clear answer here.\n\nWait, the question is specifically about the number of nations for Light flyweight. The answer should be 34. Let me double-check the other documents to make sure I'm not mixing up the weight classes.\n\nDoc 2 is Flyweight, which has 44 nations. Doc 3 is Lightweight with 39 nations. Doc 4 is Light heavyweight with 26 nations. Doc 5 is Light middleweight with 36 nations. So only Doc 1 is Light flyweight, and it states 34 nations. The answer is 34.\n</think>\n\n34"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-062",
+      "question": "Who won the gold medal in the women's 10,000 metres athletics event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Tir",
+      "gold_answer": [
+        "Tirunesh Dibaba"
+      ],
+      "retrieved_doc_ids": [
+        "Q26233297",
+        "Q26219841",
+        "Q26219862",
+        "Q1799275",
+        "Q853049"
+      ],
+      "tokens_used": 1903,
+      "elapsed_sec": 159.46,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8359,
+        0.8131,
+        0.8072,
+        0.8035,
+        0.7966
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the women's 10,000 metres at the Summer Olympics immediately before 2016. So first, I need to figure out which Olympics came right before 2016. The 2016 Summer Olympics were held in Rio, so the one before that would be 2012.\n\nLooking at the documents provided, I see Doc 4 is about the 2012 Summer Olympics Women's 10,000 metres. Let me check that. In Doc 4, the gold medalist is listed as Tirunesh Dibaba with goldNOC: ETH. The event details say it was the 2012 Summer Olympics. \n\nWait, the question is asking for the Olympics immediately before 2016, which is 2012. So the answer should be Tirunesh Dibaba. Let me confirm the other documents to make sure. \n\nDoc 1 is 2016, Doc 2 is 100m, Doc 3 is 5000m, Doc 4 is 2012, Doc 5 is 2008. So yes, Doc 4 is the 2012 event. The gold medalist there is Tirunesh Dibaba. \n\nI should check if there's any other document that might have the 2012 result. The answer seems straightforward here. The user wants the shortest answer, so just the name. The gold medalist in 2012 was Tirunesh Dibaba. So the answer is Tir"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-063",
+      "question": "How many nations competed in Swimming at the 1988 Summer Olympics – Men's 200 metre freestyle?",
+      "qtype": "lookup",
+      "predicted_answer": "41",
+      "gold_answer": [
+        "41"
+      ],
+      "retrieved_doc_ids": [
+        "Q7656692",
+        "Q7656687",
+        "Q7656691",
+        "Q7656694",
+        "Q3879660"
+      ],
+      "tokens_used": 1765,
+      "elapsed_sec": 103.11,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7922,
+        0.7696,
+        0.7686,
+        0.7652,
+        0.7589
+      ],
+      "raw_llm_output": "Okay, let's see. The question is asking how many nations competed in the Men's 200 metre freestyle at the 1988 Summer Olympics.\n\nFirst, I need to check the documents provided. Let me go through each one.\n\nLooking at Doc 1, which is about the Men's 200 metre freestyle in 1988. The infobox says \"nations: 41\". The document also mentions \"There were 63 competitors from 41 nations\". So that's a clear answer here.\n\nWait, the other documents are about different events (backstroke, butterfly, individual medley) and the 1992 Olympics, so they don't matter for this question. The question is specifically about the 1988 Men's 200m freestyle.\n\nIn Doc 1, the infobox lists \"nations: 41\". The text also states \"There were 63 competitors from 41 nations\". So the answer should be 41.\n\nI need to make sure there's no conflicting info. The other docs don't mention the freestyle event for 1988, so Doc 1 is the right one. The answer is 41.\n</think>\n\n41"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-064",
+      "question": "Who won the gold medal in the event held at ANZ Stadium on 22 September 2000 (heats)25 September 2000 (final)?",
+      "qtype": "multi_hop",
+      "predicted_answer": "In Doc 2: \"The men's shot put event at the 2000 Summer Olympics as part of the athletics program was held at the Olympic Stadium on Friday, 22 September.\" Wait, the venue here is ANZ Stadium? Wait, the document says \"venue: ANZ Stadium\". Wait, the problem says \"ANZ Stadium\" in the question. So Doc 2's venue is ANZ Stadium. The date is 2",
+      "gold_answer": [
+        "Gabriela Szabo"
+      ],
+      "retrieved_doc_ids": [
+        "Q1432476",
+        "Q3628775",
+        "Q3628770",
+        "Q3628773",
+        "Q684586"
+      ],
+      "tokens_used": 1859,
+      "elapsed_sec": 113.67,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.778,
+        0.776,
+        0.7759,
+        0.774,
+        0.7718
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the user is asking which event was held at ANZ Stadium on 22 September 2000 (heats) and 25 September 2000 (final). Wait, the dates here are a bit confusing. Let me check the documents.\n\nFirst, looking at the documents provided. The question mentions ANZ Stadium and the dates: heats on 22 September, final on 25 September. Let me go through each document.\n\nDoc 1 is Men's 10,000m. The venue is Stadium Australia, dates 22 Sept (heats) 25 Sept (final). But the venue here is Stadium Australia, not ANZ Stadium. So probably not Doc 1.\n\nDoc 2 is Men's shot put. The venue is ANZ Stadium. The date is 22 September 2000 (qualification and finals). Wait, the question says \"heats\" on 22 September and \"final\" on 25 September. But in Doc 2, the shot put event was held on 22 September (qualification and finals). Hmm, the dates here might be a bit different. Let me check the details.\n\nIn Doc 2: \"The men's shot put event at the 2000 Summer Olympics as part of the athletics program was held at the Olympic Stadium on Friday, 22 September.\" Wait, the venue here is ANZ Stadium? Wait, the document says \"venue: ANZ Stadium\". Wait, the problem says \"ANZ Stadium\" in the question. So Doc 2's venue is ANZ Stadium. The date is 2"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-065",
+      "question": "According to the provided corpus, how many biathlon events at the 2014 Winter Olympics had more than 68 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "So the only 2014 event mentioned here is Doc 5, which is the Men's sprint. The competitors for that event are 87. The question is about events at the 2014 Winter Olympics. The corpus provided only has one event from 2014: the Men's sprint. The other events (like Women",
+      "gold_answer": [
+        "5"
+      ],
+      "retrieved_doc_ids": [
+        "Q1004928",
+        "Q1005044",
+        "Q1005047",
+        "Q1222186",
+        "Q14643126"
+      ],
+      "tokens_used": 2166,
+      "elapsed_sec": 151.41,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7581,
+        0.7568,
+        0.7537,
+        0.7508,
+        0.7475
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking: \"According to the provided corpus, how many biathlon events at the 2014 Winter Olympics had more than 68 competitors?\"\n\nFirst, I need to look through the documents provided to find information about the 2014 Winter Olympics biathlon events. The documents given are from 1994, 1998, and 2014. Let me check each one.\n\nStarting with Doc 5, which is about the 2014 Winter Olympics – Men's sprint. The document states: \"competitors: 87\". So that's one event with 87 competitors, which is more than 68.\n\nWait, but the question is about how many biathlon events at the 2014 Olympics had more than 68 competitors. The documents might list multiple events. Let me check if there are other events in 2014 mentioned.\n\nLooking at the documents:\n\n- Doc 1: 1994 Men's sprint\n- Doc 2: 1994 Men's individual\n- Doc 3: 1998 Men's individual\n- Doc 4: 1994 Women's sprint\n- Doc 5: 2014 Men's sprint\n\nSo the only 2014 event mentioned here is Doc 5, which is the Men's sprint. The competitors for that event are 87. The question is about events at the 2014 Winter Olympics. The corpus provided only has one event from 2014: the Men's sprint. The other events (like Women"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-066",
+      "question": "According to the provided corpus, which weightlifting event at the 1992 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "the",
+      "gold_answer": [
+        "Weightlifting at the 1992 Summer Olympics – Men's 75 kg"
+      ],
+      "retrieved_doc_ids": [
+        "Q7979967",
+        "Q7979974",
+        "Q7979978",
+        "Q7979969",
+        "Q7979968"
+      ],
+      "tokens_used": 1831,
+      "elapsed_sec": 131.81,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7992,
+        0.7971,
+        0.7965,
+        0.7955,
+        0.7923
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. So, the question is asking which weightlifting event at the 1992 Summer Olympics had the highest number of competitors based on the provided documents. I need to look at each document and check the \"competitors\" number for each event.\n\nFirst, I'll go through each document one by one.\n\nStarting with Doc 1: Men's +110 kg. The competitors field says 20. So that's 20 competitors.\n\nDoc 2: Men's 67.5 kg. Competitors: 18. So 18 here.\n\nDoc 3: Men's 90 kg. Competitors: 23. Hmm, 23 is higher than the previous ones.\n\nDoc 4: Men's 110 kg. Competitors: 24. Wait, 24 is higher than 23. Let me check again.\n\nDoc 5: Men's 100 kg. Competitors: 25. Oh, that's 25. So 25 is the highest here.\n\nWait, let me make sure I'm not missing any. Let me list them out:\n\n- Doc 1: 20 competitors\n- Doc 2: 18 competitors\n- Doc 3: 23 competitors\n- Doc 4: 24 competitors\n- Doc 5: 25 competitors\n\nSo the highest number here is 25, which is in Doc 5: Men's 100 kg. The answer should be Men's 100 kg.\n\nWait, but the question says \"which weightlifting event\". So the answer is the"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-067",
+      "question": "Who won the gold medal in the event held at North Greenwich Arena on 4 August at the 2012 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Doc 4: Equestrian Individual Jumping. Venue is Greenwich Park, dates 4–8 August. The document says \"The individual jumping in equestrian at the 2012 Olympic Games in London was held at Greenwich Park from 4 to 8 August.\" So the event here is held at Greenwich Park. Now, North Greenwich Arena is a specific venue within Greenwich",
+      "gold_answer": [
+        "Rosannagh MacLennan"
+      ],
+      "retrieved_doc_ids": [
+        "Q962650",
+        "Q1055931",
+        "Q1067796",
+        "Q8979743",
+        "Q2000988"
+      ],
+      "tokens_used": 1755,
+      "elapsed_sec": 121.56,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7727,
+        0.768,
+        0.7651,
+        0.7648,
+        0.762
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the user is asking: \"Who won the gold medal in the event held at North Greenwich Arena on 4 August at the 2012 Summer Olympics?\"\n\nFirst, I need to figure out which event was held at North Greenwich Arena on 4 August 2012. The documents provided are about different Olympic events from 2012. Let me go through each document.\n\nStarting with Doc 1: Equestrian Individual Dressage. The venue is Greenwich Park, dates are 2–9 August. But the event here is dressage, and the dates are from 2 to 9. However, the question specifies North Greenwich Arena on 4 August. Wait, Greenwich Park is the venue here, but is North Greenwich Arena part of that? Maybe the arena is in Greenwich Park? Hmm, but the question says \"North Greenwich Arena\" specifically. Let me check the other docs.\n\nDoc 2: Athletics Men's Long Jump. Venue is Olympic Stadium, dates 3–4 August. But the venue here is Olympic Stadium, not North Greenwich Arena. So probably not this one.\n\nDoc 3: Swimming Men's 1500m Freestyle. Venue is London Aquatics Centre, dates August 3-4. Not North Greenwich Arena.\n\nDoc 4: Equestrian Individual Jumping. Venue is Greenwich Park, dates 4–8 August. The document says \"The individual jumping in equestrian at the 2012 Olympic Games in London was held at Greenwich Park from 4 to 8 August.\" So the event here is held at Greenwich Park. Now, North Greenwich Arena is a specific venue within Greenwich"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-068",
+      "question": "How many nations competed in Cycling at the 2012 Summer Olympics – Women's cross-country?",
+      "qtype": "lookup",
+      "predicted_answer": "24",
+      "gold_answer": [
+        "24"
+      ],
+      "retrieved_doc_ids": [
+        "Q2269155",
+        "Q938805",
+        "Q843287",
+        "Q1064728",
+        "Q609985"
+      ],
+      "tokens_used": 1740,
+      "elapsed_sec": 95.85,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7946,
+        0.7732,
+        0.7679,
+        0.7669,
+        0.7603
+      ],
+      "raw_llm_output": "Okay, let's see. The question is asking how many nations competed in the Women's cross-country cycling event at the 2012 Summer Olympics.\n\nFirst, I need to check the documents provided. Let me look through each one.\n\nDoc 1 is about the 2012 Summer Olympics – Women's cross-country. In the infobox section, it says \"nations: 24\". So that's the number. The document also mentions that the event took place on August 11, 2012, at Hadleigh Farm, with 30 competitors from 24 nations.\n\nWait, the question is specifically about the number of nations. In Doc 1, under the infobox, it lists \"nations: 24\". So the answer should be 24.\n\nLet me double-check the other documents to make sure I'm not mixing up the years. Doc 2 is 2008, Doc 3 is 2012 Women's road race, Doc 4 is 2008 road race, Doc 5 is 2008 time trial. So only Doc 1 is the 2012 cross-country event. The answer is 24.\n</think>\n\n24"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-069",
+      "question": "According to the provided corpus, how many fencing events at the 2000 Summer Olympics had more than 39 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "- Doc",
+      "gold_answer": [
+        "3"
+      ],
+      "retrieved_doc_ids": [
+        "Q3951952",
+        "Q632472",
+        "Q632742",
+        "Q647742",
+        "Q647750"
+      ],
+      "tokens_used": 1789,
+      "elapsed_sec": 112.41,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.771,
+        0.7702,
+        0.7638,
+        0.7637,
+        0.7605
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem step by step. The question is asking: \"According to the provided corpus, how many fencing events at the 2000 Summer Olympics had more than 39 competitors?\"\n\nFirst, I need to look at the documents provided. The documents are about different fencing events at the 2000 Summer Olympics. Let me go through each document to find the number of competitors for each event.\n\nStarting with Doc 1: This is about the Men's foil at the 2004 Summer Olympics, so it's not relevant for the 2000 Olympics. We can skip this.\n\nDoc 2: Men's foil at 2000 Summer Olympics. The competitors here are 40. So that's 40 competitors.\n\nDoc 3: Men's épée at 2000. Competitors: 42.\n\nDoc 4: Men's sabre at 2000. Competitors: 39.\n\nDoc 5: Men's team foil at 2000. Competitors: 28.\n\nWait, the question is about how many fencing events at the 2000 Summer Olympics had more than 39 competitors. So we need to check each event's competitor count.\n\nLet me list out the events from the 2000 Olympics as per the docs:\n\n- Doc 2: Men's foil (2000) → 40 competitors\n- Doc 3: Men's épée (2000) → 42 competitors\n- Doc 4: Men's sabre (2000) → 39 competitors\n- Doc"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-070",
+      "question": "According to the provided corpus, how many speed skating events at the 2010 Winter Olympics had more than 36 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "Doc 5: Women's 1000m speed skating at 2010 Winter Olympics. Competitors here are 36. The document says \"competitors: 36\". So",
+      "gold_answer": [
+        "3"
+      ],
+      "retrieved_doc_ids": [
+        "Q587805",
+        "Q614894",
+        "Q848696",
+        "Q1004860",
+        "Q905540"
+      ],
+      "tokens_used": 2105,
+      "elapsed_sec": 141.93,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7433,
+        0.7414,
+        0.7358,
+        0.7329,
+        0.7325
+      ],
+      "raw_llm_output": "Okay, let's try to figure out this problem. The question is asking: According to the provided corpus, how many speed skating events at the 2010 Winter Olympics had more than 36 competitors?\n\nFirst, I need to look through the documents to find all the speed skating events from the 2010 Winter Olympics. The documents are labeled as Doc 1 to Doc 5. Let me check each one.\n\nStarting with Doc 1: It's about Men's 10,000 metres at the 2006 Winter Olympics. So that's 2006, not 2010. So probably not relevant here.\n\nDoc 2: Short-track speed skating Women's 1000m at 2010 Winter Olympics. The competitors here are listed as 32. The document says \"competitors: 32\". So 32 competitors, which is less than 36. So this event doesn't meet the criteria.\n\nDoc 3: Men's 1000m speed skating at 2010 Winter Olympics. The competitors here are 38. The document states \"competitors: 38\". So 38 is more than 36. So this event counts.\n\nDoc 4: Men's 1000m at 2006 Winter Olympics. Again, 2006, so not relevant for 2010.\n\nDoc 5: Women's 1000m speed skating at 2010 Winter Olympics. Competitors here are 36. The document says \"competitors: 36\". So"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-071",
+      "question": "How many nations competed in Biathlon at the 2018 Winter Olympics – Women's pursuit?",
+      "qtype": "lookup",
+      "predicted_answer": "24",
+      "gold_answer": [
+        "24"
+      ],
+      "retrieved_doc_ids": [
+        "Q47155365",
+        "Q14643199",
+        "Q107861714",
+        "Q915058",
+        "Q1221867"
+      ],
+      "tokens_used": 1769,
+      "elapsed_sec": 107.2,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8111,
+        0.8032,
+        0.7991,
+        0.7919,
+        0.7894
+      ],
+      "raw_llm_output": "Hmm, the user wants me to answer how many nations competed in the Biathlon at the 2018 Winter Olympics – Women's pursuit based solely on the provided documents. They want the shortest possible answer - just a name, number, or phrase without any explanation.\n\nLet me look through the documents carefully. I need to find the information about the 2018 Winter Olympics Women's pursuit biathlon.\n\nIn Doc 1, which is about the 2018 Winter Olympics Women's pursuit, I see this line: \"nations: 24\". That's the key piece of information. The document shows that 24 nations competed in this event.\n\nI should double-check if there's any conflicting information in other documents. Doc 2 is about 2014, Doc 3 is about 2022, and Doc 4 and 5 are about earlier Olympics. None of these mention the 2018 event's nation count. So Doc 1 is the only relevant document here.\n\nThe answer is clearly \"24\" based on the infobox in Doc 1. The user wants the shortest possible answer, so I shouldn't add any extra words or explanations. Just the number 24.\n\nI recall that in the infobox format, it's listed as \"nations: 24\" for the 2018 event. This matches what I need to answer the question directly.\n\nSo the shortest possible answer is just \"24\".\n</think>\n\n24"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-072",
+      "question": "Who won the gold medal in the women's 500 metres speed skating event at the Winter Olympics held immediately before 2014?",
+      "qtype": "temporal",
+      "predicted_answer": "Lee Sang-hwa",
+      "gold_answer": [
+        "Lee Sang-hwa"
+      ],
+      "retrieved_doc_ids": [
+        "Q15056224",
+        "Q848666",
+        "Q1222137",
+        "Q1222133",
+        "Q938779"
+      ],
+      "tokens_used": 1997,
+      "elapsed_sec": 107.9,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8326,
+        0.8157,
+        0.8094,
+        0.8038,
+        0.8011
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the women's 500 metres speed skating event at the Winter Olympics held immediately before 2014. \n\nFirst, I need to figure out which Winter Olympics came right before 2014. The 2014 Winter Olympics were in Sochi, so the one before that would be 2010. So the question is about the 2010 Winter Olympics women's 500m speed skating gold medalist.\n\nLooking at the documents provided. Let me check each doc.\n\nDoc 1 is about 2014 Winter Olympics (Sochi), so that's the event after the one we need. The question is about the one immediately before 2014, so 2010.\n\nDoc 2 is \"Speed skating at the 2010 Winter Olympics – Women's 500 metres\". In this doc, the infobox shows gold: Lee Sang-hwa, goldNOC: KOR. So according to Doc 2, Lee Sang-hwa won gold in 2010.\n\nWait, but I should check if there's any confusion between speed skating and short-track speed skating. The question says \"speed skating\", but some of the docs mention \"short-track speed skating\". Let me check the documents.\n\nDoc 2 is labeled as \"Speed skating at the 2010 Winter Olympics\", so that's the standard speed skating (not short track). The 2010 Olympics had the women's 500m speed skating event. The gold medalist there was Lee Sang-hwa from Korea"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-073",
+      "question": "Who won the gold medal in the event held at Sydney International Shooting Centre on 21 September 2000 (slow)22 September 2000 (fast)?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Doc 4: Men's 25m rapid fire pistol. Dates are 20-21 September 2000",
+      "gold_answer": [
+        "Yang Ling"
+      ],
+      "retrieved_doc_ids": [
+        "Q7500814",
+        "Q7500807",
+        "Q4443767",
+        "Q7500810",
+        "Q7500809"
+      ],
+      "tokens_used": 1789,
+      "elapsed_sec": 103.06,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8011,
+        0.782,
+        0.7798,
+        0.779,
+        0.7714
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the user is asking which event was held at the Sydney International Shooting Centre on 21 September 2000 (slow) and 22 September 2000 (fast), and who won the gold medal for that event.\n\nFirst, I need to look through the documents provided to find the event that matches the dates mentioned. The dates here are a bit specific: 21 September 2000 (slow) and 22 September 2000 (fast). The \"slow\" and \"fast\" probably refer to the two different sessions of the event, like slow runs and fast runs.\n\nLet me check each document:\n\nStarting with Doc 1: Men's double trap. The date here is 20 September 2000. So that's not matching the 21-22 dates.\n\nDoc 2: Men's 10 metre running target. The date listed here is 21 September 2000 (slow) and 22 September 2000 (fast). That's exactly the dates mentioned in the question. The venue is Sydney International Shooting Centre. The gold medalist here is Yang Ling from China (CHN). The document says: \"Yang Ling successfully defended his title, a tenth of a point ahead of Oleg Moldovan.\" So the gold medalist for this event is Yang Ling.\n\nDoc 3: Men's trap. Dates are 16-17 September 2000. Not matching.\n\nDoc 4: Men's 25m rapid fire pistol. Dates are 20-21 September 2000."
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-074",
+      "question": "How many nations competed in Cross-country skiing at the 2006 Winter Olympics – Women's 4 × 5 kilometre relay?",
+      "qtype": "lookup",
+      "predicted_answer": "17",
+      "gold_answer": [
+        "17"
+      ],
+      "retrieved_doc_ids": [
+        "Q827175",
+        "Q825048",
+        "Q823675",
+        "Q915092",
+        "Q1222066"
+      ],
+      "tokens_used": 1867,
+      "elapsed_sec": 142.06,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7846,
+        0.7655,
+        0.7606,
+        0.7551,
+        0.7512
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know how many nations competed in the Cross-country skiing at the 2006 Winter Olympics – Women's 4 × 5 kilometre relay. They specified to use only the provided documents and give the shortest answer.\n\nFirst, I need to check the documents to find the relevant information. Let me look through each document.\n\nStarting with Doc 1: It's about the Women's 4 × 5 kilometre relay from the 2006 Winter Olympics. The infobox section says \"nations: 17\". So that's 17 nations. The document also mentions the competition was held on 18 February 2006 in Pragelato. The competitors count is 68, but the question is about nations, so 17 seems key here.\n\nWait, let me check the other documents to make sure. Doc 2 is about the Women's sprint, not the relay. Doc 3 is snowboarding, so irrelevant. Doc 4 is biathlon, not cross-country skiing. Doc 5 is the 2002 event, which is previous, so not relevant here.\n\nSo Doc 1 clearly states \"nations: 17\" for the 2006 Women's 4 × 5 km relay cross-country skiing. The answer should be 17. The user wants the shortest answer, so just the number 17.\n\nI should confirm there's no conflicting info. The other documents don't mention the 2006 relay's nations count. So yes, 17 is correct.\n</think>\n\n17"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-075",
+      "question": "How many nations competed in Swimming at the 2000 Summer Olympics – Men's 1500 metre freestyle?",
+      "qtype": "lookup",
+      "predicted_answer": "32",
+      "gold_answer": [
+        "32"
+      ],
+      "retrieved_doc_ids": [
+        "Q3879590",
+        "Q1076288",
+        "Q875653",
+        "Q596094",
+        "Q3879604"
+      ],
+      "tokens_used": 1809,
+      "elapsed_sec": 117.03,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7731,
+        0.7666,
+        0.761,
+        0.7607,
+        0.7598
+      ],
+      "raw_llm_output": "Okay, let's see. The question is asking how many nations competed in the Swimming at the 2000 Summer Olympics – Men's 1500 metre freestyle event.\n\nFirst, I need to check the documents provided. Let me go through each one.\n\nLooking at Doc 1, which is about the Men's 1500 metre freestyle at the 2000 Summer Olympics. The infobox section says \"nations: 32\". So that's the number of nations for that event. The document also mentions competitors: 41. But the question is about nations, so 32.\n\nWait, let me check if there's any other document that might have conflicting info. Doc 4 is about 2008, so not relevant here. Doc 2 and 3 are other events (200m and 100m freestyle), so they don't apply. Doc 5 is the 50m freestyle, so also not relevant.\n\nSo the answer should be 32. The infobox in Doc 1 clearly states \"nations: 32\" for the Men's 1500m freestyle at the 2000 Olympics.\n</think>\n\n32"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-076",
+      "question": "Who won the gold medal in the event held at Sestriere on February 24, 2006?",
+      "qtype": "multi_hop",
+      "predicted_answer": "In Doc",
+      "gold_answer": [
+        "Julia Mancuso"
+      ],
+      "retrieved_doc_ids": [
+        "Q917747",
+        "Q823663",
+        "Q786799",
+        "Q1005740",
+        "Q847288"
+      ],
+      "tokens_used": 1808,
+      "elapsed_sec": 115.1,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7817,
+        0.7759,
+        0.7689,
+        0.7689,
+        0.7686
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user is asking: \"Who won the gold medal in the event held at Sestriere on February 24, 2006?\" \n\nFirst, I need to check the documents provided to find the event that was held at Sestriere on that date. Let me go through each document.\n\nStarting with Doc 1: It's about Alpine skiing at the 2006 Winter Olympics – Men's combined. The venue is Sestriere, and the date is February 14, 2006. Wait, the question says February 24, 2006. But Doc 1 mentions the date as February 14. Hmm, maybe there's a typo here? Wait, the user wrote February 24, but the documents might have different dates. Let me check the other docs.\n\nDoc 2 is Freestyle skiing – Men's moguls at Sauze d'Oulx on 15 February. Not Sestriere.\n\nDoc 3 is Speed skating at Oval Lingotto on 11 February. Not relevant.\n\nDoc 4 is Skeleton at Cesana Pariol on 17 February. Not Sestriere.\n\nDoc 5 is Biathlon at Cesana San Sicario on 18 February. Also not Sestriere.\n\nWait, the event in Doc 1 is held at Sestriere, but the date is February 14, 2006. The question says February 24. That's a problem. Wait, maybe the user made a typo? Or perhaps the actual date in the document is different. Let me re-read Doc 1.\n\nIn Doc"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-077",
+      "question": "Who won the gold medal in the event held at Xiaohaituo Bobsleigh and Luge TrackBeijing on 13, 14 February 2022?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Doc 5 is men's",
+      "gold_answer": [
+        "Kaillie Humphries"
+      ],
+      "retrieved_doc_ids": [
+        "Q110264101",
+        "Q110264143",
+        "Q110316264",
+        "Q110264107",
+        "Q110316174"
+      ],
+      "tokens_used": 1862,
+      "elapsed_sec": 110.16,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8034,
+        0.8001,
+        0.7949,
+        0.7937,
+        0.7832
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the user is asking: \"Who won the gold medal in the event held at Xiaohaituo Bobsleigh and Luge TrackBeijing on 13, 14 February 2022?\"\n\nFirst, I need to check the documents provided to find the correct answer. Let me go through each document.\n\nStarting with Doc 1: It's about Bobsleigh at the 2022 Winter Olympics – Two-man. The event dates here are 14, 15 February 2022. The venue is Xiaohaituo Bobsleigh and Luge Track in Beijing. The gold medalists are Francesco Friedrich and Thorsten Margis (GER). But the dates mentioned here are 14th and 15th February. The question says the event was held on 13, 14 February. Hmm, so maybe the dates in the question have a typo? Wait, the user wrote \"13, 14 February 2022\". But Doc 1 says the two-man competition was held on 14 and 15 February. So the dates here don't match the 13th.\n\nWait, maybe the user made a typo. Let me check the other documents.\n\nDoc 2 is the four-man bobsleigh, held on 19, 20 February. Not relevant here.\n\nDoc 3 is figure skating pair skating, held on 18-19 Feb. Not the same venue or dates.\n\nDoc 4 is two-woman bobsleigh on 18, 19 Feb. Also not matching.\n\nDoc 5 is men's"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-078",
+      "question": "According to the provided corpus, how many athletics events at the 1996 Summer Olympics had more than 49 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "- 106 > 49 →",
+      "gold_answer": [
+        "7"
+      ],
+      "retrieved_doc_ids": [
+        "Q26860",
+        "Q3628792",
+        "Q1426735",
+        "Q2303677",
+        "Q7400322"
+      ],
+      "tokens_used": 1810,
+      "elapsed_sec": 119.65,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7721,
+        0.7614,
+        0.7595,
+        0.7594,
+        0.7574
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking how many athletics events at the 1996 Summer Olympics had more than 49 competitors, based solely on the provided documents.\n\nFirst, I need to look at the documents to find all the athletics events from the 1996 Summer Olympics. The documents given are:\n\n- Doc 1: Men's 100 metres (1996)\n- Doc 2: Men's 110 metres hurdles (1996)\n- Doc 3: Women's 100 metres (1996)\n- Doc 4: Men's 100 metres (1992) – this is from the 1992 Olympics, so not relevant for 1996\n- Doc 5: Sailing at the 1996 Summer Olympics – Soling – but this is sailing, not athletics, so probably not counted here.\n\nSo, the athletics events in 1996 from the docs are Men's 100m, Men's 110m hurdles, and Women's 100m.\n\nNow, for each of these events, check the number of competitors (as per the docs):\n\n- Doc 1 (Men's 100m): competitors: 106\n- Doc 2 (Men's 110m hurdles): competitors: 62\n- Doc 3 (Women's 100m): competitors: 56\n\nThe question is asking how many of these athletics events had more than 49 competitors. Let's see:\n\n- 106 > 49 →"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-079",
+      "question": "Who won the gold medal in the event held at Centennial Parklands, Sydney on 26 September at the 2000 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Wait, Doc 1 says the venue is Centennial Parklands, Sydney, and the date is 27 September. The event is the Men",
+      "gold_answer": [
+        "Leontien Zijlaard"
+      ],
+      "retrieved_doc_ids": [
+        "Q3001459",
+        "Q7500814",
+        "Q7400329",
+        "Q8037965",
+        "Q8037969"
+      ],
+      "tokens_used": 1816,
+      "elapsed_sec": 153.28,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7817,
+        0.7814,
+        0.7786,
+        0.7781,
+        0.7735
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user is asking: \"Who won the gold medal in the event held at Centennial Parklands, Sydney on 26 September at the 2000 Summer Olympics?\"\n\nFirst, I need to check the documents provided to find which event was held at Centennial Parklands, Sydney on September 26, 2000.\n\nLooking at Doc 1: It's about Cycling at the 2000 Summer Olympics – Men's individual road race. The venue is Centennial Parklands, Sydney. The date mentioned here is 27 September. Wait, the question says 26 September, but the document says 27 September. Hmm, that's a bit confusing. Let me check again.\n\nThe document states: \"The men's individual road race at the 2000 Summer Olympics in Sydney, Australia, was held on Wednesday, 27 September 2000 (the second day of competition of the games)...\" So the event was on 27 September, not 26. The question says 26 September, but the actual date in the docs is 27. Maybe a typo in the question? Or perhaps the user meant 27th.\n\nBut the question specifies 26 September. Wait, the Olympics started on September 15, 2000, so the 26th would be a different day. Let me check the other documents to see if any event was on 26th at Centennial Parklands.\n\nWait, Doc 1 says the venue is Centennial Parklands, Sydney, and the date is 27 September. The event is the Men"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-080",
+      "question": "How many nations competed in Beach volleyball at the 2008 Summer Olympics – Women's tournament?",
+      "qtype": "lookup",
+      "predicted_answer": "17",
+      "gold_answer": [
+        "17"
+      ],
+      "retrieved_doc_ids": [
+        "Q977229",
+        "Q1065654",
+        "Q24995398",
+        "Q4471528",
+        "Q761318"
+      ],
+      "tokens_used": 1651,
+      "elapsed_sec": 102.16,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8216,
+        0.7749,
+        0.7602,
+        0.7598,
+        0.7249
+      ],
+      "raw_llm_output": "Okay, let's see. The question is asking how many nations competed in Beach volleyball at the 2008 Summer Olympics – Women's tournament.\n\nFirst, I need to check the documents provided. Let me go through each one.\n\nLooking at Doc 1: It's about the 2008 Summer Olympics Women's tournament. The infobox says \"nations: 17\". So that's a direct answer. Wait, but let me make sure.\n\nDoc 1 says: \"nations: 17\". The document also mentions the dates, competitors, etc. So the answer here is 17.\n\nWait, but let me check the other documents to confirm. The question is specifically about 2008 Women's tournament. Doc 2 is 2012, Doc 3 is 2016, Doc 4 is Men's 2008. So Doc 1 is the correct one.\n\nIn Doc 1, the infobox lists \"nations: 17\". So the answer should be 17.\n\nWait, but the user says to use ONLY the documents above. Let me check again.\n\nYes, Doc 1 says \"nations: 17\" for the Women's tournament in 2008. So the answer is 17.\n</think>\n\n17"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-081",
+      "question": "Who won the gold medal in the event held at Beijing Shooting Range Hall on August 10, 2008?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Pang Wei",
+      "gold_answer": [
+        "Guo Wenjun"
+      ],
+      "retrieved_doc_ids": [
+        "Q940196",
+        "Q1005606",
+        "Q1205250",
+        "Q1005423",
+        "Q1360895"
+      ],
+      "tokens_used": 1833,
+      "elapsed_sec": 127.43,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7962,
+        0.7956,
+        0.7956,
+        0.7897,
+        0.789
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the user is asking: \"Who won the gold medal in the event held at Beijing Shooting Range Hall on August 10, 2008?\" And they want the answer using only the provided documents, with the shortest possible answer.\n\nFirst, I need to check each document to see which event was held on August 10, 2008. Let me go through each document one by one.\n\nStarting with Doc 1: Men's 10m air pistol. The date here is August 9, 2008. So that's August 9th, not 10th. The gold medalist here is Pang Wei from China.\n\nDoc 2: Men's 10m air rifle. The date is August 11, 2008. So that's the 11th, not 10th.\n\nDoc 3: Men's 50m pistol. Date is August 12, 2008. So 12th.\n\nDoc 4: Men's 25m rapid fire pistol. The date here is August 15 and 16, 2008. So that's later.\n\nDoc 5: Women's 25m pistol. Date is August 13, 2008. So 13th.\n\nWait, the question is about August 10, 2008. But looking at all the dates in the documents, none of the events are listed as August 10. Let me check again.\n\nDoc 1: August 9, 2008.\n\nDoc"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-082",
+      "question": "According to the provided corpus, how many swimming events at the 1996 Summer Olympics had more than 42 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "- Doc 2",
+      "gold_answer": [
+        "12"
+      ],
+      "retrieved_doc_ids": [
+        "Q3879621",
+        "Q3879616",
+        "Q3879668",
+        "Q3879615",
+        "Q3879624"
+      ],
+      "tokens_used": 1816,
+      "elapsed_sec": 123.14,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7546,
+        0.7491,
+        0.7474,
+        0.7469,
+        0.7468
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking how many swimming events at the 1996 Summer Olympics had more than 42 competitors, based solely on the provided documents.\n\nFirst, I need to go through each document and check the number of competitors for each event listed. The documents are about different swimming events from the 1996 Summer Olympics.\n\nStarting with Doc 1: Men's 200m individual medley. The competitors listed here are 39. So that's less than 42.\n\nDoc 2: Men's 100m freestyle. Competitors here are 61. That's more than 42.\n\nDoc 3: Men's 50m freestyle from 1992 Olympics. Wait, the question is about 1996 Summer Olympics, so this event is from 1992, not 1996. So this document is for a different year, so we can ignore it for the count.\n\nDoc 4: Women's 100m freestyle in 1996. Competitors are 48. That's more than 42.\n\nDoc 5: Women's 200m breaststroke in 1996. Competitors are 42. The question says \"more than 42\", so 42 is not included here.\n\nSo, let's list the events from 1996 Summer Olympics (since the question is about 1996):\n\n- Doc 1: Men's 200m IM: 39 competitors (less than 42)\n- Doc 2:"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-083",
+      "question": "Who won the gold medal in the event held at Kvitfjell and Hafjell on February 20–21, 1994?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Pernilla Wiberg",
+      "gold_answer": [
+        "Pernilla Wiberg"
+      ],
+      "retrieved_doc_ids": [
+        "Q1005292",
+        "Q1222212",
+        "Q1005808",
+        "Q532360",
+        "Q1222529"
+      ],
+      "tokens_used": 2100,
+      "elapsed_sec": 131.4,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8257,
+        0.803,
+        0.7982,
+        0.7876,
+        0.7819
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user is asking: \"Who won the gold medal in the event held at Kvitfjell and Hafjell on February 20–21, 1994?\" And they want the shortest possible answer using only the provided documents.\n\nFirst, I need to figure out which event was held at Kvitfjell and Hafjell on February 20–21, 1994. Let me check the documents.\n\nLooking at Doc 1: It's about Men's combined Alpine skiing at the 1994 Winter Olympics. The venue is Kvitfjell and Hafjell, and the date is February 14 and 25, 1994. So that's not the date in question here (20–21).\n\nDoc 2: Women's combined Alpine skiing. The venue is Kvitfjell and Hafjell, and the date is February 20–21, 1994. That matches the date the question is asking about. The gold medalist here is Pernilla Wiberg from Sweden (SWE). \n\nDoc 3 is Men's giant slalom at Hafjell, but the date is February 23, so not relevant here.\n\nDoc 4 is speed skating, venue is Hamar Olympic Hall, so not Kvitfjell and Hafjell.\n\nDoc 5 is Women's slalom at Hafjell, but the date is February 26, so not matching.\n\nSo the event in question is the Women's combined Alpine skiing, held at Kvitf"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-084",
+      "question": "According to the provided corpus, which fencing event at the 1992 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "the name of the event with the",
+      "gold_answer": [
+        "Fencing at the 1992 Summer Olympics – Men's épée"
+      ],
+      "retrieved_doc_ids": [
+        "Q38594",
+        "Q38412",
+        "Q38599",
+        "Q38410",
+        "Q19819174"
+      ],
+      "tokens_used": 1803,
+      "elapsed_sec": 200.06,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7926,
+        0.7918,
+        0.7906,
+        0.7898,
+        0.7714
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. So, the question is asking which fencing event at the 1992 Summer Olympics had the highest number of competitors based on the provided documents. I need to look at each document and check the competitors numbers.\n\nFirst, I'll go through each document one by one.\n\nStarting with Doc 1: Men's épée. The competitors number here is 70. Nations are 30. So that's 70 fencers.\n\nDoc 2: Men's sabre. Competitors: 44. Nations: 19. So 44 is less than 70.\n\nDoc 3: Men's foil. Competitors: 59. Nations: 25. So 59 is less than 70.\n\nDoc 4: Women's foil. Competitors: 46. Nations: 19. So 46 is even less.\n\nWait, the question is about fencing events. The documents cover all the fencing events mentioned here: men's épée, men's sabre, men's foil, women's foil. The equestrian event (Doc 5) is not fencing, so we can ignore that.\n\nSo comparing the competitors numbers: Men's épée has 70, which is higher than the others. Men's foil has 59, men's sabre 44, women's foil 46. So the highest is men's épée with 70 competitors.\n\nWait, let me double-check. The problem says \"fencing event\". The documents list four fencing events here. The answer should be Men's épée. The answer is the name of the event with the"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-085",
+      "question": "According to the provided corpus, which sailing event at the 2008 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "First, I'll go through each document one by one",
+      "gold_answer": [
+        "Sailing at the 2008 Summer Olympics – Men's 470"
+      ],
+      "retrieved_doc_ids": [
+        "Q1001497",
+        "Q2564420",
+        "Q7400339",
+        "Q2558792",
+        "Q2341653"
+      ],
+      "tokens_used": 1839,
+      "elapsed_sec": 96.68,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7873,
+        0.7826,
+        0.7792,
+        0.7782,
+        0.7766
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. So, the question is asking which sailing event at the 2008 Summer Olympics had the highest number of competitors based on the provided documents. I need to look at each document and find the number of competitors for each event.\n\nFirst, I'll go through each document one by one.\n\nStarting with Doc 1: Sailing at the 2008 Summer Olympics – Finn. The competitors field says \"26\" sailors, on 26 boats, from 26 nations. So that's 26 competitors.\n\nDoc 2: Men's 470. Here it says \"58 sailors, on 29 boats, from 29 nations competed.\" So 58 competitors.\n\nDoc 3: This is about the 2004 Olympics, not 2008. The question is about 2008, so I can skip this one. The event is Mixed 49er in 2004, so not relevant here.\n\nDoc 4: Women's RS:X. It states \"27 sailors, on 27 boards, from 27 nations competed.\" So 27 competitors.\n\nDoc 5: Women's Laser Radial. Here it says \"28 sailors, on 28 boats, from 28 nations competed.\" So 28 competitors.\n\nWait, so the events in 2008 are Finn (26), Men's 470 (58), Women's RS:X (27), and Women's Laser Radial (28). The highest number here is 58 for the Men's 470.\n\nLet me"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-086",
+      "question": "Who won the gold medal in the event held at Richmond Olympic Oval on 17 February 2010?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Shani Davis\" and \"goldNOC: USA",
+      "gold_answer": [
+        "Shani Davis"
+      ],
+      "retrieved_doc_ids": [
+        "Q848696",
+        "Q841942",
+        "Q905540",
+        "Q782429",
+        "Q848666"
+      ],
+      "tokens_used": 2099,
+      "elapsed_sec": 146.58,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7793,
+        0.7759,
+        0.7744,
+        0.7667,
+        0.7664
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user is asking: \"Who won the gold medal in the event held at Richmond Olympic Oval on 17 February 2010?\" And they want the answer from the documents provided, with the shortest possible answer.\n\nFirst, I need to figure out which event was held at Richmond Olympic Oval on 17 February 2010. Let me check the documents.\n\nLooking at Doc 1: It's about Speed skating at the 2010 Winter Olympics – Men's 1000 metres. The date here is 17 February 2010. The venue is Richmond Olympic Oval. So that's the event on that date.\n\nThe gold medalist for Men's 1000 metres in Doc 1 is Shani Davis (goldNOC: USA). The document says: \"gold: Shani Davis\" and \"goldNOC: USA\".\n\nWait, but let me check the other documents to make sure there's no other event on that date. Doc 2 is Men's 500 metres on 15 Feb. Doc 3 is Women's 1000m on 18 Feb. Doc 4 is Men's 1500m on 20 Feb. Doc 5 is Women's 500m on 16 Feb. So only Doc 1 has the date 17 Feb 2010.\n\nSo the event on 17 Feb 2010 at Richmond Olympic Oval is Men's 1000m speed skating, and the gold medalist is Shani Davis.\n\nThe answer should be Shani Davis. Let"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-087",
+      "question": "According to the provided corpus, how many athletics events at the 1988 Summer Olympics had more than 41 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "Doc 4: \"competitors: 51",
+      "gold_answer": [
+        "17"
+      ],
+      "retrieved_doc_ids": [
+        "Q3628682",
+        "Q3628701",
+        "Q3628700",
+        "Q3628678",
+        "Q3628690"
+      ],
+      "tokens_used": 1928,
+      "elapsed_sec": 123.6,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7815,
+        0.7749,
+        0.7708,
+        0.7702,
+        0.7617
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking how many athletics events at the 1988 Summer Olympics had more than 41 competitors, based solely on the provided documents.\n\nFirst, I need to go through each document to find the number of competitors for each event. The documents are labeled as Doc 1 to Doc 5, each describing a different athletics event from the 1988 Olympics.\n\nStarting with Doc 1: Men's 110 metres hurdles. The competitors field is listed as 41. Wait, the document says \"competitors: 41\". So that's exactly 41, not more than 41. So this event doesn't count.\n\nDoc 2: Men's 50 kilometres walk. Competitors: 42. That's more than 41. So this one counts.\n\nDoc 3: Men's 20 kilometres walk. Competitors: 53. Definitely more than 41. Counts.\n\nDoc 4: Men's 10,000 metres. Competitors: 51. More than 41. Counts.\n\nDoc 5: Men's 5000 metres. Competitors: 56. More than 41. Counts.\n\nWait, let me check each document again to be precise.\n\nDoc 1: \"competitors: 41\" → 41, so not more than 41.\n\nDoc 2: \"competitors: 42\" → 42 >41 → yes.\n\nDoc 3: \"competitors: 53\" → yes.\n\nDoc 4: \"competitors: 51"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-088",
+      "question": "According to the provided corpus, which alpine skiing event at the 1992 Winter Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Doc 1: Men's giant slalom (131)",
+      "gold_answer": [
+        "Alpine skiing at the 1992 Winter Olympics – Men's giant slalom"
+      ],
+      "retrieved_doc_ids": [
+        "Q1005805",
+        "Q988347",
+        "Q1004927",
+        "Q1222526",
+        "Q988374"
+      ],
+      "tokens_used": 2112,
+      "elapsed_sec": 124.17,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7881,
+        0.7808,
+        0.7787,
+        0.7785,
+        0.7742
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking which alpine skiing event at the 1992 Winter Olympics had the highest number of competitors, based solely on the provided documents.\n\nFirst, I need to check all the documents to see which ones are about alpine skiing events from the 1992 Winter Olympics. Let me go through each document.\n\nStarting with Doc 1: It's titled \"Alpine skiing at the 1992 Winter Olympics – Men's giant slalom\". The document mentions competitors: 131. So that's a men's alpine event with 131 competitors.\n\nDoc 2 is about Ski jumping, not alpine skiing. So skip that.\n\nDoc 3 is Biathlon, which is a different sport. Not alpine.\n\nDoc 4 is \"Alpine skiing at the 1992 Winter Olympics – Women's slalom\". Here, competitors: 63. So women's slalom has 63 competitors.\n\nDoc 5 is Nordic combined, which is a different event (combines ski jumping and cross-country), so not alpine skiing.\n\nSo the alpine skiing events mentioned in the documents are:\n\n- Men's giant slalom (Doc 1): 131 competitors\n- Women's slalom (Doc 4): 63 competitors\n\nThe question is which alpine event had the highest number of competitors. Comparing 131 and 63, Men's giant slalom has more competitors.\n\nWait, but I need to make sure there are no other alpine events in the documents. Let me check again.\n\nDoc 1: Men's giant slalom (131)"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-089",
+      "question": "According to the provided corpus, how many boxing events at the 1988 Summer Olympics had more than 39 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "Wait, but the question",
+      "gold_answer": [
+        "5"
+      ],
+      "retrieved_doc_ids": [
+        "Q10572462",
+        "Q10572432",
+        "Q10684072",
+        "Q10426128",
+        "Q10572416"
+      ],
+      "tokens_used": 1843,
+      "elapsed_sec": 353.96,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7988,
+        0.7911,
+        0.7881,
+        0.787,
+        0.7867
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. So, the question is asking how many boxing events at the 1988 Summer Olympics had more than 39 competitors, based solely on the provided documents.\n\nFirst, I need to go through each document to find the number of competitors for each boxing event. The documents are labeled with different weight classes: Lightweight, Light heavyweight, Super heavyweight, Bantamweight, and Light flyweight.\n\nStarting with Doc 1: Lightweight. The competitors field says 39. So that's exactly 39, not more than 39.\n\nDoc 2: Light heavyweight. Competitors: 26. That's less than 39.\n\nDoc 3: Super heavyweight. Competitors: 17. Also less than 39.\n\nDoc 4: Bantamweight. Competitors: 48. That's more than 39.\n\nDoc 5: Light flyweight. Competitors: 34. Less than 39.\n\nWait, so only Bantamweight (Doc 4) has more than 39 competitors (48). Let me double-check each document.\n\nDoc 1: Lightweight has 39 competitors. So not more than 39.\n\nDoc 2: Light heavyweight has 26. No.\n\nDoc 3: Super heavyweight has 17. No.\n\nDoc 4: Bantamweight has 48. Yes, 48 >39.\n\nDoc 5: Light flyweight has 34. No.\n\nSo only one event (Bantamweight) had more than 39 competitors. The answer should be 1.\n\nWait, but the question"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-090",
+      "question": "Who won the gold medal in the men's greco-roman 96 kg wrestling event at the Summer Olympics held immediately before 2012?",
+      "qtype": "temporal",
+      "predicted_answer": "Hmm, the documents only mention 1996 and",
+      "gold_answer": [
+        "Aslanbek Khushtov"
+      ],
+      "retrieved_doc_ids": [
+        "Q8037916",
+        "Q8037922",
+        "Q8037927",
+        "Q2358254",
+        "Q8037914"
+      ],
+      "tokens_used": 1849,
+      "elapsed_sec": 79.25,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7811,
+        0.7738,
+        0.7727,
+        0.7725,
+        0.7687
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user is asking: \"Who won the gold medal in the men's greco-roman 96 kg wrestling event at the Summer Olympics held immediately before 2012?\"\n\nFirst, I need to figure out which Olympics were held immediately before 2012. The Summer Olympics in 2012 was the London Games. The one before that would be 2008 in Beijing. Wait, but looking at the documents provided, there's a Doc 4 which is about the 2012 Olympics. The question is about the event held immediately before 2012, so that's 2008.\n\nWait, but the user says \"the Summer Olympics held immediately before 2012\". So 2012's Olympics were in London, so the one before that is 2008 in Beijing. But the documents provided don't have a 2008 event for Greco-Roman 96 kg. Let me check the documents again.\n\nLooking at the documents:\n\nDoc 1: 1996 Summer Olympics - Men's Greco-Roman 48 kg\n\nDoc 2: 1996 Summer Olympics - Men's Greco-Roman 82 kg\n\nDoc 3: 1996 Summer Olympics - Men's freestyle 48 kg\n\nDoc 4: 2012 Summer Olympics - Men's Greco-Roman 96 kg\n\nDoc 5: 1996 Summer Olympics - Men's Greco-Roman 130 kg\n\nHmm, the documents only mention 1996 and"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-091",
+      "question": "How many nations competed in Wrestling at the 1992 Summer Olympics – Men's freestyle 100 kg?",
+      "qtype": "lookup",
+      "predicted_answer": "18",
+      "gold_answer": [
+        "18"
+      ],
+      "retrieved_doc_ids": [
+        "Q3498987",
+        "Q3499001",
+        "Q3498597",
+        "Q3499038",
+        "Q3498676"
+      ],
+      "tokens_used": 1876,
+      "elapsed_sec": 111.32,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.797,
+        0.7955,
+        0.7923,
+        0.7882,
+        0.7876
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know how many nations competed in Wrestling at the 1992 Summer Olympics – Men's freestyle 100 kg. I need to look at the documents provided and find the answer.\n\nFirst, I'll check each document to see which one mentions the 1992 Summer Olympics Men's freestyle 100 kg event. \n\nLooking at Doc 1: It's titled \"Wrestling at the 1992 Summer Olympics – Men's freestyle 100 kg\". The infobox section shows \"nations: 18\". So that's a direct answer here. The document states that there were 18 nations competing in that event.\n\nWait, but let me double-check the other documents to make sure. Doc 2 is about the 90 kg category, Doc 3 is 82 kg, Doc 4 is 68 kg, and Doc 5 is the 1988 Olympics event. So only Doc 1 is relevant here. \n\nIn Doc 1's infobox, under \"nations\", it says 18. The question is specifically about the 1992 Summer Olympics Men's freestyle 100 kg, so Doc 1 is the correct one. The answer should be 18.\n\nI should confirm there's no conflicting info. The other documents don't mention the 100 kg category for 1992, so no. The answer is 18.\n</think>\n\n18"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-092",
+      "question": "According to the provided corpus, how many shooting events at the 1992 Summer Olympics had more than 44 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "Doc 5: This is about \"Shooting at the 1992 Summer Olympics –",
+      "gold_answer": [
+        "6"
+      ],
+      "retrieved_doc_ids": [
+        "Q7500764",
+        "Q3628710",
+        "Q4786042",
+        "Q7500739",
+        "Q7500758"
+      ],
+      "tokens_used": 1838,
+      "elapsed_sec": 81.09,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7543,
+        0.7506,
+        0.7467,
+        0.7454,
+        0.7451
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem step by step. The question is asking: \"According to the provided corpus, how many shooting events at the 1992 Summer Olympics had more than 44 competitors?\"\n\nFirst, I need to look through the documents provided to find information about shooting events at the 1992 Summer Olympics and the number of competitors in each.\n\nLet me go through each document:\n\n**Doc 1**: This is about \"Shooting at the 1992 Summer Olympics – Men's 25 metre rapid fire pistol\". The document mentions that the men's ISSF 25 meter rapid fire pistol was one of the thirteen shooting events at the 1992 Summer Olympics. The competitors here are listed as 30. So this event had 30 competitors.\n\n**Doc 2**: This is about Athletics at the 1988 Summer Olympics – Men's javelin throw. But the question is about 1992 Summer Olympics shooting events, so this might not be relevant. The document mentions 1988 Olympics, so probably not part of the answer.\n\n**Doc 3**: This is about Archery at the 1992 Summer Olympics – Men's individual. But the question is about shooting events, not archery. So this is probably not relevant.\n\n**Doc 4**: This is about Shooting at the 1988 Summer Olympics – Men's 25 metre rapid fire pistol. Since it's 1988, not 1992, this might not be relevant for the question.\n\n**Doc 5**: This is about \"Shooting at the 1992 Summer Olympics –"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-093",
+      "question": "According to the provided corpus, how many biathlon events at the 2006 Winter Olympics had more than 72 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "So for 2006, the events listed are",
+      "gold_answer": [
+        "4"
+      ],
+      "retrieved_doc_ids": [
+        "Q846788",
+        "Q256529",
+        "Q1004918",
+        "Q1004924",
+        "Q847288"
+      ],
+      "tokens_used": 1791,
+      "elapsed_sec": 119.52,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7691,
+        0.7634,
+        0.7611,
+        0.7599,
+        0.7585
+      ],
+      "raw_llm_output": "Okay, let's tackle this problem. The question is asking how many biathlon events at the 2006 Winter Olympics had more than 72 competitors, based solely on the provided documents.\n\nFirst, I need to go through each document to find the number of competitors for each biathlon event in 2006. The documents are labeled with different events from the 2006 Winter Olympics.\n\nStarting with Doc 1: It's about the Men's individual biathlon. The competitors field is listed as 88. So that's 88 competitors. Since 88 is more than 72, this event counts.\n\nDoc 2: Men's mass start. Competitors: 30. That's less than 72, so doesn't count.\n\nDoc 3: This is from 2002 Winter Olympics, so it's not part of the 2006 events. The question is about 2006, so we can ignore this doc.\n\nDoc 4: Men's sprint in 2006. Competitors: 90. 90 is more than 72, so this counts.\n\nDoc 5: Men's pursuit in 2006. Competitors: 57. 57 is less than 72, so doesn't count.\n\nWait, let me check again. The question is about events at the 2006 Winter Olympics. So Doc 3 is 2002, so not relevant. The other docs (1,2,4,5) are 2006 events.\n\nSo for 2006, the events listed are:"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-094",
+      "question": "Who won the gold medal in the men's greco-roman 48 kg wrestling event at the Summer Olympics held immediately before 1996?",
+      "qtype": "temporal",
+      "predicted_answer": "Sim Kwon-ho (KOR) for 1996",
+      "gold_answer": [
+        "Oleg Kucherenko"
+      ],
+      "retrieved_doc_ids": [
+        "Q8037916",
+        "Q8037927",
+        "Q8037919",
+        "Q8037915",
+        "Q8037917"
+      ],
+      "tokens_used": 1855,
+      "elapsed_sec": 115.85,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8144,
+        0.8084,
+        0.7858,
+        0.7842,
+        0.7834
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user is asking: \"Who won the gold medal in the men's greco-roman 48 kg wrestling event at the Summer Olympics held immediately before 1996?\"\n\nFirst, I need to figure out which Olympics were held immediately before 1996. The Summer Olympics in 1996 were held in Atlanta, so the one before that would be 1992 in Barcelona. So the question is about the 1992 Olympics for the men's greco-roman 48 kg event.\n\nLooking at the documents provided, each document is about a different weight class in the 1996 Olympics. The key here is that the question is about the event held immediately before 1996, which is 1992. So I need to check if any of the documents mention the 1992 results for the 48 kg Greco-Roman.\n\nLet me check each document:\n\nDoc 1: Men's Greco-Roman 48 kg at 1996 Summer Olympics. The \"prev\" field says \"1992\". So this document mentions the previous Olympics (1992) but doesn't list the gold medalist from 1992. The gold medalist here is Sim Kwon-ho (KOR) for 1996.\n\nDoc 2: Men's freestyle 48 kg at 1996. Not relevant here.\n\nDoc 3: Greco-Roman 68 kg at 1996. Not relevant.\n\nDoc 4: Greco-Roman 52 kg at"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-095",
+      "question": "Who won the gold medal in the event held at Beijing National Stadium on 16 August 2008?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Usain Bolt from Jamaica with a time of 9.69 seconds",
+      "gold_answer": [
+        "Valerie Vili"
+      ],
+      "retrieved_doc_ids": [
+        "Q677027",
+        "Q762663",
+        "Q1005784",
+        "Q754844",
+        "Q656634"
+      ],
+      "tokens_used": 1876,
+      "elapsed_sec": 96.07,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7834,
+        0.783,
+        0.7734,
+        0.7706,
+        0.7704
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. So, the question is: \"Who won the gold medal in the event held at Beijing National Stadium on 16 August 2008?\"\n\nFirst, I need to figure out which event was held at Beijing National Stadium on 16 August 2008. Let me check the documents provided.\n\nLooking at Doc 4: Athletics at the 2008 Summer Olympics – Men's 100 metres. The dates here are listed as \"15 August (heats and quarterfinals), 16 August (semifinals and final)\". The venue is Beijing National Stadium. So the final for the Men's 100m was on 16 August 2008 at Beijing National Stadium.\n\nIn Doc 4, the gold medalist is Usain Bolt from Jamaica with a time of 9.69 seconds, which is a world record. The document says: \"The final was won by Jamaican Usain Bolt in a world record time of 9.69 seconds.\"\n\nSo the event on 16 August 2008 at Beijing National Stadium that had a final on that day is the Men's 100m. The gold medalist there was Usain Bolt.\n\nLet me check the other documents to make sure there's no other event on that date. Doc 1 is Men's 800m, which had heats on 20th, semi-finals on 21st, final on 23rd. So not 16th. Doc 2 is Gymnastics, held at Beijing National Indoor Stadium, dates 9-14 August. So"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-096",
+      "question": "Who won the gold medal in the event held at Riocentro – Pavilion 6 on 10–21 August 2016?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Fazliddin Gaibnazarov",
+      "gold_answer": [
+        "Fazliddin Gaibnazarov"
+      ],
+      "retrieved_doc_ids": [
+        "Q26212149",
+        "Q26212151",
+        "Q26389812",
+        "Q26242954",
+        "Q26218605"
+      ],
+      "tokens_used": 2102,
+      "elapsed_sec": 234.03,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.7804,
+        0.77,
+        0.7648,
+        0.7647,
+        0.7614
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the event held at Riocentro – Pavilion 6 on 10–21 August 2016, using only the provided documents.\n\nFirst, I need to find which event was held at Riocentro – Pavilion 6 between those dates. Let me check the documents.\n\nLooking at Doc 2: Boxing at the 2016 Summer Olympics – Men's light welterweight. The venue is Riocentro – Pavilion 6, and the dates are 10–21 August 2016. That matches the time frame and venue specified in the question. The gold medalist here is Fazliddin Gaibnazarov from Uzbekistan (UZB).\n\nWait, but there's also Doc 5 which is Women's middleweight boxing at the same venue (Riocentro – Pavilion 6) but the dates are 14–21 August 2016. The question specifies the event on 10–21 August, so the men's light welterweight (Doc 2) covers the full period from 10th to 21st. The women's middleweight starts on the 14th, so the main event here is the men's light welterweight boxing.\n\nThe gold medalist for Doc 2 is Fazliddin Gaibnazarov (goldNOC: UZB). The answer should be his name. Let me confirm the details again. The event in Doc 2 has the venue as Riocentro – Pavilion 6, dates 1"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-097",
+      "question": "Who won the gold medal in the women's épée fencing event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Yana Shemyakina",
+      "gold_answer": [
+        "Yana Shemyakina"
+      ],
+      "retrieved_doc_ids": [
+        "Q25386274",
+        "Q25384917",
+        "Q25386279",
+        "Q25386262",
+        "Q1156695"
+      ],
+      "tokens_used": 1872,
+      "elapsed_sec": 107.77,
+      "exact_match": 1,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8315,
+        0.8006,
+        0.7956,
+        0.787,
+        0.7866
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the women's épée fencing event at the Summer Olympics held immediately before 2016. \n\nFirst, I need to figure out which Olympics came right before 2016. The 2016 Summer Olympics were in Rio, so the one before that would be the 2012 Summer Olympics. The question says \"immediately before 2016,\" so that's 2012.\n\nLooking at the documents provided, Doc 5 is about the 2012 Summer Olympics – Women's épée. Let me check that document. \n\nIn Doc 5, the event details show:\n- event: Women's épée\n- games: 2012 Summer\n- ... \n- gold: Yana Shemyakina\n- goldNOC: UKR\n\nSo the gold medalist for women's épée in 2012 was Yana Shemyakina from Ukraine (NOC: UKR). \n\nI should make sure there's no confusion with other documents. Doc 1 is 2016 Women's épée, which has Emese Szász as gold. But the question is about the Olympics immediately before 2016, so 2012. \n\nThe answer should be Yana Shemyakina. Let me double-check the documents. Doc 5 clearly states \"gold: Yana Shemyakina\" for the 2012 event. The other documents are for 2016 or other events, so they don't apply here. \n\nYes, the answer is"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-098",
+      "question": "Who won the gold medal in the event held at Sydney Convention and Exhibition Centre on 18 September to 1 October 2000?",
+      "qtype": "multi_hop",
+      "predicted_answer": "The user wants to know who",
+      "gold_answer": [
+        "Bekzat Sattarkhanov"
+      ],
+      "retrieved_doc_ids": [
+        "Q7500814",
+        "Q8037965",
+        "Q8037967",
+        "Q8037964",
+        "Q8037969"
+      ],
+      "tokens_used": 1741,
+      "elapsed_sec": 116.07,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.799,
+        0.7954,
+        0.7896,
+        0.7894,
+        0.789
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the event held at Sydney Convention and Exhibition Centre on 18 September to 1 October 2000. Hmm, first I need to check the documents provided.\n\nLooking at the documents, there are several wrestling events listed. Let me go through each one.\n\nDoc 1 is about Shooting at the 2000 Summer Olympics – Men's double trap. The date mentioned there is 20 September 2000. But the venue is Sydney International Shooting Centre, not the Convention and Exhibition Centre. So that's probably not the event in question.\n\nDoc 2 is Wrestling – Men's freestyle 58 kg. The venue is Sydney Convention and Exhibition Centre, and the dates are 29 September – 1 October 2000. The gold medalist here is Alireza Dabir from IRI (Iran). But the dates here start on 29th September, not 18th September. Wait, the question says the event was held from 18 September to 1 October. Hmm, maybe the dates are a bit off here.\n\nDoc 3 is Men's freestyle 69 kg. Same venue and dates as Doc 2: 29 September – 1 October 2000. Gold is Daniel Igali from CAN (Canada). Again, dates don't match the 18th September start.\n\nDoc 4 is Men's freestyle 54 kg. Venue is Sydney Convention and Exhibition Centre, dates 28–30 September 2000. So that's a shorter period, ending on 3"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-099",
+      "question": "Who won the gold medal in the event held at Laura Biathlon & Ski Complex on 22 February 2014?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Hmm, so all the events listed in the documents are on dates before 22 February. The next day after 17 Feb would be 18, 19, etc. But the documents don",
+      "gold_answer": [
+        "Erik LesserDaniel BöhmArnd PeifferSimon Schempp"
+      ],
+      "retrieved_doc_ids": [
+        "Q15021060",
+        "Q15052019",
+        "Q15055031",
+        "Q14643199",
+        "Q15052022"
+      ],
+      "tokens_used": 1982,
+      "elapsed_sec": 131.1,
+      "exact_match": 0,
+      "contains_gold": 0,
+      "gold_in_pred": 0,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.8164,
+        0.8161,
+        0.8086,
+        0.7994,
+        0.7992
+      ],
+      "raw_llm_output": "Okay, let's try to figure out who won the gold medal in the event held at Laura Biathlon & Ski Complex on 22 February 2014. Hmm, first I need to check the documents provided to see which event was on that date.\n\nLooking at the documents:\n\nDoc 1 is Men's individual Biathlon at 2014 Winter Olympics. The date here is 13 February 2014.\n\nDoc 2 is Women's individual Biathlon. Date is 14 February 2014.\n\nDoc 3 is Women's 15 km skiathlon cross-country skiing. Date is 8 February 2014.\n\nDoc 4 is Women's pursuit Biathlon. Date is 11 February 2014.\n\nDoc 5 is Women's mass start Biathlon. Date is 17 February 2014.\n\nWait, the question is about 22 February 2014. None of the documents mention an event on that date. Let me check again.\n\nWait, the problem says \"Using ONLY the documents above\". Let me re-read each document's dates.\n\nDoc 1: 13 Feb 2014\n\nDoc 2: 14 Feb 2014\n\nDoc 3: 8 Feb 2014\n\nDoc 4: 11 Feb 2014\n\nDoc 5: 17 Feb 2014\n\nHmm, so all the events listed in the documents are on dates before 22 February. The next day after 17 Feb would be 18, 19, etc. But the documents don"
+    },
+    {
+      "pipeline": "RAG",
+      "qid": "pub-100",
+      "question": "Who won the gold medal in the women's 200 metre backstroke swimming event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Missy Franklin\" and \"goldNOC: USA",
+      "gold_answer": [
+        "Missy Franklin"
+      ],
+      "retrieved_doc_ids": [
+        "Q25932666",
+        "Q2051400",
+        "Q25932069",
+        "Q26237636",
+        "Q25991462"
+      ],
+      "tokens_used": 1899,
+      "elapsed_sec": 110.4,
+      "exact_match": 0,
+      "contains_gold": 1,
+      "gold_in_pred": 1,
+      "top_k": 5,
+      "retrieval_scores": [
+        0.836,
+        0.8212,
+        0.8136,
+        0.8118,
+        0.8107
+      ],
+      "raw_llm_output": "Okay, let's tackle this question. The user wants to know who won the gold medal in the women's 200m backstroke at the Summer Olympics held immediately before 2016. \n\nFirst, I need to figure out which Olympics came right before 2016. The 2016 Summer Olympics were in Rio, so the one before that would be the 2012 Summer Olympics in London. \n\nLooking at the documents provided, Doc 2 is about the 2012 Summer Olympics – Women's 200m backstroke. In that document, the gold medalist is listed as Missy Franklin with her NOC being USA. The document states: \"gold: Missy Franklin\" and \"goldNOC: USA\". \n\nI should check if there's any other document that might have information about the 2012 event. Doc 1 is 2016, Doc 2 is 2012, Doc 3 is 2016 freestyle, Doc 4 is 2016 medley, Doc 5 is 2016 breaststroke. So only Doc 2 covers the 2012 event. \n\nThe question asks for the Olympics immediately before 2016, which is 2012. The gold medalist in the women's 200m backstroke at the 2012 Olympics was Missy Franklin. \n\nWait, let me double-check the dates. The 2012 Olympics were held in London, and the next one after that is 2016. So yes, 2012 is"
+    }
+  ]
+}
