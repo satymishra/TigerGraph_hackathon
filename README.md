@@ -64,7 +64,7 @@ The agent evaluates evidence at each step and decides what to do next — it is 
 | Pipeline | Exact Match | Contains Gold | Avg LLM Tokens |
 |---|---|---|---|
 | RAG (baseline) | 29% | 43% | ~1,856/q |
-| GraphRAG | **85%** | **85%** | **0** |
+| GraphRAG | **90%** | **90%** | **0** |
 | Agentic GraphRAG | **84%** | **84%** | ~0/q |
 
 ### By Question Type
@@ -75,8 +75,8 @@ The agent evaluates evidence at each step and decides what to do next — it is 
 | lookup | 19 | 89.5% | 100% | 100% |
 | superlative | 10 | 0% | 90.0% | 90.0% |
 | temporal | 22 | 40.9% | 100% | 95.5% |
-| multi_hop | 28 | 10.7% | 53.6% | 53.6% |
-| **Overall** | **100** | **29%** | **85%** | **84%** |
+| multi_hop | 28 | 10.7% | 71.4% | 53.6% |
+| **Overall** | **100** | **29%** | **90%** | **84%** |
 
 RAG completely fails on aggregation and superlative — these require counting or ranking across the entire corpus, which top-5 retrieval cannot do. GraphRAG handles both perfectly because the graph stores structured counts per event. The only category where RAG is competitive is lookup (89.5%) — single-fact questions where the answer is likely in the top retrieved document.
 
