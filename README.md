@@ -2,60 +2,7 @@
 
 Built for the TigerGraph Agentic GraphRAG Hackathon, September 2026.
 
----
-
-## What We Built
-
-A system that answers questions about Olympic events using three different retrieval architectures — RAG, GraphRAG, and Agentic GraphRAG — benchmarked head-to-head on 100 evaluation questions, with a full web interface that lets you run live queries and watch each pipeline work in real time.
-
-The core question this project answers: **does graph-based retrieval actually beat vector search, and by how much?**
-
-The short answer: yes, dramatically. GraphRAG achieves 85% exact match with zero LLM calls. RAG achieves 29% while spending ~1,856 tokens per question.
-
----
-
-## The Three Pipelines
-
-### RAG — the baseline
-
-Vector similarity search over 2,951 Wikipedia articles. Embeds the question with `nomic-embed-text`, retrieves the top 5 most similar documents, passes them to `qwen3:4b`, and generates an answer. This is the standard approach most teams use.
-
-Its weakness: aggregation questions need counts across 20+ events, but RAG only sees 5 documents. It gets 0% on aggregation and 0% on superlative questions.
-
-### GraphRAG — structured traversal, no LLM
-
-Instead of searching documents, GraphRAG queries a TigerGraph knowledge graph directly.
-
-```
-Question
-  -> extract entities (year, season, sport, venue, date, threshold)
-  -> TigerGraph REST++ vertex filter
-  -> edge traversal (PREV/NEXT_EDITION for temporal, HELD_AT for multi-hop)
-  -> read structured attribute (gold medalist, competitor count, nation count)
-  -> return answer directly
-```
-
-No LLM involved. The graph encodes exactly what the questions ask about, so traversal replaces both retrieval and reasoning. Aggregation becomes a filter + count. Temporal questions become a two-hop edge traversal. Lookup is an exact attribute read.
-
-Result: 85% exact match, 0 tokens, sub-second latency on most question types.
-
-### Agentic GraphRAG — adaptive multi-step reasoning
-
-An LLM plans the investigation, then executes it step by step using a set of graph and vector tools.
-
-```
-Question
-  -> qwen3:4b produces a structured plan (year, season, sport, direction, threshold...)
-  -> regex enrichment fills any plan fields the LLM missed
-  -> adaptive tool execution:
-       graph_filter, count_results, sort_results, follow_edge,
-       infobox_lookup, venue_date_filter, vector_search
-  -> synthesize answer from evidence chain
-  -> if answer missing: retry with vector-augmented graph search
-  -> if still missing: pure vector fallback
-```
-
-The agent evaluates evidence at each step and decides what to do next — it is not a fixed pipeline. It matches GraphRAG at 84% while handling edge cases that pure graph traversal misses.
+A system that answers questions about Olympic events using three different retrieval architectures — RAG, GraphRAG, and Agentic GraphRAG — benchmarked head-to-head on 100 evaluation questions, with a full web interface that lets you run live queries and watch each pipeline reason through the answer in real time.
 
 ---
 
@@ -78,13 +25,54 @@ The agent evaluates evidence at each step and decides what to do next — it is 
 | multi_hop | 28 | 10.7% | 71.4% | 53.6% |
 | **Overall** | **100** | **29%** | **90%** | **84%** |
 
-RAG completely fails on aggregation and superlative — these require counting or ranking across the entire corpus, which top-5 retrieval cannot do. GraphRAG handles both perfectly because the graph stores structured counts per event. The only category where RAG is competitive is lookup (89.5%) — single-fact questions where the answer is likely in the top retrieved document.
+![Dashboard showing benchmark results across all three pipelines](images/Dashboard.png)
+
+GraphRAG achieves 90% exact match with zero LLM tokens. RAG scores zero on aggregation and superlative questions because top-5 retrieval can never count or rank across the full corpus — the graph can, instantly, across all 2,187 events.
+
+---
+
+## The Three Pipelines
+
+### RAG — the baseline
+
+Vector similarity search over 2,951 Wikipedia articles. Embeds the question with `nomic-embed-text`, retrieves the top 5 most similar documents, passes them to `qwen3:4b`, and generates an answer. Works for simple lookups. Fails completely on any question that requires counting, ranking, or reasoning across more than 5 documents.
+
+### GraphRAG — structured traversal, no LLM
+
+```
+Question
+  -> extract entities (year, season, sport, venue, date, threshold)
+  -> TigerGraph REST++ vertex filter
+  -> edge traversal (PREV/NEXT_EDITION for temporal, HELD_AT for multi-hop)
+  -> read structured attribute (gold medalist, competitor count, nation count)
+  -> return answer directly
+```
+
+No LLM involved. The graph encodes exactly what the questions ask about, so traversal replaces both retrieval and reasoning. Aggregation is a filter + count. Temporal questions are a two-hop edge traversal. Lookup is a direct attribute read. Result: 90% exact match, 0 tokens, most queries answered in under one second.
+
+### Agentic GraphRAG — adaptive multi-step reasoning
+
+```
+Question
+  -> qwen3:4b produces a structured plan (year, season, sport, direction, threshold...)
+  -> regex enrichment fills any plan fields the LLM missed
+  -> adaptive tool execution:
+       graph_filter, count_results, sort_results, follow_edge,
+       infobox_lookup, venue_date_filter, vector_search
+  -> answer synthesized from evidence chain
+  -> if answer missing: retry with vector-augmented graph search
+  -> if still missing: pure vector fallback
+```
+
+The agent evaluates evidence at each step and decides what to do next — not a fixed pipeline. It handles edge cases that pure graph traversal misses, at the cost of higher latency.
 
 ---
 
 ## The Knowledge Graph
 
 Hosted on TigerGraph Savanna 4.2.5, graph name: `OlympicsGraph`.
+
+![Architecture page showing TigerGraph schema and pipeline comparison](images/Architecture.png)
 
 **Vertices**
 
@@ -108,35 +96,41 @@ The PREV/NEXT_EDITION edges are what make temporal questions trivial. "Who won g
 
 ## The Web Interface
 
-A React + Vite frontend with five pages, all powered by a live FastAPI backend connected to TigerGraph.
+A React + Vite frontend with five pages, powered by a live FastAPI backend connected to TigerGraph.
 
 ### Dashboard
 
-Benchmark overview. Shows exact match accuracy for all three pipelines with a live bar chart, accuracy breakdown by question type, and a side-by-side stat summary. Numbers pull from the actual results JSON — nothing hardcoded.
+Benchmark overview showing exact match accuracy for all three pipelines, a per-question-type bar chart, a capability radar, and a detailed breakdown table. All numbers come from the actual results JSON — nothing hardcoded.
 
 ### Questions Explorer
 
-Browse all 100 benchmark questions. Each question shows the gold answer and the predicted answer from all three pipelines side by side, with a pass/fail indicator. Filter by question type or pipeline accuracy.
+Browse all 100 benchmark questions with the gold answer and predicted answers from all three pipelines side by side, with pass/fail indicators per question per pipeline.
 
 ### Live Query
 
-Ask any Olympic question and watch the answer get computed in real time. Three pipeline tabs — switch between GraphRAG, Agentic, and RAG.
+Ask any Olympic question and watch the answer computed in real time.
 
-For GraphRAG: a full Cytoscape.js graph animation plays showing the traversal path. Signal dots travel along edges, traversed nodes light up in cyan, and the answer node turns gold at the end. After the animation, a collapsible Graph Query Trace panel shows every REST++ operation that ran — SOURCE, FILTER, EDGE, INFOBOX, RETURN — with the actual endpoint called.
+![Live Query showing the actual TigerGraph graph traversal with answer nodes highlighted in gold](images/Live%20Graph.png)
 
-For Agentic: a step-by-step tool call trace animates as the agent runs — each tool call appears with its input, output, and a status indicator.
+For GraphRAG: the visualization above shows the actual TigerGraph knowledge graph loaded live from Savanna — real vertices, real edges. Ask a question and watch it traverse: nodes light up as it filters by sport and year, edges highlight as it hops between events, and the answer node turns gold. A collapsible Graph Query Trace panel shows every REST++ operation that ran — SOURCE, FILTER, EDGE, INFOBOX, RETURN — with the actual endpoint called.
 
-For RAG: retrieved documents appear as ranked cards with staggered animation as each one loads.
+For Agentic: a step-by-step tool call trace animates as the agent runs — each tool call with its input, output, and status.
 
-A "Surprise me" button picks a random example question and fires it automatically. A copy button lets you grab the answer.
+For RAG: retrieved documents appear as ranked cards with staggered animation.
+
+A "Surprise me" button picks a random example and fires it automatically.
 
 ### Compare
 
-Fires all three pipelines simultaneously against the same question and shows them side by side. A speed race bar tracks each pipeline's elapsed time independently as they run — bars only grow, never jump backward, using a log scale so fast pipelines (GraphRAG at ~3s) and slow ones (RAG at ~150s) are both visible. Each column shows that pipeline's visualization live. Once all three finish, answers appear with their elapsed times for direct comparison. The GraphRAG column also shows the Query Trace panel.
+Fires all three pipelines simultaneously against the same question and shows them side by side.
+
+![Compare page showing all three pipelines running in parallel with the speed race bar](images/Comparison.png)
+
+A speed race bar tracks each pipeline's elapsed time independently as they run. GraphRAG answered in 0.05 seconds in the screenshot above. Agentic and RAG are still running. Each column shows that pipeline's live visualization. Once all three finish, answers appear with their elapsed times and token usage for direct comparison.
 
 ### Architecture
 
-Pipeline architecture diagrams, graph schema, and live statistics pulled directly from TigerGraph (vertex counts, edge types). Accuracy percentages update from the live results API.
+Pipeline architecture diagrams, graph schema with vertex and edge types, and live statistics pulled directly from TigerGraph.
 
 ---
 
@@ -244,7 +238,7 @@ Open [http://localhost:5173](http://localhost:5173).
 | `nomic-embed-text` | Document and query embeddings (768-dim) | 137M |
 | `qwen3:4b` | Agentic planning, synthesis, RAG answers | 4B |
 
-All inference runs locally via Ollama. GraphRAG uses zero LLM calls for most question types — the graph answers directly.
+All inference runs locally via Ollama. GraphRAG uses zero LLM calls — the graph answers directly.
 
 ---
 
