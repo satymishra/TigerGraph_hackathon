@@ -1,0 +1,1221 @@
+{
+  "pipeline": "agentic",
+  "dataset": "eval_hidden.jsonl",
+  "total": 50,
+  "avg_tokens": 0.0,
+  "avg_elapsed": 27.02,
+  "results": [
+    {
+      "pipeline": "agentic",
+      "qid": "eval-001",
+      "question": "Who won the gold medal in the event held at Olympic Tennis Centre on 15 to 22 August 2004?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Li TingSun Tiantian",
+      "tokens_used": 0,
+      "elapsed_sec": 29.2,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the event held at Olympi → {'year': 2004, 'season': None, 'sport': 'Tennis', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Olympic Tennis Centre, date=15 August → 3 events → 3 events",
+        "infobox_lookup: Q942805 infobox.gold=Li TingSun Tiantian → Li TingSun Tiantian"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the event held at Olympi → {'year': 2004, 'season': None, 'sport': 'Tennis', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Olympic Tennis Centre, date=15 August → 3 events → 3 events",
+        "infobox_lookup: Q942805 infobox.gold=Li TingSun Tiantian → Li TingSun Tiantian"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q942805"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-002",
+      "question": "How many nations competed in Fencing at the 1988 Summer Olympics – Men's foil?",
+      "qtype": "lookup",
+      "predicted_answer": "16",
+      "tokens_used": 0,
+      "elapsed_sec": 21.73,
+      "graph_path": [
+        "llm_plan: question=How many nations competed in Fencing at the 1988 S → {'year': 1988, 'season': 'Summer', 'sport': 'Fencing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_lookup: Title match (8 words): 'Fencing at the 1988 Summer Olympics – Men's team foil' → → 16"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=How many nations competed in Fencing at the 1988 S → {'year': 1988, 'season': 'Summer', 'sport': 'Fencing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_lookup: Title match (8 words): 'Fencing at the 1988 Summer Olympics – Men's team foil' → → 16"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q5443138"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-003",
+      "question": "According to the provided corpus, how many cycling events at the 2008 Summer Olympics had more than 30 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "8",
+      "tokens_used": 0,
+      "elapsed_sec": 21.91,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many cycling → {'year': 2008, 'season': 'Summer', 'sport': 'Cycling', 'threshold_op': '>', 'threshold_val': 30, 'medal': 'gold'}",
+        "graph_filter: filter by year=2008, season=Summer, sport=Cycling → 18 events → 18 events found",
+        "count_results: competitors>30 → 8 → 8"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many cycling → {'year': 2008, 'season': 'Summer', 'sport': 'Cycling', 'threshold_op': '>', 'threshold_val': 30, 'medal': 'gold'}",
+        "graph_filter: filter by year=2008, season=Summer, sport=Cycling → 18 events → 18 events found",
+        "count_results: competitors>30 → 8 → 8"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q1202526",
+        "Q628945",
+        "Q1005363",
+        "Q1064571",
+        "Q609985"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-004",
+      "question": "Who won the gold medal in the event held at Sydney International Shooting Centre on 22 September 2000?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Mykola Milchev",
+      "tokens_used": 0,
+      "elapsed_sec": 22.77,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the event held at Sydney → {'year': 2000, 'season': None, 'sport': 'Shooting', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Sydney International Shooting Centre, date=22 September → 3 events → 3 events",
+        "infobox_lookup: Q7500816 infobox.gold=Mykola Milchev → Mykola Milchev"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the event held at Sydney → {'year': 2000, 'season': None, 'sport': 'Shooting', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Sydney International Shooting Centre, date=22 September → 3 events → 3 events",
+        "infobox_lookup: Q7500816 infobox.gold=Mykola Milchev → Mykola Milchev"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q7500816"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-005",
+      "question": "According to the provided corpus, which sailing event at the 2016 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Sailing at the 2016 Summer Olympics – Men's 470",
+      "tokens_used": 0,
+      "elapsed_sec": 22.41,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, which sailing ev → {'year': 2016, 'season': 'Summer', 'sport': 'Sailing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=2016, season=Summer, sport=Sailing → 10 events → 10 events",
+        "sort_results: max competitors=52 → Sailing at the 2016 Summer Olympics – Men's 470 → Sailing at the 2016 Summer Olympics – Men's 470"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, which sailing ev → {'year': 2016, 'season': 'Summer', 'sport': 'Sailing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=2016, season=Summer, sport=Sailing → 10 events → 10 events",
+        "sort_results: max competitors=52 → Sailing at the 2016 Summer Olympics – Men's 470 → Sailing at the 2016 Summer Olympics – Men's 470"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q26263261"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-006",
+      "question": "According to the provided corpus, how many cross-country skiing events at the 2010 Winter Olympics had more than 62 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "4",
+      "tokens_used": 0,
+      "elapsed_sec": 21.84,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many cross-c → {'year': 2010, 'season': 'Winter', 'sport': 'Cross-country skiing', 'threshold_op': '>', 'threshold_val': 62, 'medal': '",
+        "graph_filter: filter by year=2010, season=Winter, sport=Cross-country skiing → 10 events → 10 events found",
+        "count_results: competitors>62 → 4 → 4"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many cross-c → {'year': 2010, 'season': 'Winter', 'sport': 'Cross-country skiing', 'threshold_op': '>', 'threshold_val': 62, 'medal': '",
+        "graph_filter: filter by year=2010, season=Winter, sport=Cross-country skiing → 10 events → 10 events found",
+        "count_results: competitors>62 → 4 → 4"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q916916",
+        "Q843851",
+        "Q916724",
+        "Q384953",
+        "Q571263"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-007",
+      "question": "Who won the gold medal in the men's heavyweight boxing event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Oleksandr Usyk",
+      "tokens_used": 0,
+      "elapsed_sec": 22.96,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the men's heavyweight bo → {'year': 2016, 'season': 'Summer', 'sport': 'Boxing', 'threshold_op': None, 'threshold_val': None, 'direction': 'prev', ",
+        "graph_filter: year=2016, season=Summer, sport=Boxing → 13 events → 13 anchor events",
+        "follow_edge: Q26208602 -PREV_EDITION→ Q326384 → Q326384",
+        "infobox_lookup: Q326384 infobox.gold=Oleksandr Usyk → Oleksandr Usyk"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the men's heavyweight bo → {'year': 2016, 'season': 'Summer', 'sport': 'Boxing', 'threshold_op': None, 'threshold_val': None, 'direction': 'prev', ",
+        "graph_filter: year=2016, season=Summer, sport=Boxing → 13 events → 13 anchor events",
+        "follow_edge: Q26208602 -PREV_EDITION→ Q326384 → Q326384",
+        "infobox_lookup: Q326384 infobox.gold=Oleksandr Usyk → Oleksandr Usyk"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q326384"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-008",
+      "question": "According to the provided corpus, how many sailing events at the 1996 Summer Olympics had more than 46 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "4",
+      "tokens_used": 0,
+      "elapsed_sec": 21.76,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many sailing → {'year': 1996, 'season': 'Summer', 'sport': 'Sailing', 'threshold_op': '>', 'threshold_val': 46, 'medal': 'gold'}",
+        "graph_filter: filter by year=1996, season=Summer, sport=Sailing → 10 events → 10 events found",
+        "count_results: competitors>46 → 4 → 4"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many sailing → {'year': 1996, 'season': 'Summer', 'sport': 'Sailing', 'threshold_op': '>', 'threshold_val': 46, 'medal': 'gold'}",
+        "graph_filter: filter by year=1996, season=Summer, sport=Sailing → 10 events → 10 events found",
+        "count_results: competitors>46 → 4 → 4"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q7400319",
+        "Q7400321",
+        "Q7400325",
+        "Q7400318",
+        "Q7400317"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-009",
+      "question": "According to the provided corpus, which sailing event at the 2004 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Sailing at the 2004 Summer Olympics – Men's 470",
+      "tokens_used": 0,
+      "elapsed_sec": 21.76,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, which sailing ev → {'year': 2004, 'season': 'Summer', 'sport': 'Sailing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=2004, season=Summer, sport=Sailing → 11 events → 11 events",
+        "sort_results: max competitors=54 → Sailing at the 2004 Summer Olympics – Men's 470 → Sailing at the 2004 Summer Olympics – Men's 470"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, which sailing ev → {'year': 2004, 'season': 'Summer', 'sport': 'Sailing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=2004, season=Summer, sport=Sailing → 11 events → 11 events",
+        "sort_results: max competitors=54 → Sailing at the 2004 Summer Olympics – Men's 470 → Sailing at the 2004 Summer Olympics – Men's 470"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q7400344"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-010",
+      "question": "How many nations competed in Boxing at the 1996 Summer Olympics – Flyweight?",
+      "qtype": "lookup",
+      "predicted_answer": "32",
+      "tokens_used": 0,
+      "elapsed_sec": 22.07,
+      "graph_path": [
+        "llm_plan: question=How many nations competed in Boxing at the 1996 Su → {'year': 1996, 'season': 'Summer', 'sport': 'Boxing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_lookup: Title match (7 words): 'Boxing at the 1996 Summer Olympics – Flyweight' → nation → 32"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=How many nations competed in Boxing at the 1996 Su → {'year': 1996, 'season': 'Summer', 'sport': 'Boxing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_lookup: Title match (7 words): 'Boxing at the 1996 Summer Olympics – Flyweight' → nation → 32"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q10497009"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-011",
+      "question": "According to the provided corpus, how many weightlifting events at the 1992 Summer Olympics had more than 24 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "4",
+      "tokens_used": 0,
+      "elapsed_sec": 21.97,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many weightl → {'year': 1992, 'season': 'Summer', 'sport': 'Weightlifting', 'threshold_op': '>', 'threshold_val': 24, 'medal': 'gold'}",
+        "graph_filter: filter by year=1992, season=Summer, sport=Weightlifting → 10 events → 10 events found",
+        "count_results: competitors>24 → 4 → 4"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many weightl → {'year': 1992, 'season': 'Summer', 'sport': 'Weightlifting', 'threshold_op': '>', 'threshold_val': 24, 'medal': 'gold'}",
+        "graph_filter: filter by year=1992, season=Summer, sport=Weightlifting → 10 events → 10 events found",
+        "count_results: competitors>24 → 4 → 4"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q7979974",
+        "Q7979967",
+        "Q7979978",
+        "Q7979975",
+        "Q7979971"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-012",
+      "question": "How many nations competed in Swimming at the 2016 Summer Olympics – Men's 100 metre butterfly?",
+      "qtype": "lookup",
+      "predicted_answer": "32",
+      "tokens_used": 0,
+      "elapsed_sec": 22.32,
+      "graph_path": [
+        "llm_plan: question=How many nations competed in Swimming at the 2016  → {'year': 2016, 'season': 'Summer', 'sport': 'Swimming', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_lookup: Title match (10 words): 'Swimming at the 2016 Summer Olympics – Men's 100 metre  → 32"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=How many nations competed in Swimming at the 2016  → {'year': 2016, 'season': 'Summer', 'sport': 'Swimming', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_lookup: Title match (10 words): 'Swimming at the 2016 Summer Olympics – Men's 100 metre  → 32"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q25991452"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-013",
+      "question": "According to the provided corpus, how many cycling events at the 2016 Summer Olympics had more than 27 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "6",
+      "tokens_used": 0,
+      "elapsed_sec": 27.0,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many cycling → {'year': 2016, 'season': 'Summer', 'sport': 'Cycling', 'threshold_op': '>', 'threshold_val': 27, 'medal': 'gold'}",
+        "graph_filter: filter by year=2016, season=Summer, sport=Cycling → 16 events → 16 events found",
+        "count_results: competitors>27 → 6 → 6"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many cycling → {'year': 2016, 'season': 'Summer', 'sport': 'Cycling', 'threshold_op': '>', 'threshold_val': 27, 'medal': 'gold'}",
+        "graph_filter: filter by year=2016, season=Summer, sport=Cycling → 16 events → 16 events found",
+        "count_results: competitors>27 → 6 → 6"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q25476545",
+        "Q26260960",
+        "Q24761058",
+        "Q25476761",
+        "Q25476845"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-014",
+      "question": "Who won the gold medal in the event held at San Sicario on February 15, 2006?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Michaela Dorfmeister",
+      "tokens_used": 0,
+      "elapsed_sec": 26.89,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the event held at San Si → {'year': 2006, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=San Sicario, date=15 February → 1 events → 1 events",
+        "infobox_lookup: Q771123 infobox.gold=Michaela Dorfmeister → Michaela Dorfmeister"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the event held at San Si → {'year': 2006, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=San Sicario, date=15 February → 1 events → 1 events",
+        "infobox_lookup: Q771123 infobox.gold=Michaela Dorfmeister → Michaela Dorfmeister"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q771123"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-015",
+      "question": "How many nations competed in Athletics at the 2016 Summer Olympics – Men's 400 metres?",
+      "qtype": "lookup",
+      "predicted_answer": "33",
+      "tokens_used": 0,
+      "elapsed_sec": 30.84,
+      "graph_path": [
+        "llm_plan: question=How many nations competed in Athletics at the 2016 → {'year': 2016, 'season': 'Summer', 'sport': 'Athletics', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_lookup: Title match (9 words): 'Athletics at the 2016 Summer Olympics – Men's 400 metres → 33"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=How many nations competed in Athletics at the 2016 → {'year': 2016, 'season': 'Summer', 'sport': 'Athletics', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_lookup: Title match (9 words): 'Athletics at the 2016 Summer Olympics – Men's 400 metres → 33"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q26233103"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-016",
+      "question": "How many nations competed in Athletics at the 2008 Summer Olympics – Women's shot put?",
+      "qtype": "lookup",
+      "predicted_answer": "22",
+      "tokens_used": 0,
+      "elapsed_sec": 28.35,
+      "graph_path": [
+        "llm_plan: question=How many nations competed in Athletics at the 2008 → {'year': 2008, 'season': 'Summer', 'sport': 'Athletics', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_lookup: Title match (9 words): 'Athletics at the 2008 Summer Olympics – Women's shot put → 22"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=How many nations competed in Athletics at the 2008 → {'year': 2008, 'season': 'Summer', 'sport': 'Athletics', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_lookup: Title match (9 words): 'Athletics at the 2008 Summer Olympics – Women's shot put → 22"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q848278"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-017",
+      "question": "Who won the gold medal in the event held at Eton Dorney on 28 July – 4 August 2012?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Eric MurrayHamish Bond",
+      "tokens_used": 0,
+      "elapsed_sec": 30.19,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the event held at Eton D → {'year': 2012, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Eton Dorney, date=28 July → 7 events → 7 events",
+        "infobox_lookup: Q767351 infobox.gold=Eric MurrayHamish Bond → Eric MurrayHamish Bond"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the event held at Eton D → {'year': 2012, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Eton Dorney, date=28 July → 7 events → 7 events",
+        "infobox_lookup: Q767351 infobox.gold=Eric MurrayHamish Bond → Eric MurrayHamish Bond"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q767351"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-018",
+      "question": "Who won the gold medal in the event held at Olympic Stadium on 16–18 August 2016?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Dmitriy Balandin",
+      "tokens_used": 0,
+      "elapsed_sec": 28.07,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the event held at Olympi → {'year': 2016, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Olympic Stadium, date=16 August → 64 events → 64 events",
+        "infobox_lookup: Q25991451 infobox.gold=Dmitriy Balandin → Dmitriy Balandin"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the event held at Olympi → {'year': 2016, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Olympic Stadium, date=16 August → 64 events → 64 events",
+        "infobox_lookup: Q25991451 infobox.gold=Dmitriy Balandin → Dmitriy Balandin"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q25991451"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-019",
+      "question": "According to the provided corpus, how many alpine skiing events at the 1998 Winter Olympics had more than 45 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "4",
+      "tokens_used": 0,
+      "elapsed_sec": 27.73,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many alpine  → {'year': 1998, 'season': 'Winter', 'sport': 'Alpine skiing', 'threshold_op': '>', 'threshold_val': 45, 'medal': 'gold'}",
+        "graph_filter: filter by year=1998, season=Winter, sport=Alpine skiing → 10 events → 10 events found",
+        "count_results: competitors>45 → 4 → 4"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many alpine  → {'year': 1998, 'season': 'Winter', 'sport': 'Alpine skiing', 'threshold_op': '>', 'threshold_val': 45, 'medal': 'gold'}",
+        "graph_filter: filter by year=1998, season=Winter, sport=Alpine skiing → 10 events → 10 events found",
+        "count_results: competitors>45 → 4 → 4"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q1222474",
+        "Q1005296",
+        "Q1005810",
+        "Q1222214",
+        "Q1005576"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-020",
+      "question": "Who won the gold medal in the event held at Royal Artillery Barracks on 5 August 2012?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Giovanni Cernogoraz",
+      "tokens_used": 0,
+      "elapsed_sec": 28.78,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the event held at Royal  → {'year': 2012, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Royal Artillery Barracks, date=5 August → 2 events → 2 events",
+        "infobox_lookup: Q681571 infobox.gold=Giovanni Cernogoraz → Giovanni Cernogoraz"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the event held at Royal  → {'year': 2012, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Royal Artillery Barracks, date=5 August → 2 events → 2 events",
+        "infobox_lookup: Q681571 infobox.gold=Giovanni Cernogoraz → Giovanni Cernogoraz"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q681571"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-021",
+      "question": "Who won the gold medal in the men's 200 metre backstroke swimming event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Tyler Clary",
+      "tokens_used": 0,
+      "elapsed_sec": 29.84,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the men's 200 metre back → {'year': 2016, 'season': 'Summer', 'sport': 'Swimming', 'threshold_op': None, 'threshold_val': None, 'direction': 'prev'",
+        "graph_filter: year=2016, season=Summer, sport=Swimming → 31 events → 31 anchor events",
+        "follow_edge: Q25991449 -PREV_EDITION→ Q2071160 → Q2071160",
+        "infobox_lookup: Q2071160 infobox.gold=Tyler Clary → Tyler Clary"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the men's 200 metre back → {'year': 2016, 'season': 'Summer', 'sport': 'Swimming', 'threshold_op': None, 'threshold_val': None, 'direction': 'prev'",
+        "graph_filter: year=2016, season=Summer, sport=Swimming → 31 events → 31 anchor events",
+        "follow_edge: Q25991449 -PREV_EDITION→ Q2071160 → Q2071160",
+        "infobox_lookup: Q2071160 infobox.gold=Tyler Clary → Tyler Clary"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q2071160"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-022",
+      "question": "How many nations competed in Cross-country skiing at the 2014 Winter Olympics – Men's sprint?",
+      "qtype": "lookup",
+      "predicted_answer": "40",
+      "tokens_used": 0,
+      "elapsed_sec": 27.23,
+      "graph_path": [
+        "llm_plan: question=How many nations competed in Cross-country skiing  → {'year': 2014, 'season': 'Winter', 'sport': 'Cross-country skiing', 'threshold_op': None, 'threshold_val': None, 'medal'",
+        "graph_lookup: Title match (10 words): 'Cross-country skiing at the 2014 Winter Olympics – Men' → 40"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=How many nations competed in Cross-country skiing  → {'year': 2014, 'season': 'Winter', 'sport': 'Cross-country skiing', 'threshold_op': None, 'threshold_val': None, 'medal'",
+        "graph_lookup: Title match (10 words): 'Cross-country skiing at the 2014 Winter Olympics – Men' → 40"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q15055036"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-023",
+      "question": "According to the provided corpus, how many shooting events at the 2000 Summer Olympics had more than 42 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "7",
+      "tokens_used": 0,
+      "elapsed_sec": 26.59,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many shootin → {'year': 2000, 'season': 'Summer', 'sport': 'Shooting', 'threshold_op': '>', 'threshold_val': 42, 'medal': 'gold'}",
+        "graph_filter: filter by year=2000, season=Summer, sport=Shooting → 17 events → 17 events found",
+        "count_results: competitors>42 → 7 → 7"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many shootin → {'year': 2000, 'season': 'Summer', 'sport': 'Shooting', 'threshold_op': '>', 'threshold_val': 42, 'medal': 'gold'}",
+        "graph_filter: filter by year=2000, season=Summer, sport=Shooting → 17 events → 17 events found",
+        "count_results: competitors>42 → 7 → 7"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q7500816",
+        "Q4443763",
+        "Q4443764",
+        "Q7500817",
+        "Q7500819"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-024",
+      "question": "According to the provided corpus, which cross-country skiing event at the 1998 Winter Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Cross-country skiing at the 1998 Winter Olympics – Men's 10 kilometre classical",
+      "tokens_used": 0,
+      "elapsed_sec": 30.83,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, which cross-coun → {'year': 1998, 'season': 'Winter', 'sport': 'Cross-country skiing', 'threshold_op': None, 'threshold_val': None, 'medal'",
+        "graph_filter: year=1998, season=Winter, sport=Cross-country skiing → 9 events → 9 events",
+        "sort_results: max competitors=97 → Cross-country skiing at the 1998 Winter Olympics – Men's 10 kilometre classical → Cross-country skiing at the 1998 Winter Olympics – Men's 10 kilometre classical"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, which cross-coun → {'year': 1998, 'season': 'Winter', 'sport': 'Cross-country skiing', 'threshold_op': None, 'threshold_val': None, 'medal'",
+        "graph_filter: year=1998, season=Winter, sport=Cross-country skiing → 9 events → 9 events",
+        "sort_results: max competitors=97 → Cross-country skiing at the 1998 Winter Olympics – Men's 10 kilometre classical → Cross-country skiing at the 1998 Winter Olympics – Men's 10 kilometre classical"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q1004937"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-025",
+      "question": "According to the provided corpus, which rowing event at the 2016 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Rowing at the 2016 Summer Olympics – Women's eight",
+      "tokens_used": 0,
+      "elapsed_sec": 28.93,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, which rowing eve → {'year': 2016, 'season': 'Summer', 'sport': 'Rowing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=2016, season=Summer, sport=Rowing → 13 events → 13 events",
+        "sort_results: max competitors=56 → Rowing at the 2016 Summer Olympics – Women's eight → Rowing at the 2016 Summer Olympics – Women's eight"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, which rowing eve → {'year': 2016, 'season': 'Summer', 'sport': 'Rowing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=2016, season=Summer, sport=Rowing → 13 events → 13 events",
+        "sort_results: max competitors=56 → Rowing at the 2016 Summer Olympics – Women's eight → Rowing at the 2016 Summer Olympics – Women's eight"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q22968979"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-026",
+      "question": "How many nations competed in Fencing at the 2000 Summer Olympics – Men's foil?",
+      "qtype": "lookup",
+      "predicted_answer": "22",
+      "tokens_used": 0,
+      "elapsed_sec": 28.08,
+      "graph_path": [
+        "llm_plan: question=How many nations competed in Fencing at the 2000 S → {'year': 2000, 'season': 'Summer', 'sport': 'Fencing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_lookup: Title match (8 words): 'Fencing at the 2000 Summer Olympics – Men's foil' → nati → 22"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=How many nations competed in Fencing at the 2000 S → {'year': 2000, 'season': 'Summer', 'sport': 'Fencing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_lookup: Title match (8 words): 'Fencing at the 2000 Summer Olympics – Men's foil' → nati → 22"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q632472"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-027",
+      "question": "According to the provided corpus, which cycling event at the 2012 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Cycling at the 2012 Summer Olympics – Men's individual road race",
+      "tokens_used": 0,
+      "elapsed_sec": 27.73,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, which cycling ev → {'year': 2012, 'season': 'Summer', 'sport': 'Cycling', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=2012, season=Summer, sport=Cycling → 18 events → 18 events",
+        "sort_results: max competitors=144 → Cycling at the 2012 Summer Olympics – Men's individual road race → Cycling at the 2012 Summer Olympics – Men's individual road race"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, which cycling ev → {'year': 2012, 'season': 'Summer', 'sport': 'Cycling', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=2012, season=Summer, sport=Cycling → 18 events → 18 events",
+        "sort_results: max competitors=144 → Cycling at the 2012 Summer Olympics – Men's individual road race → Cycling at the 2012 Summer Olympics – Men's individual road race"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q754412"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-028",
+      "question": "According to the provided corpus, how many wrestling events at the 2012 Summer Olympics had more than 19 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "3",
+      "tokens_used": 0,
+      "elapsed_sec": 27.64,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many wrestli → {'year': 2012, 'season': 'Summer', 'sport': 'Wrestling', 'threshold_op': '>', 'threshold_val': 19, 'medal': 'gold'}",
+        "graph_filter: filter by year=2012, season=Summer, sport=Wrestling → 15 events → 15 events found",
+        "count_results: competitors>19 → 3 → 3"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many wrestli → {'year': 2012, 'season': 'Summer', 'sport': 'Wrestling', 'threshold_op': '>', 'threshold_val': 19, 'medal': 'gold'}",
+        "graph_filter: filter by year=2012, season=Summer, sport=Wrestling → 15 events → 15 events found",
+        "count_results: competitors>19 → 3 → 3"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q2171151",
+        "Q2358274",
+        "Q2299006",
+        "Q767959",
+        "Q2289605"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-029",
+      "question": "According to the provided corpus, how many boxing events at the 2012 Summer Olympics had more than 26 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "3",
+      "tokens_used": 0,
+      "elapsed_sec": 26.3,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many boxing  → {'year': 2012, 'season': 'Summer', 'sport': 'Boxing', 'threshold_op': '>', 'threshold_val': 26, 'medal': 'gold'}",
+        "graph_filter: filter by year=2012, season=Summer, sport=Boxing → 11 events → 11 events found",
+        "count_results: competitors>26 → 3 → 3"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many boxing  → {'year': 2012, 'season': 'Summer', 'sport': 'Boxing', 'threshold_op': '>', 'threshold_val': 26, 'medal': 'gold'}",
+        "graph_filter: filter by year=2012, season=Summer, sport=Boxing → 11 events → 11 events found",
+        "count_results: competitors>26 → 3 → 3"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q2070048",
+        "Q31850",
+        "Q2070431",
+        "Q332673",
+        "Q2070058"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-030",
+      "question": "According to the provided corpus, which alpine skiing event at the 1994 Winter Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Alpine skiing at the 1994 Winter Olympics – Men's super-G",
+      "tokens_used": 0,
+      "elapsed_sec": 26.62,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, which alpine ski → {'year': 1994, 'season': 'Winter', 'sport': 'Alpine skiing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold",
+        "graph_filter: year=1994, season=Winter, sport=Alpine skiing → 10 events → 10 events",
+        "sort_results: max competitors=69 → Alpine skiing at the 1994 Winter Olympics – Men's super-G → Alpine skiing at the 1994 Winter Olympics – Men's super-G"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, which alpine ski → {'year': 1994, 'season': 'Winter', 'sport': 'Alpine skiing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold",
+        "graph_filter: year=1994, season=Winter, sport=Alpine skiing → 10 events → 10 events",
+        "sort_results: max competitors=69 → Alpine skiing at the 1994 Winter Olympics – Men's super-G → Alpine skiing at the 1994 Winter Olympics – Men's super-G"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q1005746"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-031",
+      "question": "Who won the gold medal in the men's 62 kg weightlifting event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Kim Un-guk",
+      "tokens_used": 0,
+      "elapsed_sec": 28.24,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the men's 62 kg weightli → {'year': 2016, 'season': 'Summer', 'sport': 'Weightlifting', 'threshold_op': None, 'threshold_val': None, 'direction': '",
+        "graph_filter: year=2016, season=Summer, sport=Weightlifting → 15 events → 15 anchor events",
+        "follow_edge: Q26212149 -PREV_EDITION→ Q1139399 → Q1139399",
+        "infobox_lookup: Q1139399 infobox.gold=Kim Un-guk → Kim Un-guk"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the men's 62 kg weightli → {'year': 2016, 'season': 'Summer', 'sport': 'Weightlifting', 'threshold_op': None, 'threshold_val': None, 'direction': '",
+        "graph_filter: year=2016, season=Summer, sport=Weightlifting → 15 events → 15 anchor events",
+        "follow_edge: Q26212149 -PREV_EDITION→ Q1139399 → Q1139399",
+        "infobox_lookup: Q1139399 infobox.gold=Kim Un-guk → Kim Un-guk"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q1139399"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-032",
+      "question": "Who won the gold medal in the event held at Pacific Coliseum on February 20, 2010?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Lee Jung-su",
+      "tokens_used": 0,
+      "elapsed_sec": 27.29,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the event held at Pacifi → {'year': 2010, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Pacific Coliseum, date=20 February → 10 events → 10 events",
+        "infobox_lookup: Q905485 infobox.gold=Lee Jung-su → Lee Jung-su"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the event held at Pacifi → {'year': 2010, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Pacific Coliseum, date=20 February → 10 events → 10 events",
+        "infobox_lookup: Q905485 infobox.gold=Lee Jung-su → Lee Jung-su"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q905485"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-033",
+      "question": "According to the provided corpus, how many alpine skiing events at the 1988 Winter Olympics had more than 57 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "4",
+      "tokens_used": 0,
+      "elapsed_sec": 26.88,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many alpine  → {'year': 1988, 'season': 'Winter', 'sport': 'Alpine skiing', 'threshold_op': '>', 'threshold_val': 57, 'medal': 'gold'}",
+        "graph_filter: filter by year=1988, season=Winter, sport=Alpine skiing → 10 events → 10 events found",
+        "count_results: competitors>57 → 4 → 4"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many alpine  → {'year': 1988, 'season': 'Winter', 'sport': 'Alpine skiing', 'threshold_op': '>', 'threshold_val': 57, 'medal': 'gold'}",
+        "graph_filter: filter by year=1988, season=Winter, sport=Alpine skiing → 10 events → 10 events found",
+        "count_results: competitors>57 → 4 → 4"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q1222203",
+        "Q1005639",
+        "Q1222524",
+        "Q1222713",
+        "Q1005284"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-034",
+      "question": "Who won the gold medal in the men's freestyle 120 kg wrestling event at the Summer Olympics held immediately before 2012?",
+      "qtype": "temporal",
+      "predicted_answer": "Bakhtiyar Akhmedov",
+      "tokens_used": 0,
+      "elapsed_sec": 28.28,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the men's freestyle 120  → {'year': 2012, 'season': 'Summer', 'sport': 'Wrestling', 'threshold_op': None, 'threshold_val': None, 'direction': 'prev",
+        "graph_filter: year=2012, season=Summer, sport=Wrestling → 15 events → 15 anchor events",
+        "follow_edge: Q677063 -PREV_EDITION→ Q581364 → Q581364",
+        "infobox_lookup: Q581364 infobox.gold=Bakhtiyar Akhmedov → Bakhtiyar Akhmedov"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the men's freestyle 120  → {'year': 2012, 'season': 'Summer', 'sport': 'Wrestling', 'threshold_op': None, 'threshold_val': None, 'direction': 'prev",
+        "graph_filter: year=2012, season=Summer, sport=Wrestling → 15 events → 15 anchor events",
+        "follow_edge: Q677063 -PREV_EDITION→ Q581364 → Q581364",
+        "infobox_lookup: Q581364 infobox.gold=Bakhtiyar Akhmedov → Bakhtiyar Akhmedov"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q581364"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-035",
+      "question": "According to the provided corpus, which rowing event at the 2012 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Rowing at the 2012 Summer Olympics – Women's eight",
+      "tokens_used": 0,
+      "elapsed_sec": 27.13,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, which rowing eve → {'year': 2012, 'season': 'Summer', 'sport': 'Rowing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=2012, season=Summer, sport=Rowing → 13 events → 13 events",
+        "sort_results: max competitors=56 → Rowing at the 2012 Summer Olympics – Women's eight → Rowing at the 2012 Summer Olympics – Women's eight"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, which rowing eve → {'year': 2012, 'season': 'Summer', 'sport': 'Rowing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=2012, season=Summer, sport=Rowing → 13 events → 13 events",
+        "sort_results: max competitors=56 → Rowing at the 2012 Summer Olympics – Women's eight → Rowing at the 2012 Summer Olympics – Women's eight"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q370500"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-036",
+      "question": "According to the provided corpus, how many short-track speed skating events at the 2018 Winter Olympics had more than 34 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "3",
+      "tokens_used": 0,
+      "elapsed_sec": 30.46,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many short-t → {'year': 2018, 'season': 'Winter', 'sport': 'Short-track speed skating', 'threshold_op': '>', 'threshold_val': 34, 'meda",
+        "graph_filter: filter by year=2018, season=Winter, sport=Short-track speed skating → 8 events → 8 events found",
+        "count_results: competitors>34 → 3 → 3"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many short-t → {'year': 2018, 'season': 'Winter', 'sport': 'Short-track speed skating', 'threshold_op': '>', 'threshold_val': 34, 'meda",
+        "graph_filter: filter by year=2018, season=Winter, sport=Short-track speed skating → 8 events → 8 events found",
+        "count_results: competitors>34 → 3 → 3"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q47310015",
+        "Q47309990",
+        "Q47309958",
+        "Q47309816",
+        "Q47455933"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-037",
+      "question": "According to the provided corpus, which sailing event at the 1996 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Sailing at the 1996 Summer Olympics – Men's 470",
+      "tokens_used": 0,
+      "elapsed_sec": 27.38,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, which sailing ev → {'year': 1996, 'season': 'Summer', 'sport': 'Sailing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=1996, season=Summer, sport=Sailing → 10 events → 10 events",
+        "sort_results: max competitors=72 → Sailing at the 1996 Summer Olympics – Men's 470 → Sailing at the 1996 Summer Olympics – Men's 470"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, which sailing ev → {'year': 1996, 'season': 'Summer', 'sport': 'Sailing', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=1996, season=Summer, sport=Sailing → 10 events → 10 events",
+        "sort_results: max competitors=72 → Sailing at the 1996 Summer Olympics – Men's 470 → Sailing at the 1996 Summer Olympics – Men's 470"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q7400319"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-038",
+      "question": "According to the provided corpus, how many athletics events at the 2008 Summer Olympics had more than 40 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "21",
+      "tokens_used": 0,
+      "elapsed_sec": 27.32,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many athleti → {'year': 2008, 'season': 'Summer', 'sport': 'Athletics', 'threshold_op': '>', 'threshold_val': 40, 'medal': 'gold'}",
+        "graph_filter: filter by year=2008, season=Summer, sport=Athletics → 43 events → 43 events found",
+        "count_results: competitors>40 → 21 → 21"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many athleti → {'year': 2008, 'season': 'Summer', 'sport': 'Athletics', 'threshold_op': '>', 'threshold_val': 40, 'medal': 'gold'}",
+        "graph_filter: filter by year=2008, season=Summer, sport=Athletics → 43 events → 43 events found",
+        "count_results: competitors>40 → 21 → 21"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q744487",
+        "Q1043342",
+        "Q853023",
+        "Q853040",
+        "Q947750"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-039",
+      "question": "According to the provided corpus, how many boxing events at the 1992 Summer Olympics had more than 30 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "3",
+      "tokens_used": 0,
+      "elapsed_sec": 29.35,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many boxing  → {'year': 1992, 'season': 'Summer', 'sport': 'Boxing', 'threshold_op': '>', 'threshold_val': 30, 'medal': 'gold'}",
+        "graph_filter: filter by year=1992, season=Summer, sport=Boxing → 12 events → 12 events found",
+        "count_results: competitors>30 → 3 → 3"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many boxing  → {'year': 1992, 'season': 'Summer', 'sport': 'Boxing', 'threshold_op': '>', 'threshold_val': 30, 'medal': 'gold'}",
+        "graph_filter: filter by year=1992, season=Summer, sport=Boxing → 12 events → 12 events found",
+        "count_results: competitors>30 → 3 → 3"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q10426127",
+        "Q10706347",
+        "Q10495989",
+        "Q10581228",
+        "Q58412558"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-040",
+      "question": "Who won the gold medal in the event held at Stadium Australia on 27 September 2000 (heats)29 September 2000 (semi-finals)30 September 2000 (final)?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Ellina Zvereva",
+      "tokens_used": 0,
+      "elapsed_sec": 28.77,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the event held at Stadiu → {'year': 2000, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Stadium Australia, date=27 September → 15 events → 15 events",
+        "infobox_lookup: Q3628776 infobox.gold=Ellina Zvereva → Ellina Zvereva"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the event held at Stadiu → {'year': 2000, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Stadium Australia, date=27 September → 15 events → 15 events",
+        "infobox_lookup: Q3628776 infobox.gold=Ellina Zvereva → Ellina Zvereva"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q3628776"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-041",
+      "question": "According to the provided corpus, how many alpine skiing events at the 2006 Winter Olympics had more than 63 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "4",
+      "tokens_used": 0,
+      "elapsed_sec": 27.5,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many alpine  → {'year': 2006, 'season': 'Winter', 'sport': 'Alpine skiing', 'threshold_op': '>', 'threshold_val': 63, 'medal': 'gold'}",
+        "graph_filter: filter by year=2006, season=Winter, sport=Alpine skiing → 10 events → 10 events found",
+        "count_results: competitors>63 → 4 → 4"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many alpine  → {'year': 2006, 'season': 'Winter', 'sport': 'Alpine skiing', 'threshold_op': '>', 'threshold_val': 63, 'medal': 'gold'}",
+        "graph_filter: filter by year=2006, season=Winter, sport=Alpine skiing → 10 events → 10 events found",
+        "count_results: competitors>63 → 4 → 4"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q1005801",
+        "Q771123",
+        "Q1042644",
+        "Q2574045",
+        "Q585893"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-042",
+      "question": "Who won the gold medal in the mixed trap shooting event at the Summer Olympics held immediately before 1992?",
+      "qtype": "temporal",
+      "predicted_answer": "Dmitry Monakov",
+      "tokens_used": 0,
+      "elapsed_sec": 29.47,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the mixed trap shooting  → {'year': 1992, 'season': 'Summer', 'sport': 'Shooting', 'threshold_op': None, 'threshold_val': None, 'direction': 'prev'",
+        "graph_filter: year=1992, season=Summer, sport=Shooting → 13 events → 13 anchor events",
+        "follow_edge: Q7500772 -PREV_EDITION→ Q7500750 → Q7500750",
+        "infobox_lookup: Q7500750 infobox.gold=Dmitry Monakov → Dmitry Monakov"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the mixed trap shooting  → {'year': 1992, 'season': 'Summer', 'sport': 'Shooting', 'threshold_op': None, 'threshold_val': None, 'direction': 'prev'",
+        "graph_filter: year=1992, season=Summer, sport=Shooting → 13 events → 13 anchor events",
+        "follow_edge: Q7500772 -PREV_EDITION→ Q7500750 → Q7500750",
+        "infobox_lookup: Q7500750 infobox.gold=Dmitry Monakov → Dmitry Monakov"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q7500750"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-043",
+      "question": "Who won the gold medal in the event held at Carioca Arena 3 on 11 August 2016?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Loredana DinuSimona GhermanSimona PopAna Maria Popescu",
+      "tokens_used": 0,
+      "elapsed_sec": 27.8,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the event held at Carioc → {'year': 2016, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Carioca Arena 3, date=11 August → 1 events → 1 events",
+        "infobox_lookup: Q25384917 infobox.gold=Loredana DinuSimona GhermanSimona PopAna Maria Popescu → Loredana DinuSimona GhermanSimona PopAna Maria Popescu"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the event held at Carioc → {'year': 2016, 'season': None, 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Carioca Arena 3, date=11 August → 1 events → 1 events",
+        "infobox_lookup: Q25384917 infobox.gold=Loredana DinuSimona GhermanSimona PopAna Maria Popescu → Loredana DinuSimona GhermanSimona PopAna Maria Popescu"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q25384917"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-044",
+      "question": "Who won the gold medal in the women's 75 kg weightlifting event at the Summer Olympics held immediately before 2016?",
+      "qtype": "temporal",
+      "predicted_answer": "Lydia Valentín",
+      "tokens_used": 0,
+      "elapsed_sec": 29.41,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the women's 75 kg weight → {'year': 2016, 'season': 'Summer', 'sport': 'Weightlifting', 'threshold_op': None, 'threshold_val': None, 'direction': '",
+        "graph_filter: year=2016, season=Summer, sport=Weightlifting → 15 events → 15 anchor events",
+        "follow_edge: Q26212188 -PREV_EDITION→ Q1997032 → Q1997032",
+        "infobox_lookup: Q1997032 infobox.gold=Lydia Valentín → Lydia Valentín"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the women's 75 kg weight → {'year': 2016, 'season': 'Summer', 'sport': 'Weightlifting', 'threshold_op': None, 'threshold_val': None, 'direction': '",
+        "graph_filter: year=2016, season=Summer, sport=Weightlifting → 15 events → 15 anchor events",
+        "follow_edge: Q26212188 -PREV_EDITION→ Q1997032 → Q1997032",
+        "infobox_lookup: Q1997032 infobox.gold=Lydia Valentín → Lydia Valentín"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q1997032"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-045",
+      "question": "Who won the gold medal in the women's moguls freestyle skiing event at the Winter Olympics held immediately before 2014?",
+      "qtype": "temporal",
+      "predicted_answer": "Hannah Kearney",
+      "tokens_used": 0,
+      "elapsed_sec": 29.34,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the women's moguls frees → {'year': 2014, 'season': 'Winter', 'sport': 'Freestyle skiing', 'threshold_op': None, 'threshold_val': None, 'direction'",
+        "graph_filter: year=2014, season=Winter, sport=Freestyle skiing → 10 events → 10 anchor events",
+        "follow_edge: Q15056095 -PREV_EDITION→ Q905561 → Q905561",
+        "infobox_lookup: Q905561 infobox.gold=Hannah Kearney → Hannah Kearney"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the women's moguls frees → {'year': 2014, 'season': 'Winter', 'sport': 'Freestyle skiing', 'threshold_op': None, 'threshold_val': None, 'direction'",
+        "graph_filter: year=2014, season=Winter, sport=Freestyle skiing → 10 events → 10 anchor events",
+        "follow_edge: Q15056095 -PREV_EDITION→ Q905561 → Q905561",
+        "infobox_lookup: Q905561 infobox.gold=Hannah Kearney → Hannah Kearney"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q905561"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-046",
+      "question": "Who won the gold medal in the light flyweight boxing event at the Summer Olympics held immediately before 2004?",
+      "qtype": "temporal",
+      "predicted_answer": "Brahim Asloum",
+      "tokens_used": 0,
+      "elapsed_sec": 29.29,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the light flyweight boxi → {'year': 2004, 'season': 'Summer', 'sport': 'Boxing', 'threshold_op': None, 'threshold_val': None, 'direction': 'prev', ",
+        "graph_filter: year=2004, season=Summer, sport=Boxing → 11 events → 11 anchor events",
+        "follow_edge: Q3925468 -PREV_EDITION→ Q4951841 → Q4951841",
+        "infobox_lookup: Q4951841 infobox.gold=Brahim Asloum → Brahim Asloum"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the light flyweight boxi → {'year': 2004, 'season': 'Summer', 'sport': 'Boxing', 'threshold_op': None, 'threshold_val': None, 'direction': 'prev', ",
+        "graph_filter: year=2004, season=Summer, sport=Boxing → 11 events → 11 anchor events",
+        "follow_edge: Q3925468 -PREV_EDITION→ Q4951841 → Q4951841",
+        "infobox_lookup: Q4951841 infobox.gold=Brahim Asloum → Brahim Asloum"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q4951841"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-047",
+      "question": "According to the provided corpus, which cycling event at the 2004 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Cycling at the 2004 Summer Olympics – Men's individual road race",
+      "tokens_used": 0,
+      "elapsed_sec": 28.1,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, which cycling ev → {'year': 2004, 'season': 'Summer', 'sport': 'Cycling', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=2004, season=Summer, sport=Cycling → 8 events → 8 events",
+        "sort_results: max competitors=144 → Cycling at the 2004 Summer Olympics – Men's individual road race → Cycling at the 2004 Summer Olympics – Men's individual road race"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, which cycling ev → {'year': 2004, 'season': 'Summer', 'sport': 'Cycling', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=2004, season=Summer, sport=Cycling → 8 events → 8 events",
+        "sort_results: max competitors=144 → Cycling at the 2004 Summer Olympics – Men's individual road race → Cycling at the 2004 Summer Olympics – Men's individual road race"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q2445057"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-048",
+      "question": "According to the provided corpus, how many cycling events at the 2012 Summer Olympics had more than 30 competitors?",
+      "qtype": "aggregation",
+      "predicted_answer": "7",
+      "tokens_used": 0,
+      "elapsed_sec": 29.14,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, how many cycling → {'year': 2012, 'season': 'Summer', 'sport': 'Cycling', 'threshold_op': '>', 'threshold_val': 30, 'medal': 'gold'}",
+        "graph_filter: filter by year=2012, season=Summer, sport=Cycling → 18 events → 18 events found",
+        "count_results: competitors>30 → 7 → 7"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, how many cycling → {'year': 2012, 'season': 'Summer', 'sport': 'Cycling', 'threshold_op': '>', 'threshold_val': 30, 'medal': 'gold'}",
+        "graph_filter: filter by year=2012, season=Summer, sport=Cycling → 18 events → 18 events found",
+        "count_results: competitors>30 → 7 → 7"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q2718015",
+        "Q2329168",
+        "Q2362858",
+        "Q2718019",
+        "Q1005298"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-049",
+      "question": "According to the provided corpus, which shooting event at the 1988 Summer Olympics had the highest number of competitors?",
+      "qtype": "superlative",
+      "predicted_answer": "Shooting at the 1988 Summer Olympics – Men's 50 metre rifle prone",
+      "tokens_used": 0,
+      "elapsed_sec": 29.2,
+      "graph_path": [
+        "llm_plan: question=According to the provided corpus, which shooting e → {'year': 1988, 'season': 'Summer', 'sport': 'Shooting', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=1988, season=Summer, sport=Shooting → 13 events → 13 events",
+        "sort_results: max competitors=55 → Shooting at the 1988 Summer Olympics – Men's 50 metre rifle prone → Shooting at the 1988 Summer Olympics – Men's 50 metre rifle prone"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=According to the provided corpus, which shooting e → {'year': 1988, 'season': 'Summer', 'sport': 'Shooting', 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "graph_filter: year=1988, season=Summer, sport=Shooting → 13 events → 13 events",
+        "sort_results: max competitors=55 → Shooting at the 1988 Summer Olympics – Men's 50 metre rifle prone → Shooting at the 1988 Summer Olympics – Men's 50 metre rifle prone"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q7500747"
+      ]
+    },
+    {
+      "pipeline": "agentic",
+      "qid": "eval-050",
+      "question": "Who won the gold medal in the event held at Olympic Stadium on 6–9 August at the 2012 Summer Olympics?",
+      "qtype": "multi_hop",
+      "predicted_answer": "Allyson Felix",
+      "tokens_used": 0,
+      "elapsed_sec": 30.06,
+      "graph_path": [
+        "llm_plan: question=Who won the gold medal in the event held at Olympi → {'year': 2012, 'season': 'Summer', 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Olympic Stadium, date=6 August → 10 events → 10 events",
+        "infobox_lookup: Q1798867 infobox.gold=Allyson Felix → Allyson Felix"
+      ],
+      "evidence_chain": [
+        "llm_plan: question=Who won the gold medal in the event held at Olympi → {'year': 2012, 'season': 'Summer', 'sport': None, 'threshold_op': None, 'threshold_val': None, 'medal': 'gold'}",
+        "venue_date_filter: venue=Olympic Stadium, date=6 August → 10 events → 10 events",
+        "infobox_lookup: Q1798867 infobox.gold=Allyson Felix → Allyson Felix"
+      ],
+      "used_fallback": false,
+      "retrieved_doc_ids": [
+        "Q1798867"
+      ]
+    }
+  ]
+}
